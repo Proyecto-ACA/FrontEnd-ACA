@@ -1,5 +1,9 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    form(action="login.html" class="form-box")
+        img(class="form-title" src="images/Logo.png")
+        input(type="text" placeholder="Username")
+        input(type="password" placeholder="Password")
+        button(type="submit") LOG IN
+    
