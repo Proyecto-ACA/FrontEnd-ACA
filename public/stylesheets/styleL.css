@@ -2,22 +2,13 @@ body, html {
     height: 100%;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background: #0b1320;
-    background-image: url("../images/fondo.png");
-    background-size: 670px 650px;;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    /* No Scrollbar */
-    overflow: hidden;
+.login{
+    background-color: #394d5f;
 }
 
+.logo-login{
+    width: 30%;
+}
 .form-box {
     margin: auto;
     width: 50%;

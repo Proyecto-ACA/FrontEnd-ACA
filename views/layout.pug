@@ -2,6 +2,12 @@ doctype html
 html
   head
     title= title
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous")
     link(rel='stylesheet', href='/stylesheets/styleL.css')
   body
+    nav.navbar.navbar-dark.bg-dark(style="height:10%")
+        div.container-fluid
+          a.navbar-brand
+            img(src="images/nameicon.png" class="img" alt="" width="30%" class="d-inline-block align-text-top")
+        
     block content
