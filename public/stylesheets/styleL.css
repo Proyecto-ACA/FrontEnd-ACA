@@ -81,3 +81,21 @@ body, html {
 .form-box button[type="submit"]:hover {
     background: none;
 }
+
+@media only screen 
+    and (max-device-width: 800px)
+    and (min-device-width: 275px)
+    {
+    [class*="col-"] 
+    {
+        max-width: 100%;
+        flex:0 0 100%;;
+        -ms-flex:0 0 100%;
+    }
+    .col-4.row.login
+    {
+        -ms-flex:0 0 100%;
+        flex:0 0 100%;;
+        width: 100%;
+    }
+}
