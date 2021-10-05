@@ -54,4 +54,30 @@ a:hover {
     margin: 0 10px;
 }
 
+@media only screen 
+    and (min-device-width: 1000px){
+    .footer{
+        display:none
+    }  
+}
+@media only screen 
+    and (max-device-width: 1000px)
+    and (min-device-width: 75px)
+    {
+        .grid-container{
+            grid-template-columns: repeat(1, 1fr);
 
+        
+        }
+        .sidebar{
+            display:none
+        }
+        .grid-container {
+            height: 70%;
+        }
+        footer{
+            bottom: 0;
+            position: absolute;
+        }
+
+    }

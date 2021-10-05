@@ -10,68 +10,37 @@ head
   script(nomodule='', src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js')
   link(rel='stylesheet', href='stylesheets/stylesa.css')
   title @LESSA
-.container-fluid
-  .row.flex-nowrap
-    .sidebar.col-auto.col-md-3.col-xl-2.px-sm-2.px-0
-      .d-flex.flex-column.align-items-center.align-items-sm-start.px-3.pt-2.text-white.min-vh-100
-        a.d-flex.align-items-center.pb-5(href='/')
-          img.form-title.img-responsive.w-100(src='images/Logo.png')
-        ul#menu.nav.nav-pills.flex-column.mb-sm-auto.mb-0.align-items-center.align-items-sm-start
-          li.nav-item
-            a.nav-link.align-middle.px-0.d-block.text-light.p-3(href='ppal')
-              i.icon.ion-md-home.lead.mr-2
-              span.ms-1.d-none.d-sm-inline Principal
-          li
-            a.nav-link.px-0.align-middle.d-block.text-light.p-3(href='lecciones')
-              i.icon.ion-md-bookmarks.mr-2.lead
-              span.ms-1.d-none.d-sm-inline Lecciones
-          li
-            a.nav-link.px-0.align-middle.d-block.text-light.p-3(href='#')
-              i.icon.ion-md-today.lead.mr-2
-              span.ms-1.d-none.d-sm-inline Evaluaciones
-          li
-            a.nav-link.px-0.align-middle.d-block.text-light.p-3(href='#')
-              i.icon.ion-md-stats.lead.mr-2
-              span.ms-1.d-none.d-sm-inline Estad&iacute;sticas
-        hr
-        .dropdown.pb-4
-          a#dropdownUser1.d-flex.align-items-center.text-white.text-decoration-none.dropdown-toggle(href='#', data-bs-toggle='dropdown', aria-expanded='false')
-            img.rounded-circle(src='https://fortmyersradon.com/wp-content/uploads/2019/12/dummy-user-img-1.png', alt='hugenerd', width='30', height='30')
-            span.d-none.d-sm-inline.mx-1 User
-          ul.dropdown-menu.dropdown-menu-dark.text-small.shadow(aria-labelledby='dropdownUser1')
-            li
-              a.dropdown-item(href='login') Sign out
-    // Navbar
-    .navp.col.py-0
-      nav.navbar.navbar-expand-lg.navbar-light
-        .container
-          h5.w-75.text-light  Categor&iacute;a: Abecedario
-          #navbarSupportedContent.collapse.navbar-collapse
-            form.d-flex
-      // atras/adelante
-      .section-navigation.mdl-bottom
-        span.mdl-left
-          a(href='categoriaABC')
-            span.larrow
-              ion-icon(name='caret-back-outline')
-            |                             Atr&aacute;s
-        span.close
-          a(href='')
-            span.xclose
-              ion-icon.iclose(name='close-circle-outline')
-        span.mdl-right
-          a(href='')
-            | Siguiente
-            span.rarrow
-              ion-icon(name='caret-forward-outline')
-      .containers
-        section.left Informaci&oacute;n
-        section.center Imagen
-        section.right Gift
-  // Optional JavaScript; choose one of the two!
-  // Option 1: Bootstrap Bundle with Popper
-  script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js', integrity='sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ', crossorigin='anonymous')
-  // Option 2: Separate Popper and Bootstrap JS
-  //
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+  
+  .container-fluid
+    .row.flex-nowrap
+      include sidebar
+      // Navbar
+      .navp.col.py-0
+        nav.navbar.navbar-expand-lg.navbar-light
+          .container
+            h5.w-75.text-light  Categor&iacute;a: Abecedario
+            #navbarSupportedContent.collapse.navbar-collapse
+              form.d-flex
+        // atras/adelante
+        .section-navigation.mdl-bottom
+          span.mdl-left
+            a(href='categoriaABC')
+              span.larrow
+                ion-icon(name='caret-back-outline')
+              |                             Atr&aacute;s
+          span.close
+            a(href='')
+              span.xclose
+                ion-icon.iclose(name='close-circle-outline')
+          span.mdl-right
+            a(href='')
+              | Siguiente
+              span.rarrow
+                ion-icon(name='caret-forward-outline')
+        .containers
+          section.left Informaci&oacute;n
+          section.center Imagen
+          section.right Gift
+
+include footer
+
