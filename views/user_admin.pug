@@ -1,0 +1,61 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU', crossorigin='anonymous')
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  title Administrador de Usuarios
+nav.navbar.navbar-dark.bg-dark
+  a.navbar-brand(href='#')
+    img.d-inline-block.align-top(src='/public/images/Logo.png', width='100', height='100', alt='')
+  a.navbar-brand @LESSA
+  form.form-inline
+    input(type='search', placeholder='Search', aria-label='Search')
+    button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+.input-group.mb-3
+  br
+  br
+  span.input-group-text Nombre y Apellido
+  input.form-control(type='text', aria-label='First name')
+  input.form-control(type='text', aria-label='Last name')
+.input-group.mb-3
+  input.form-control(type='text', placeholder='Username', aria-label='Username', aria-describedby='basic-addon1')
+.input-group.mb-3
+  input.form-control(type='password', placeholder='Contraseña', aria-label='Password', aria-describedby='basic-addon1')
+.input-group.mb-3
+  span#basic-addon1.input-group-text @
+  input.form-control(type='text', placeholder='E-mail', aria-label="Recipient's username", aria-describedby='basic-addon2')
+label(for='start') Fecha de nacimiento:
+.input-group.mb-3
+  input#start(type='date', name='trip-start', value='1995-01-01', min='1995-01-01', max='2002-12-31')
+button.btn.btn-primary(type='submit') Submit
+br
+br
+table.table.table-striped
+  thead
+    tr
+      th(scope='col') #
+      th(scope='col') Nombre
+      th(scope='col') Apellido
+      th(scope='col') Email
+      th(scope='col') Fecha de nacimiento
+  tbody
+    tr
+      th(scope='row') 1
+      td Liliana
+      td Hercules
+      td erika@yahoo.com
+      td 31/10/1999
+    tr
+      th(scope='row') 2
+      td Cristian
+      td Tempest
+      td Cristian@msn.es
+      td 1/02/1998
+    tr
+      th(scope='row') 3
+      td Diego
+      td Rubi
+      td rubi@hotmail.com
+      td 15/12/1998
