@@ -5,7 +5,14 @@ body, html {
 .login{
     background-color: #394d5f;
 }
-
+.login-side{
+    background-color: #394d5f;
+    background-repeat: no-repeat;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; 
+    background-image: url("../images/montain.jpg");
+}
 .logo-login{
     width: 30%;
 }
