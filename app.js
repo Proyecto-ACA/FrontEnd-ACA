@@ -11,6 +11,11 @@ var categoriaABCRouter = require('./routes/categoriaABC');
 var ppalRouter = require('./routes/ppal');
 var user_adminRouter = require('./routes/user_admin');
 var word_adminRouter = require('./routes/word_admin');
+var evaluaciones = require('./routes/evaluaciones');
+var evaluacion = require('./routes/evaluacion');
+var lecciones = require('./routes/lecciones');
+var leccion = require('./routes/leccion');
+
 
 var app = express();
 
@@ -31,7 +36,10 @@ app.use('/categoriaABC', categoriaABCRouter);
 app.use('/ppal', ppalRouter);
 app.use('/user_admin', user_adminRouter);
 app.use('/word_admin', word_adminRouter);
-
+app.use('/evaluaciones', evaluaciones);
+app.use('/evaluacion', evaluacion);
+app.use('/lecciones', lecciones);
+app.use('/leccion', leccion);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
