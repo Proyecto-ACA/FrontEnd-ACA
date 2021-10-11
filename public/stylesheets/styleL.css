@@ -114,8 +114,14 @@ body, html {
     padding-right: 0px;
     background-color: #fef9e6;
 }
-
-.grid-container {
+.grid-containerpp {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    overflow-y: scroll;
+    height: 557px;
+}
+/*abc*/
+.grid-containerabc {
     display: grid;
     grid-template-columns: auto auto auto;
     overflow-y: scroll;
@@ -182,44 +188,52 @@ a:hover {
 .text-muted i {
     margin: 0 10px;
 }
-
+/*abc*/
 ion-icon {
     font-size: 30px;
     color: black;
 }
-
-.larrow {
+/*abc*/
+.larroww{
     align-items: center;
 }
-
-.mdl-left {
-    text-align: left;
+.section-navigations .mdl-leftt {
+    font-weight: 400;
+    float: left;
+    margin-right: 1em;
+    padding-left: 25px;
+    padding-right: 850px;
 }
+.mdl-leftt {
+    text-align: left;
+}  
+/*a*/
 
-.iclose {
+.iclose{
     color: red;
     font-size: 30px;
 }
-
-a {
+a{
     text-decoration: none;
     color: black;
 }
 
-
-.section-navigation .mdl-left {
+.larrowa{
+    align-items: center;
+}
+.section-navigationa .mdl-lefta {
     font-weight: 400;
     float: left;
     margin-left: 2em;
 }
 
-.section-navigation .mdl-right {
+.section-navigationa .mdl-righta {
     font-weight: 400;
     float: right;
     margin-right: 2em;
 }
 
-.section-navigation .close {
+.section-navigationa .close {
     font-weight: 400;
     float: center;
     margin-right: 1em;
@@ -227,7 +241,7 @@ a {
 }
 
 .containers {
-    height: 531px;
+    height: 511px;
     padding: 5px;
     margin: 5px 0;
     display: grid;
@@ -259,15 +273,55 @@ section {
     height: auto;
     line-height: 100px;
 }
+/*a*/
+/*lecciones*/
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    overflow-y: scroll;
+    height: 565px;
+}
+/**/
+/*leccion1*/
+.lista {
+    overflow-y: scroll;
+    height: 520px;
+}
+.larrowl1{
+    align-items: center;
+}
+.section-navigationl1 .mdl-leftl1 {
+    font-weight: 400;
+    float: left;
+    margin-right: 1em;
+    padding-left: 40px;
+    padding-right: 855px;
+}
+.mdl-leftl1 {
+    text-align: left;
+}
 
+.section-list .ico {
+    font-weight: 400;
+    float: left;
+    margin-right: 1em;
+}
+.ico {
+    text-align: left;
+}
+.list-group{
+    padding-left: 245px;
+    padding-right: 40px;
+    text-align: left;
+    display:inline-block;
+}
+/**/
+/*evaluaciones*/
 .accordion{
     overflow-y: scroll;
     height: 519px;
 }
-ion-icon {
-    font-size: 30px;
-    color: black;
-}
+
 .link-eva .icono{
     float: left;
     padding-left: 100px;
@@ -317,6 +371,7 @@ ion-icon {
     font-size: 20px;
     border-radius: 10px;
 }
+/**/
 
 @media only screen and (min-device-width: 1000px) {
     .footer {
