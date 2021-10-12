@@ -6,16 +6,16 @@ block content
         div.col-4.row.login
           div.col.h-auto
           div.col-12.h-auto
-            form(action="login.html").d-flex.flex-column.p-5
+            form(action="/login" method="POST").d-flex.flex-column.p-5
                 div.d-flex.justify-content-center.m-3.mb-4
                   img(class="logo-login" src="images/okIcon.png")
                 div.form-group
                   label(for="exampleInputEmail1") Nombre de usuario
-                  input(type="text" class="form-control" id="inputUsername" aria-describedby="userlHelp")
+                  input(type="text" class="form-control" id="inputUsername" name="username" placeholder="nombre de usuario" aria-describedby="userlHelp")
                   small(id="userHelp" class="form-text text-muted")
                 div.form-group
                   label(for="exampleInputEmail1") Contraseña
-                  input(type="password" class="form-control" id="inputPass")
+                  input(type="password" name="password" class="form-control" id="inputPass")
                 button(type="submit").btn.btn-primary LOG IN
           div.col.h-auto
         div.col.row.login-side

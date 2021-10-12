@@ -3,18 +3,19 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var passport = require('passport');
+var session = require('express-session');
+const PassportLocal = require('passport-local').Strategy;
 
 var indexRouter = require('./routes/index');
+var leccionRouter = require('./routes/leccion');
+var adminRouter = require('./routes/admin');
+var evaluacionRouter = require('./routes/evaluacion');
+var signRouter = require('./routes/sign');
+
 var usersRouter = require('./routes/users');
-var aRouter = require('./routes/a');
-var categoriaABCRouter = require('./routes/categoriaABC');
-var ppalRouter = require('./routes/ppal');
-var user_adminRouter = require('./routes/user_admin');
-var word_adminRouter = require('./routes/word_admin');
-var evaluaciones = require('./routes/evaluaciones');
-var evaluacion = require('./routes/evaluacion');
-var lecciones = require('./routes/lecciones');
-var leccion = require('./routes/leccion');
+
+
 
 
 var app = express();
@@ -26,20 +27,37 @@ app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+
+app.use(cookieParser("t3mp3st"));
+app.use(session({
+  secret: "t3mp3st",
+  resave: true,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new PassportLocal(function (username, password, done) {
+  if(username === "admin" && password === "1234")
+    return done(null, {id: '1', name: 'admin'});
+  done(null, false);
+}));
+
+passport.serializeUser(function (user,done){
+  done(null, user.id);
+});
+
+passport.deserializeUser(function (id,done){
+  done(null, {id: '1', name: 'admin'});
+});
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/a', aRouter);
-app.use('/categoriaABC', categoriaABCRouter);
-app.use('/ppal', ppalRouter);
-app.use('/user_admin', user_adminRouter);
-app.use('/word_admin', word_adminRouter);
-app.use('/evaluaciones', evaluaciones);
-app.use('/evaluacion', evaluacion);
-app.use('/lecciones', lecciones);
-app.use('/leccion', leccion);
+app.use('/sign', signRouter);
+app.use('/admin', adminRouter);
+app.use('/evaluacion', evaluacionRouter);
+app.use('/leccion', leccionRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
