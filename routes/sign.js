@@ -2,12 +2,18 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/sign', function(req, res, next) {
+router.get('/sign', (req, res, next)=>{
+  if(req.isAuthenticated()) return next();
+  res.redirect("/login");
+}, (req, res) => {
   res.render('sign', { title: 'Seña' });
 });
 
-router.get('/categoria', function(req, res, next) {
-  res.render('categoria', { title: 'Categorias' });
+router.get('/categoria', (req, res, next)=>{
+  if(req.isAuthenticated()) return next();
+  res.redirect("/login");
+}, (req, res) => {
+  res.render('categoria', { title: 'Categoria' });
 });
 
 

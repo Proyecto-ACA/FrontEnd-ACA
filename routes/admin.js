@@ -2,12 +2,19 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/users', function(req, res, next) {
+
+router.get('/users', (req, res, next)=>{
+  if(req.isAuthenticated()) return next();
+  res.redirect("/login");
+}, (req, res) => {
   res.render('user_admin', { title: 'Administrar Usuarios' });
 });
 
-router.get('/words', function(req, res, next) {
-  res.render('word_admin', { title: 'Administrar Palabras' });
+router.get('/words', (req, res, next)=>{
+  if(req.isAuthenticated()) return next();
+  res.redirect("/login");
+}, (req, res) => {
+  res.render('word_admin', { title: 'Administrar de palabras' });
 });
 
 module.exports = router;
