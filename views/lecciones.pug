@@ -1,0 +1,119 @@
+doctype html
+head
+  // Required meta tags
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  // Bootstrap CSS
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU' crossorigin='anonymous')
+  link(href='https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css' rel='stylesheet')
+  link(rel='stylesheet' href='styles/styleLe.css')
+  title @LESSA
+.container-fluid
+  .row.flex-nowrap
+    .sidebar.col-auto.col-md-3.col-xl-2.px-sm-2.px-0
+      .d-flex.flex-column.align-items-center.align-items-sm-start.px-3.pt-2.text-white.min-vh-100
+        a.d-flex.align-items-center.pb-5(href='/')
+          img.form-title.img-responsive.w-100(src='images/Logo.png')
+        ul#menu.nav.nav-pills.flex-column.mb-sm-auto.mb-0.align-items-center.align-items-sm-start
+          li.nav-item
+            a.nav-link.align-middle.px-0.d-block.text-light.p-3(href='ppal.html')
+              i.icon.ion-md-home.lead.mr-2
+              span.ms-1.d-none.d-sm-inline Principal
+          li
+            a.nav-link.px-0.align-middle.d-block.text-light.p-3(href='lecciones.html')
+              i.icon.ion-md-bookmarks.mr-2.lead
+              span.ms-1.d-none.d-sm-inline Lecciones
+          li
+            a.nav-link.px-0.align-middle.d-block.text-light.p-3(href='Evaluaciones.html')
+              i.icon.ion-md-today.lead.mr-2
+              span.ms-1.d-none.d-sm-inline Evaluaciones
+          a.nav-link.px-0.align-middle.d-block.text-light.p-3(href='#')
+            i.icon.ion-md-stats.lead.mr-2
+            span.ms-1.d-none.d-sm-inline Estad&iacute;sticas
+        hr
+        .dropdown.pb-4
+          a#dropdownUser1.d-flex.align-items-center.text-white.text-decoration-none.dropdown-toggle(href='#' data-bs-toggle='dropdown' aria-expanded='false')
+            img.rounded-circle(src='https://fortmyersradon.com/wp-content/uploads/2019/12/dummy-user-img-1.png' alt='hugenerd' width='30' height='30')
+            span.d-none.d-sm-inline.mx-1 User
+          ul.dropdown-menu.dropdown-menu-dark.text-small.shadow(aria-labelledby='dropdownUser1')
+            li
+              a.dropdown-item(href='#') Sign out
+    // Navbar
+    .navp.col.py-0.w-100
+      nav.navbar.navbar-expand-lg.navbar-light
+        .container-fluid
+          button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+          #navbarSupportedContent.collapse.navbar-collapse
+            h1.navbar-brand.text-white Lecciones
+      .grid-container
+        .grid-item
+          .card(style='width: 18rem;')
+            a(href='Leccion1.html')
+              img.card-img-top(src='https://images.unsplash.com/photo-1472076638602-b1f8b1ac0b4a?ixlib=rb-0.3.5&s=63c9de7246b535be56c8eaff9b87dd89&auto=format&fit=crop&w=500&q=80' alt='Card image cap')
+              .card-body
+                h5.card-title Lecci&oacute;n 1
+                p.card-text breve descripci&oacute;n del contenido de la lecci&oacute;n 1
+        .grid-item
+          .card(style='width: 18rem;')
+            a(href='#')
+              img.card-img-top(src='https://images.unsplash.com/photo-1508015926936-4eddcc6d4866?ixlib=rb-0.3.5&s=10b3a8717ab609be8d7786cab50c4e0b&auto=format&fit=crop&w=500&q=80' alt='Card image cap')
+              .card-body
+                h5.card-title Lecci&oacute;n 2
+                p.card-text Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        .grid-item
+          .card(style='width: 18rem;')
+            a(href='#')
+              img.card-img-top(src='https://images.unsplash.com/photo-1508015926936-4eddcc6d4866?ixlib=rb-0.3.5&s=10b3a8717ab609be8d7786cab50c4e0b&auto=format&fit=crop&w=500&q=80' alt='Card image cap')
+              .card-body
+                h5.card-title Lecci&oacute;n 3
+                p.card-text Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        .grid-item
+          .card(style='width: 18rem;')
+            a(href='#')
+              img.card-img-top(src='https://images.unsplash.com/photo-1472076638602-b1f8b1ac0b4a?ixlib=rb-0.3.5&s=63c9de7246b535be56c8eaff9b87dd89&auto=format&fit=crop&w=500&q=80' alt='Card image cap')
+              .card-body
+                h5.card-title Lecci&oacute;n 4
+                p.card-text Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        .grid-item
+          .card(style='width: 18rem;')
+            a(href='#')
+              img.card-img-top(src='https://images.unsplash.com/photo-1472076638602-b1f8b1ac0b4a?ixlib=rb-0.3.5&s=63c9de7246b535be56c8eaff9b87dd89&auto=format&fit=crop&w=500&q=80' alt='Card image cap')
+              .card-body
+                h5.card-title Lecci&oacute;n 5
+                p.card-text Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        .grid-item
+          .card(style='width: 18rem;')
+            a(href='#')
+              img.card-img-top(src='https://images.unsplash.com/photo-1472076638602-b1f8b1ac0b4a?ixlib=rb-0.3.5&s=63c9de7246b535be56c8eaff9b87dd89&auto=format&fit=crop&w=500&q=80' alt='Card image cap')
+              .card-body
+                h5.card-title Lecci&oacute;n 6
+                p.card-text Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        .grid-item
+          .card(style='width: 18rem;')
+            a(href='#')
+              img.card-img-top(src='https://images.unsplash.com/photo-1472076638602-b1f8b1ac0b4a?ixlib=rb-0.3.5&s=63c9de7246b535be56c8eaff9b87dd89&auto=format&fit=crop&w=500&q=80' alt='Card image cap')
+              .card-body
+                h5.card-title Lecci&oacute;n 7
+                p.card-text Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        .grid-item
+          .card(style='width: 18rem;')
+            a(href='#')
+              img.card-img-top(src='https://images.unsplash.com/photo-1472076638602-b1f8b1ac0b4a?ixlib=rb-0.3.5&s=63c9de7246b535be56c8eaff9b87dd89&auto=format&fit=crop&w=500&q=80' alt='Card image cap')
+              .card-body
+                h5.card-title Lecci&oacute;n 8
+                p.card-text Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        .grid-item
+          .card(style='width: 18rem;')
+            a(href='lecciones.html')
+              img.card-img-top(src='https://images.unsplash.com/photo-1508015926936-4eddcc6d4866?ixlib=rb-0.3.5&s=10b3a8717ab609be8d7786cab50c4e0b&auto=format&fit=crop&w=500&q=80' alt='Card image cap')
+              .card-body
+                h5.card-title Lecci&oacute;n 9
+                p.card-text Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  // Optional JavaScript; choose one of the two!
+  // Option 1: Bootstrap Bundle with Popper
+  script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js' integrity='sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ' crossorigin='anonymous')
+  // Option 2: Separate Popper and Bootstrap JS
+  //
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
