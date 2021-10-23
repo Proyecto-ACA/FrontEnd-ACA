@@ -3,6 +3,7 @@ block content
   .container-fluid
     .row.flex-nowrap
       include __sidebar
+      script(src='routes/home.js')
       // Navbar
       .navp.col.py-0
         nav.navbar.navbar-expand-lg.navbar-light
@@ -10,8 +11,8 @@ block content
             h5.w-75.text-light  Categorias
             #navbarSupportedContent.collapse.navbar-collapse
               form.d-flex
-                input.form-control.me-2.w-100(type='search', placeholder='Buscar', aria-label='Search')
-                button.btn(type='submit')
+                input#formulario.form-control.me-2.w-100(type='search', placeholder='Buscar', aria-label='Search')
+                button#boton.btn(type='submit')
                   i.icon.ion-md-search.lead.text-light
         // Cartas
         .grid-containerpp
