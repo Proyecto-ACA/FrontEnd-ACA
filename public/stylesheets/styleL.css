@@ -24,7 +24,7 @@ body, html {
 }
 
 .logo-login {
-    width: 30%;
+    width: 60%;
 }
 
 .form-box {
@@ -417,4 +417,24 @@ section {
         bottom: 0;
         position: absolute;
     }
+}
+/*Estadisticas*/
+
+.est{
+    overflow-y: scroll;
+    height: 565px;
+}
+.esta{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.header{
+    padding-left: 200px;
+    padding-bottom: 20px;
+}
+.nota{
+    padding-left: 250px;
+}
+.notas{
+    padding-left: 220px;
 }
