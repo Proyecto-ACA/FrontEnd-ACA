@@ -1,4 +1,4 @@
-axios.get('http://localhost:3023/category/getAll')
+axios.get(api+'category/getAll')
       .then(function (response) {
         document.getElementById('obteniendo').innerHTML = 
         response.data.map(function (category) 
