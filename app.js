@@ -15,6 +15,11 @@ var signRouter = require('./routes/sign');
 
 var usersRouter = require('./routes/users');
 
+// var testContent = require('./contents/test');
+// imprime JSON con categorias
+// var contentCategory = require('./contents/category');
+// imprime JSON con Senas
+// var contentSigns = require('./contents/signs');
 
 
 
@@ -74,5 +79,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;
