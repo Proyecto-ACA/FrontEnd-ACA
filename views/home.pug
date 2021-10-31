@@ -3,7 +3,7 @@ block content
   .container-fluid
     .row.flex-nowrap
       include __sidebar
-      //- script(src='routes/home.js')
+      script(src='routes/home.js')
       // Navbar
       .navp.col.py-0
         nav.navbar.navbar-expand-lg.navbar-light
@@ -16,25 +16,7 @@ block content
                   i.icon.ion-md-search.lead.text-light
         // Cartas
         #obteniendo.grid-containerpp
-        
+          //- Aqui adentro se usa el script de abajo
   //- include footer
-  script.
-      axios.get('http://localhost:3023/category/getAll')
-      .then(function (response) {
-        document.getElementById('obteniendo').innerHTML = 
-        response.data.map(function (category) 
-        {
-          return (        
-          '<div class="grid-item">'+
-            '<div class="card" style="width: 18rem;">'+
-              '<a href="sign/categoria"><img class="card-img-top" src="'+category.image+'" alt="Card image cap"/>'
-                +'<div class="card-body">'
-                  +'<h5 class="card-title">'+category.name+'</h5>'
-                +'</div></a></div>'
-          +'</div>'
-          );
-        }).join('');
-        })
-        .catch(function (err) {
-          document.getElementById('obteniendo').innerHTML = '<li class="text-danger">' + err.message + '</li>';
-        });
+  script(src='/services/category.js')
+      

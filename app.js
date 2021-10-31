@@ -12,17 +12,7 @@ var leccionRouter = require('./routes/leccion');
 var adminRouter = require('./routes/admin');
 var evaluacionRouter = require('./routes/evaluacion');
 var signRouter = require('./routes/sign');
-
 var usersRouter = require('./routes/users');
-
-
-// var testContent = require('./src/test');
-// imprime JSON con categorias
-// var contentCategory = require('./src/category');
-// imprime JSON con Senas
-// var contentSigns = require('./src/signs');
-var contentCategory = require('./src/peopletest');
-
 
 
 var app = express();
