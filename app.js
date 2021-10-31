@@ -15,11 +15,13 @@ var signRouter = require('./routes/sign');
 
 var usersRouter = require('./routes/users');
 
-// var testContent = require('./contents/test');
+
+// var testContent = require('./src/test');
 // imprime JSON con categorias
-// var contentCategory = require('./contents/category');
+// var contentCategory = require('./src/category');
 // imprime JSON con Senas
-// var contentSigns = require('./contents/signs');
+// var contentSigns = require('./src/signs');
+var contentCategory = require('./src/peopletest');
 
 
 
