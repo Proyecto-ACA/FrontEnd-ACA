@@ -240,39 +240,36 @@ a{
     padding-left: 450px;
 }
 
-.containers {
-    height: 511px;
-    padding: 5px;
-    margin: 5px 0;
-    display: grid;
-    grid-template-column: repeat(3, 1fr);
-    grid-template-row: repeat(3, auto);
-    grid-gap: 8px;
-    grid-template-areas: "t . f" "t s s" "t s s";
+.site{
+    width: 1123px;
+    overflow: scroll;
+}
+.imagea{
+    height: 475px;
+}
+@media screen and (min-width: 600px) {
+	@supports (display: grid) {
+
+		.site {
+			display: grid;
+			grid-template-columns: 1fr repeat(6, minmax(auto, 10em)) 1fr;
+			grid-template-rows: minmax(1em, auto) 1fr auto minmax(1em, auto);
+		}
+
+		.main-content {
+			grid-column: 2/5;
+		}
+
+		.side {
+			grid-column: 5/8;
+		}
+
+		.twin {
+			grid-column: 2/8;
+		}
+	}
 }
 
-.left {
-    background-color: #dc4d4d;
-    grid-area: f;
-    text-align: center;
-}
-
-.center {
-    background-color: #FD9A5C;
-    grid-area: s;
-    text-align: center;
-}
-
-.right {
-    background-color: #e8a2af;
-    grid-area: t;
-    text-align: center;
-}
-
-section {
-    height: auto;
-    line-height: 100px;
-}
 /*a*/
 /*lecciones*/
 .grid-container {
