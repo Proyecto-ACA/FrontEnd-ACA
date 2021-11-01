@@ -1,23 +1,30 @@
-axios.get(api+'signs/getAll')
-        .then(function (response) {
-        document.getElementById('obteniendo').innerHTML = 
-        response.data.map(function (signs) 
-        {
-        return (
-            '<main id="content" class="main-content">'+
-                '<img class="" src="'+signs.sign+'" alt="">'+
-            '</main>'+
+axios.get(api+'signs/getOne/3')
+        .then
+        (
+            function (response) 
+            {
+                // console.log(response)
+                // console.log(response.data)
+                document.getElementById('obteniendo').innerHTML =
                 
-            '<aside class="side">'+
-                '<img class="imagea" src="'+signs.image+'" alt="">'+
-            '</aside>'+
-                
-            '<aside class="twin">'+
-                '<h5 class="card-title">'+signs.description+'</h5>'+
-            '</aside>'
+                '<main id="content" class="main-content">'+
+                    '<img class="" src="'+response.data.sign+'" alt="">'+
+                '</main>'+
+                    
+                '<aside class="side">'+
+                    '<img class="imagea" src="'+response.data.image+'" alt="">'+
+                '</aside>'+
+                    
+                '<aside class="twin">'+
+                    '<h5 class="card-title">'+response.data.description+'</h5>'+
+                '</aside>'
+            }
+        )
+        .catch
+        (
+        function (err) 
+            {
+            document.getElementById('obteniendo').innerHTML =
+            '<li class="text-danger">' + err.message + '</li>';
+            }
         );
-        }).join('');
-        })
-        .catch(function (err) {
-        document.getElementById('obteniendo').innerHTML = '<li class="text-danger">' + err.message + '</li>';
-        });
