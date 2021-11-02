@@ -8,7 +8,7 @@ axios.get(api+'signs/getOne/1')
                 document.getElementById('obteniendo').innerHTML =
                 
                 '<main id="content" class="main-content">'+
-                    '<img class="" src="'+response.data.sign+'" alt="">'+
+                    '<img class="gift" src="'+response.data.sign+'" alt="">'+
                 '</main>'+
                     
                 '<aside class="side">'+
@@ -16,7 +16,7 @@ axios.get(api+'signs/getOne/1')
                 '</aside>'+
                     
                 '<aside class="twin">'+
-                    '<h5 class="card-title">'+response.data.description+'</h5>'+
+                    '<h5 class="texta">'+response.data.description+'</h5>'+
                 '</aside>'
             }
         )
