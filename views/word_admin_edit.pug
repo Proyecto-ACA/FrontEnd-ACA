@@ -3,9 +3,19 @@ block content
   .container-fluid
     .row.flex-nowrap
       include __sidebar
+      script(src='routes/home.js')
+      // Navbar
       .navp.col.py-0
-        include __navbar2
+        nav.navbar.navbar-expand-lg.navbar-light
+          .container
+            h5.w-75.text-light  Categorias
+            #navbarSupportedContent.collapse.navbar-collapse
+              form.d-flex
+                input#formulario.form-control.me-2.w-100(type='search', placeholder='Buscar', aria-label='Search')
+                button#boton.btn(type='submit')
+                  i.icon.ion-md-search.lead.text-light
         .container-fluid
+          #obteniendo.site
           br
           .input-group.mb-2
             span.input-group-text Palabra
@@ -25,22 +35,5 @@ block content
           label GIF
           .input-group.mb-3
             input#inputGroupFile01.form-control(type='file')
-          button.btn.btn-primary(type='submit') Crear palabra
-          br
-          br
-          table.table.table-striped
-            thead.thead-dark
-              tr
-                th(scope='col') #
-                th(scope='col') Palabra
-                th(scope='col') Descripcion
-                th(scope='col') Imagen
-                th(scope='col') Categoria
-                th(scope='col') Gif
-                th(scope='col') Editar
-                th(scope='col') Eliminar
-
-            tbody#mytable
-              
-        
-  script(src='/services/admin_senas.js')
+          button.btn.btn-primary(type='submit') Editar 
+    script(src='/services/edit_word.js')

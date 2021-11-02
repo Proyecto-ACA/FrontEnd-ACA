@@ -6,7 +6,7 @@ axios.get(api+'signs/getAll')
           return (        
           '<div class="grid-item">'+
             '<div class="card" style="width: 18rem;">'+
-              '<a href="sign/"><img class="card-img-top" src="'+signs.image+'" alt="Card image cap"/>'
+              '<a href="sign?id='+signs.id+'"><img class="card-img-top" src="'+signs.image+'" alt="Card image cap"/>'
                 +'<div class="card-body">'
                   +'<h5 class="card-title">'+signs.name+'</h5>'
                 +'</div></a></div>'
