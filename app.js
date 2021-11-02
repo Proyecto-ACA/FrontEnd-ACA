@@ -52,7 +52,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/sign', signRouter);
+app.use('/catalogo', signRouter);
 app.use('/admin', adminRouter);
 app.use('/evaluacion', evaluacionRouter);
 app.use('/estadisticas', estadisticasRouter);
