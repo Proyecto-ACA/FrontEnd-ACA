@@ -1,4 +1,4 @@
-axios.get(api+'signs/getOne/3')
+axios.get(api+'signs/getOne/1')
         .then
         (
             function (response) 
