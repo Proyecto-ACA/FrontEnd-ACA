@@ -14,7 +14,10 @@ axios.get(api+'signs/getAll')
                     '<td><img class="d-inline-block align-top" src='+signs.image+' width="30" height="30" alt="" /></td>'+
                     '<td>'+signs.category_id+'</td>'+
                     '<td><img class="d-inline-block align-top" src='+signs.sign+' width="30" height="30" alt="" /></td>'+
-                    '<td>'+'</td>'+
+                    '<td> <div class="d-grid gap-2 d-md-block">'+
+                    '<button class="btn btn-primary" type="button">Editar</button></td>'+
+                    '<td> <div class="d-grid gap-2 d-md-block">'+
+                    '<button class="btn btn-primary" type="button">Eliminar</button></td>'+
             '</tr>'
           );
         }).join('');
