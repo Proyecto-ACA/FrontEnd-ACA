@@ -8,7 +8,7 @@ block content
       .navp.col.py-0
         nav.navbar.navbar-expand-lg.navbar-light
           .container
-            h5.w-75.text-light  Categorias
+            h5.w-75.text-light  Nueva palabra
             #navbarSupportedContent.collapse.navbar-collapse
               form.d-flex
                 input#formulario.form-control.me-2.w-100(type='search', placeholder='Buscar', aria-label='Search')
@@ -16,22 +16,31 @@ block content
                   i.icon.ion-md-search.lead.text-light
         .container-fluid
           br
-          .input-group.mb-2
-            span.input-group-text Palabra
-            input.form-control(type='text', aria-label='Palabra')
-          .input-group.mb-3
-            input.form-control(type='text', placeholder='Descripcion', aria-label='descripcion', aria-describedby='basic-addon1')
-          label Imagen Representativa
-          .input-group.mb-3
-            input#inputGroupFile01.form-control(type='file')
-          label Categoria
-          .input-group.mb-3
-            select#inputGroupSelect02.form-select
-              option(selected='') Categoria
-              option(value='1') Categoria 1
-              option(value='2') Categoria 2
-              option(value='3') Categoria 3
-          label GIF
-          .input-group.mb-3
-            input#inputGroupFile01.form-control(type='file')
-          button.btn.btn-primary(type='submit') Guardar 
+          form.form(role='form' onsubmit='return false;')
+            .form-group
+              label(for='data') JSON
+              textarea#data.form-control(rows='5')
+            button#post.btn.btn-primary(type='button') POST
+            //- .input-group.mb-2
+            //-   span.input-group-text Palabra
+            //-   input.form-control(type='text', placeholder='Nombre',id='name', aria-label='Nombre', aria-describedby='basic-addon1')
+            //- .input-group.mb-2
+            //-   span.input-group-text Descripcion
+            //-   input.form-control(type='text', placeholder='Descripcion',id='description', aria-label='descripcion', aria-describedby='basic-addon1')
+            //- label Imagen Representativa
+            //- .input-group.mb-2
+            //-   span.input-group-text URL de Imagen
+            //-   input.form-control(type='text', placeholder='URL',id='image', aria-label='descripcion', aria-describedby='basic-addon1')
+            //- label Categoria
+            //- .input-group.mb-3
+            //- select#inputGroupSelect02.form-select
+            //-   option(selected='') Abecedario
+            //-   option(value='1') Categoria 1
+            //-   option(value='2') Categoria 2
+            //-   option(value='3') Categoria 3
+            //- label GIF
+            //- .input-group.mb-2
+            //-   span.input-group-text URL de Imagen
+            //-   input.form-control(type='text', placeholder='URL',id='image', aria-label='descripcion', aria-describedby='basic-addon1')
+            //- input#btn.btn.btn-default.btn-success(type='submit' value="Guardar" onClick="window.location.reload();")
+  script(src='/services/admin_add_senas.js')
