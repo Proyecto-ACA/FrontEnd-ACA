@@ -6,27 +6,9 @@ block content
       .navp.col.py-0
         include __navbar2
         .container-fluid
-          br
-          .input-group.mb-2
-            span.input-group-text Palabra
-            input.form-control(type='text', aria-label='Palabra')
-          .input-group.mb-3
-            input.form-control(type='text', placeholder='Descripcion', aria-label='descripcion', aria-describedby='basic-addon1')
-          label Imagen Representativa
-          .input-group.mb-3
-            input#inputGroupFile01.form-control(type='file')
-          label Categoria
-          .input-group.mb-3
-            select#inputGroupSelect02.form-select
-              option(selected='') Categoria
-              option(value='1') Categoria 1
-              option(value='2') Categoria 2
-              option(value='3') Categoria 3
-          label GIF
-          .input-group.mb-3
-            input#inputGroupFile01.form-control(type='file')
-          button.btn.btn-primary(type='submit') Crear palabra
-          br
+          .d-grid.gap-2
+            br
+            button.btn.btn-info(type='button' onclick="window.location.href='add/'") Agregar Palabra          
           br
           table.table.table-striped
             thead.thead-dark
@@ -39,8 +21,6 @@ block content
                 th(scope='col') Gif
                 th(scope='col') Editar
                 th(scope='col') Eliminar
-
             tbody#mytable
-              
         
   script(src='/services/admin_senas.js')
