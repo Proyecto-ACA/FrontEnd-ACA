@@ -241,8 +241,8 @@ a{
 }
 
 .site{
-    width: 1123px;
-    height: 500px;
+    width: 1120px;
+    height: 450px;
 }
 .imagea{
     height: 400px;
@@ -279,7 +279,7 @@ a{
 
 		.twin {
 			grid-column: 2/8;
-            padding-top: 230px;
+            padding-top: 200px;
 		}
 	}
 }
