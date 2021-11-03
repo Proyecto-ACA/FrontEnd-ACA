@@ -7,28 +7,36 @@ router.get('/users', (req, res, next)=>{
   if(req.isAuthenticated()) return next();
   res.redirect("/login");
 }, (req, res) => {
-  res.render('user_admin', { title: 'Administrar Usuarios' });
+  res.render('admin_users', { title: 'Administrar Usuarios' });
 });
 
 router.get('/words', (req, res, next)=>{
   if(req.isAuthenticated()) return next();
   res.redirect("/login");
 }, (req, res) => {
-  res.render('word_admin', { title: 'Administrar de palabras' });
+  res.render('admin_word', { title: 'Administrar de palabras' });
 });
 
-router.get('/edit', (req, res, next)=>{
+router.get('/category', (req, res, next)=>{
   if(req.isAuthenticated()) return next();
   res.redirect("/login");
 }, (req, res) => {
-  res.render('word_admin_edit', { title: 'Administrar de palabras' });
+  res.render('admin_category', { title: 'Administrar de Categorias' });
 });
 
-router.get('/add', (req, res, next)=>{
+
+router.get('/edit_word', (req, res, next)=>{
   if(req.isAuthenticated()) return next();
   res.redirect("/login");
 }, (req, res) => {
-  res.render('word_admin_add', { title: 'Administrar de palabras' });
+  res.render('admin_word_edit', { title: 'Editar palabra' });
+});
+
+router.get('/add_word', (req, res, next)=>{
+  if(req.isAuthenticated()) return next();
+  res.redirect("/login");
+}, (req, res) => {
+  res.render('admin_word_add', { title: 'Agregar palabra' });
 });
 
 module.exports = router;

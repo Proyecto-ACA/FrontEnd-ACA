@@ -32,7 +32,7 @@ axios.get(api+'signs/getAll').then(function (response)
               '<td><img class="d-inline-block align-top" src='+signs.image+' width="30" height="30" alt="" /></td>'+
               '<td>'+signs.category_id+'</td>'+
               //'<td><img class="d-inline-block align-top" src='+signs.sign+' width="30" height="30" alt="" /></td>'+
-              '<td>'+'<a class="btn btn-sm btn-warning" href="/admin/edit?id=' +signs.id+'">Editar</a>'+'</td>'+
+              '<td>'+'<a class="btn btn-sm btn-warning" href="/admin/edit_word?id=' +signs.id+'">Editar</a>'+'</td>'+
               '<td>'+'<a class="btn btn-sm btn-danger" onClick="deleteconfirmation('+signs.id+')">Eliminar</a>'+'</td>'+
       '</tr>'
     );
