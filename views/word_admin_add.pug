@@ -23,38 +23,22 @@ block content
           //-   button#post.btn.btn-primary(type='button') POST
           form.form(role='form' onsubmit='return false;')
             .form-group
-              label(for='data') Nombre
-              textarea#name.form-control(rows='1')
-              label(for='data') Descaripcion
-              textarea#description.form-control(rows='4')
-              label(for='data') Categoria
-              select#category.form-select
-                option(value='1') Abecedario
-              label(for='data') URL de imagen
-              textarea#image.form-control(rows='1')
-              label(for='data') URL de Sena
-              textarea#sign.form-control(rows='1')
-            button#post.btn.btn-primary(type='button') POST
-            //- .input-group.mb-2
-            //-   span.input-group-text Palabra
-            //-   input.form-control(type='text', placeholder='Nombre',id='name', aria-label='Nombre', aria-describedby='basic-addon1')
-            //- .input-group.mb-2
-            //-   span.input-group-text Descripcion
-            //-   input.form-control(type='text', placeholder='Descripcion',id='description', aria-label='descripcion', aria-describedby='basic-addon1')
-            //- label Imagen Representativa
-            //- .input-group.mb-2
-            //-   span.input-group-text URL de Imagen
-            //-   input.form-control(type='text', placeholder='URL',id='image', aria-label='descripcion', aria-describedby='basic-addon1')
-            //- label Categoria
-            //- .input-group.mb-3
-            //- select#inputGroupSelect02.form-select
-            //-   option(selected='') Abecedario
-            //-   option(value='1') Categoria 1
-            //-   option(value='2') Categoria 2
-            //-   option(value='3') Categoria 3
-            //- label GIF
-            //- .input-group.mb-2
-            //-   span.input-group-text URL de Imagen
-            //-   input.form-control(type='text', placeholder='URL',id='image', aria-label='descripcion', aria-describedby='basic-addon1')
-            //- input#btn.btn.btn-default.btn-success(type='submit' value="Guardar" onClick="window.location.reload();")
+              .input-group.mb-2
+                span.input-group-text Nombre
+                input#name.form-control(type='text', placeholder='Nombre', aria-label='Nombre', aria-describedby='basic-addon1')
+              .input-group.mb-2
+                span.input-group-text Descripcion
+                textarea#description.form-control(rows='4')
+              .input-group.mb-2
+                span.input-group-text Categoria
+                select#category.form-select
+                  option(value='1') Abecedario
+              .input-group.mb-2
+                span.input-group-text URL de imagen
+                input#image.form-control(type='text', placeholder='URL de imagen', aria-label='URL de imagen', aria-describedby='basic-addon1')             
+              .input-group.mb-2
+                span.input-group-text URL de Seña
+                input#sign.form-control(type='text', placeholder='URL de Seña', aria-label='URL de Seña', aria-describedby='basic-addon1')             
+            .d-grid.gap-2
+              button#post.btn.btn-primary(type='button') Guardar Palabra
   script(src='/services/admin_add_senas.js')
