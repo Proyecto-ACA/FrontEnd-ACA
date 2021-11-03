@@ -32,7 +32,12 @@ axios.get(api+'category/getAll')
         var jsonString= JSON.stringify(obj);      
         axios.post('http://localhost:3023/signs/save', JSON.parse(jsonString))
         .then(function (res) {
-            alert(JSON.parse(jsonString))
+          if (confirm("Se agrego con exito!\n ¿Desea regresar?")) 
+          {
+            window.open("/admin/words","_self");
+          } else {
+            
+          }
             })
         .catch(function (err) {
             alert(JSON.parse(jsonString))
