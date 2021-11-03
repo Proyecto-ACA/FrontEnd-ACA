@@ -20,6 +20,9 @@ block content
             form.form(role='form' onsubmit='return false;')
               .form-group
                 .input-group.mb-2
+                    span.input-group-text ID
+                    input#id.form-control(type='text', placeholder='id', aria-label='id', aria-describedby='basic-addon1' readonly)
+                .input-group.mb-2
                   span.input-group-text Nombre
                   input#name.form-control(type='text', placeholder='Nombre', aria-label='Nombre', aria-describedby='basic-addon1')
                 .input-group.mb-2
