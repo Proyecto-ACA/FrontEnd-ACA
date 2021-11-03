@@ -1,16 +1,27 @@
 (function () {
-    var output = document.getElementById('output');
-    document.getElementById('post').onclick = function () {
-      var data = document.getElementById('data').value;
-      axios.post('http://localhost:3023/signs/save', JSON.parse(data))
-      .then(function (res) {
-          output.className = 'container';
-          output.innerHTML = res.data;
-          console.log(res.data);
-        })
+    document.getElementById('post').onclick = function () 
+    {
+        var name = document.getElementById('name').value;
+        var category = document.getElementById('category');
+        var category_id = category.options[category.selectedIndex].value;
+        var category_id_int = parseInt(category_id);
+        var image = document.getElementById('image').value;
+        var description = document.getElementById('description').value;
+        var sign = document.getElementById('sign').value;
+        var obj = new Object();
+        obj.name = name;
+        obj.category_id = category_id_int;
+        obj.image = image;
+        obj.description = description;
+        obj.sign = sign;
+
+        var jsonString= JSON.stringify(obj);      
+        axios.post('http://localhost:3023/signs/save', JSON.parse(jsonString))
+        .then(function (res) {
+            alert(JSON.parse(jsonString))
+            })
         .catch(function (err) {
-          output.className = 'container text-danger';
-          output.innerHTML = err.message;
+            alert(JSON.parse(jsonString))
         });
     };
   })();

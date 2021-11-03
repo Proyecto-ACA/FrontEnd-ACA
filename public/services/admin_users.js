@@ -5,7 +5,7 @@ axios.get(api+'users/getAll')
         document.getElementById('mytable').innerHTML = 
         response.data.map(function (signs) 
         {
-          console.log("Sena : ",signs.name,signs)
+          // console.log("Sena : ",signs.name,signs)
           return (        
             '<tr>'+
                 '<th scope="row">'+signs.id+'</th>'+

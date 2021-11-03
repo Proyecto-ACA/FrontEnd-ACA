@@ -16,10 +16,27 @@ block content
                   i.icon.ion-md-search.lead.text-light
         .container-fluid
           br
+          //- form.form(role='form' onsubmit='return false;')
+          //-   .form-group
+          //-     label(for='data') JSON
+          //-     textarea#data.form-control(rows='5')
+          //-   button#post.btn.btn-primary(type='button') POST
           form.form(role='form' onsubmit='return false;')
             .form-group
-              label(for='data') JSON
-              textarea#data.form-control(rows='5')
+              label(for='data') name
+              textarea#name.form-control(rows='1')
+              label(for='data') category
+              select#category.form-select
+                option(value='1') Abecedario
+                option(value='2') Categoria 1
+                option(value='3') Categoria 2
+                option(value='4') Categoria 3
+              label(for='data') image
+              textarea#image.form-control(rows='1')
+              label(for='data') sign
+              textarea#sign.form-control(rows='1')
+              label(for='data') description
+              textarea#description.form-control(rows='1')
             button#post.btn.btn-primary(type='button') POST
             //- .input-group.mb-2
             //-   span.input-group-text Palabra
