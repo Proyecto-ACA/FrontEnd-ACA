@@ -1,3 +1,17 @@
+axios.get(api+'category/getAll')
+      .then(function (response) {
+        document.getElementById('category').innerHTML = 
+        response.data.map(function (category) 
+        {
+          return (        
+                  '<option value="'+category.id+'">'+category.name+'</option>'
+          );
+        }).join('');
+        })
+        .catch(function (err) {
+          document.getElementById('obteniendo').innerHTML = '<li class="text-danger">' + err.message + '</li>';
+        });
+
 (function () {
     document.getElementById('post').onclick = function () 
     {
