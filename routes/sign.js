@@ -13,7 +13,7 @@ router.get('/', (req, res, next)=>{
   if(req.isAuthenticated()) return next();
   res.redirect("/login");
 }, (req, res) => {
-  res.render('categoria', { title: 'Categoria' });
+  res.render('sign_list', { title: 'Categoria' });
 });
 
 
