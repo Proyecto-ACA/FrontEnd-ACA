@@ -18,7 +18,7 @@ axios.get(api+'signs/getOne/'+last_segment)
                 '</main>'+
                     
                 '<aside class="side">'+
-                    '<img class="imagea" src="'+response.data.image+'" alt="">'+
+                    '<img class="imagea" src="'+response.data.image+'" width="400" height="100" alt="">'+
                 '</aside>'+
                     
                 '<aside class="twin">'+
