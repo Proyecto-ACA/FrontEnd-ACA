@@ -17,7 +17,7 @@ function deleteconfirmation(id)
     
   }
 }
-axios.get(api+'signs/getAll').then(function (response) 
+axios.get(api+'signs/getAllId').then(function (response) 
 {
   document.getElementById('mytable').innerHTML = 
   response.data.map(function (signs) 

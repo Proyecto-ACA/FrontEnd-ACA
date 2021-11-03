@@ -19,7 +19,7 @@ function deleteconfirmation(id)
 }
 
 
-axios.get(api+'category/getAll')
+axios.get(api+'category/getAllOrderbyId')
       .then(function (response) 
       {
         
