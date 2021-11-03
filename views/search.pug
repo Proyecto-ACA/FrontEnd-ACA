@@ -8,9 +8,13 @@ block content
       .navp.col.py-0
         include __navbar2
         // Cartas
-        h1 Categorias
-          #obteniendo-search-categorias.grid-containerpp
-        h1 Palabras
-          #obteniendo-search-palabras.grid-containerpp
+        .container
+          .row
+            .col
+              h1 Categorias
+                #obteniendo-search-categorias
+            .col
+              h1 Palabras
+                #obteniendo-search-palabras
         
   script(src='/services/search_page.js')
