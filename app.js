@@ -14,6 +14,7 @@ var evaluacionRouter = require('./routes/evaluacion');
 var estadisticasRouter = require('./routes/estadisticas');
 var signRouter = require('./routes/sign');
 var usersRouter = require('./routes/users');
+var searchRouter = require('./routes/search');
 
 var app = express();
 
@@ -56,6 +57,7 @@ app.use('/admin', adminRouter);
 app.use('/evaluacion', evaluacionRouter);
 app.use('/estadisticas', estadisticasRouter);
 app.use('/leccion', leccionRouter);
+app.use('/search', searchRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
