@@ -14,7 +14,7 @@ axios.get(api+'signs/getOne/'+last_segment)
                 document.getElementById('obteniendo').innerHTML =
                 
                 '<main id="content" class="main-content">'+
-                    '<img class="gift" src="'+response.data.sign+'" alt="">'+
+                    '<img class="gift" src="'+response.data.sign+'"width="400" height="100" alt="">'+
                 '</main>'+
                     
                 '<aside class="side">'+

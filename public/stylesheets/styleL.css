@@ -256,7 +256,7 @@ a{
 }
 .texta{
     padding-top: 200px;
-    padding-left: 60px;
+    padding-left: 40px;
 }
 @media screen and (min-width: 600px) {
 	@supports (display: grid) {
@@ -265,16 +265,17 @@ a{
 			display: grid;
 			grid-template-columns: 1fr repeat(6, minmax(auto, 10em)) 1fr;
 			grid-template-rows: minmax(1em, auto) 1fr auto minmax(1em, auto);
-            padding-top: 25px;
+            padding-top: 10px;
 		}
 
 		.main-content {
 			grid-column: 2/5;
+            padding-left: 30px;
 		}
 
 		.side {
 			grid-column: 5/8;
-            padding-left: 80px;
+            padding-left: 50px;
 		}
 
 		.twin {
