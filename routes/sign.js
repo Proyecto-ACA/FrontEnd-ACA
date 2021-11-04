@@ -8,7 +8,7 @@ router.get('/sign', (req, res, next)=>{
 }, (req, res) => {
   res.render('sign', { title: 'Seña' });
 });
-
+x
 router.get('/categoria', (req, res, next)=>{
   if(req.isAuthenticated()) return next();
   res.redirect("/login");
