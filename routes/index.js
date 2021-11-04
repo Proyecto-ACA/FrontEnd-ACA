@@ -12,22 +12,21 @@ router.post('/login', passport.authenticate('local',{
   failureRedirect: '/login'
 }));
 
-router.get('/', isLoggedIn ,(req, res, next)=>{
-  res.redirect("/login");});
+router.get('/', isLoggedIn, (req, res, next)=>{
+  res.render('home')
+})
 
 router.get('/logout', function(req, res){
   req.logout();
   res.redirect('/');
 });
 
-
-// --------- funcion de login
+// ------------- Funcion de logueo
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
       return next();
   }
   return res.redirect('/login');
 }
-
 
 module.exports = router;
