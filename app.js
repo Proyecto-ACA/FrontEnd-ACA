@@ -4,8 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var passport = require('passport');
+var passport = require('passport');
 var session = require('express-session');
-const PassportLocal = require('passport-local').Strategy;
+require('./passport/passport')(passport);
 
 var indexRouter = require('./routes/index');
 var leccionRouter = require('./routes/leccion');
@@ -34,7 +35,7 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-passport.use(new PassportLocal(function (username, password, done) {
+/* passport.use(new PassportLocal(function (username, password, done) {
   if(username === "admin" && password === "1234")
     return done(null, {id: '1', name: 'admin'});
   done(null, false);
@@ -46,7 +47,7 @@ passport.serializeUser(function (user,done){
 
 passport.deserializeUser(function (id,done){
   done(null, {id: '1', name: 'admin'});
-});
+}); */
 
 app.use(express.static(path.join(__dirname, 'public')));
 

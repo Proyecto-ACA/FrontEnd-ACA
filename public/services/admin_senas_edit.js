@@ -28,9 +28,7 @@ axios.get(api+'signs/getOne/'+last_segment)
         document.getElementById('image').value= response.data.image;
         document.getElementById('description').value= response.data.description;
         document.getElementById('sign').value= response.data.sign;
-        
-         
-      })
+    })
     .catch(function (err) {
           document.getElementById('container-edit').innerHTML = '<li class="text-danger">' + err.message + '</li>';
 });     

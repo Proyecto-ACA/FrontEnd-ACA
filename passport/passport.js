@@ -1,19 +1,19 @@
 const LocalStrategy = require('passport-local').Strategy;
-const usuario = require('../models/user/usuarios');
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
+const axios = require('axios');
+
+var api = 'http://localhost:3023/';
 
 module.exports = function (passport) {
     passport.serializeUser((user, done)=>{
-        done(null, user.id_usuario);
+        done(null, user.data.data.id);
     });
 
-    passport.deserializeUser(async(id, done)=>{
-        await usuario.findOne({
-            where: {
-                id_usuario: id
-            }}).then((user)=>{
+    passport.deserializeUser((id, done)=>{
+        axios.post(api+'users/userid',{id: id})
+        .then((user)=>{
             if (user) {
-                done(null, user.get());
+                done(null, user);
             } else {
                 done(user.errors, null);
             }
@@ -27,25 +27,24 @@ module.exports = function (passport) {
     },
     function (req, username, password, done) {
         var isValidPassword = (userpass, password) => {
+            /* var salt = bcrypt.genSaltSync(10);
+            var hash = bcrypt.hashSync(password, salt);
+            console.log(hash); */
             return bcrypt.compareSync(password, userpass);
         }
-        usuario.findOne({
-            where: {
-                name: username
-            }
-        }).then((user) => {
+        axios.post(api+'users/user',{name: username})
+        .then((user) => {
             if (!user) {
                 return done(null, false, {
                     message: 'Usuario no existe'
                 });
             }
-            if (!isValidPassword(user.password, password)) {
+            if (!isValidPassword(user.data.data.password, password)) {
                 return done(null, false, {
                     message: 'Contraseña incorrecta'
                 })
             }
-            var userinfo = user.get();
-            return done(null, userinfo);
+            return done(null, user);
         }).catch((err) => {
             console.error(err);
             return done(null, false, {

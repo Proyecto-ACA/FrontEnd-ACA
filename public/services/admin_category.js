@@ -12,7 +12,6 @@ function deleteconfirmation(id)
     .catch(function (err) {
         alert(JSON.parse(jsonString))
     });
-   
   } else {
     
   }
