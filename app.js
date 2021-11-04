@@ -11,12 +11,10 @@ var indexRouter = require('./routes/index');
 var leccionRouter = require('./routes/leccion');
 var adminRouter = require('./routes/admin');
 var evaluacionRouter = require('./routes/evaluacion');
+var estadisticasRouter = require('./routes/estadisticas');
 var signRouter = require('./routes/sign');
-
 var usersRouter = require('./routes/users');
-
-
-
+var searchRouter = require('./routes/search');
 
 var app = express();
 
@@ -54,10 +52,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/sign', signRouter);
+app.use('/catalogo', signRouter);
 app.use('/admin', adminRouter);
 app.use('/evaluacion', evaluacionRouter);
+app.use('/estadisticas', estadisticasRouter);
 app.use('/leccion', leccionRouter);
+app.use('/search', searchRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -74,5 +74,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;

@@ -7,24 +7,21 @@ block content
       .navp.col.py-0
         include __navbar2
         // atras/adelante
-        .section-navigationa.mdl-bottom
-          span.mdl-lefta
-            a(href='/catalogo')
-              span.larrowa
+        .section-navigations.mdl-bottom
+          span.mdl-leftt
+            a(href='/')
+              span.larroww
                 ion-icon(name='caret-back-outline')
                 | Atrás
-          span.close
-            a(href='')
-              span.xclose
-                ion-icon.iclose(name='close-circle-outline')
-          span.mdl-righta
+
+          span.mdl-rightt
             a(href='')
               | Siguiente
-              span.rarrowa
+              span.rarroww
                 ion-icon(name='caret-forward-outline')
+        // Cartas
+        #obteniendo.grid-containerpp
+        //- Aqui adentro se usa el script de abajo
         
-
-        #obteniendo.site
-
   //- include footer
-  script(src='/services/sign.js')
+  script(src='/services/sign_list.js')

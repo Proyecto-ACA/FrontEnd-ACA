@@ -1,0 +1,23 @@
+extends __layout
+block content
+  .container-fluid
+    .row.flex-nowrap
+      include __sidebar
+      .navp.col.py-0
+        include __navbar2
+        .container-fluid
+          .d-grid.gap-2
+            br
+            button.btn.btn-info(type='button' onclick="window.location.href='add_category/'") Agregar Palabra          
+          br
+          table.table.table-striped
+            thead.thead-dark
+              tr
+                th(scope='col') #
+                th(scope='col') Usuario
+                th(scope='col') ID de rol
+                th(scope='col') Editar
+                th(scope='col') Eliminar
+            tbody#mytable
+        
+  script(src='/services/admin_category.js')

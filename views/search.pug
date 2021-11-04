@@ -1,0 +1,20 @@
+extends __layout
+block content
+  .container-fluid
+    .row.flex-nowrap
+      include __sidebar
+      script(src='routes/home.js')
+      // Navbar
+      .navp.col.py-0
+        include __navbar2
+        // Cartas
+        .container
+          .row
+            .col
+              h1 Categorias
+                #obteniendo-search-categorias
+            .col
+              h1 Palabras
+                #obteniendo-search-palabras
+        
+  script(src='/services/search_page.js')
