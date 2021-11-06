@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "build": "browserify app.js > bundle.js"
   },
   "dependencies": {
     "axios": "^0.24.0",
