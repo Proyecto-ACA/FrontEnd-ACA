@@ -2,6 +2,7 @@ version: '3.7'
 services:
   web:
     build: .
+    # image: dilverpro/lessa-frontend:v2
     command: npm run start
     volumes:
       - .:/usr/app/
