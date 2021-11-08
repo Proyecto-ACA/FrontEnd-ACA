@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
-    "build": "browserify app.js > bundle.js"
+    "start": "nodemon ./bin/www"
   },
   "dependencies": {
     "axios": "^0.24.0",
