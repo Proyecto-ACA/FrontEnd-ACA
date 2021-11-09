@@ -1,3 +1,6 @@
+var mytable = document.getElementById('mytable');
+var filtro = document.getElementById('filtro_busqueda')
+
 function deleteconfirmation(id) 
 { 
   if (confirm("¿Seguro que desea eliminar la palabra?")) 
@@ -12,18 +15,16 @@ function deleteconfirmation(id)
     .catch(function (err) {
         alert(JSON.parse(jsonString))
     });
-   
   } else {
     
   }
 }
 axios.get(api+'signs/getAllId').then(function (response) 
 {
-  document.getElementById('mytable').innerHTML = 
+  mytable.innerHTML = 
   response.data.map(function (signs) 
   {
     // console.log("Sena : ",signs.name,signs)
-   
     return (        
       '<tr>'+
           '<th scope="row">'+signs.id+'</th>'+
@@ -32,13 +33,26 @@ axios.get(api+'signs/getAllId').then(function (response)
               '<td><img class="d-inline-block align-top" src='+signs.image+' width="30" height="30" alt="" /></td>'+
               '<td>'+signs.category_id+'</td>'+
               //'<td><img class="d-inline-block align-top" src='+signs.sign+' width="30" height="30" alt="" /></td>'+
-              '<td>'+'<a class="btn btn-sm btn-warning" href="/admin/edit_word?id=' +signs.id+'">Editar</a>'+'</td>'+
+              '<td>'+'<a class="btn btn-sm btn-primary" href="/admin/edit_word?id=' +signs.id+'">Editar</a>'+'</td>'+
               '<td>'+'<a class="btn btn-sm btn-danger" onClick="deleteconfirmation('+signs.id+')">Eliminar</a>'+'</td>'+
       '</tr>'
     );
   }).join('');
   })
   .catch(function (err) {
-    document.getElementById('mytable').innerHTML = '<li class="text-danger">' + err.message + '</li>';
+    mytable.innerHTML = '<li class="text-danger">' + err.message + '</li>';
 });
         
+const filtrar = () => {
+  var texto = filtro_busqueda.value.toLowerCase();
+  for (let i=0; i<mytable.childElementCount; i++){
+    let busqueda = mytable.children[i].children[1].textContent.toLowerCase();
+    if(busqueda.indexOf(texto) !== -1){
+      mytable.children[i].style.display = '' 
+  } else{
+      mytable.children[i].style.display = 'none'
+  }
+  }
+}
+
+filtro_busqueda.addEventListener('keyup',filtrar);
