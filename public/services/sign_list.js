@@ -14,7 +14,7 @@ axios.get(api+'signs/getCategory?category_id='+last_segment)
             '<div class="card" style="width: 20rem; height: 20rem">'+
               '<a class="contenedor" href="catalogo/palabra?id='+signs.id+'"><img class="card-img-top" src="'+signs.image+'" alt="Card image cap"/>'
                 +'<div class="centrado">'
-                  +'<h5>'+((signs.name.length == 1)?"":signs.name)+'</h5>'
+                  +'<h5>'+((signs.name.length <= 2)?"":signs.name)+'</h5>'
                 +'</div></a></div>'
           +'</div>'
           );
