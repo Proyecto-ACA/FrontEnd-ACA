@@ -483,3 +483,9 @@ a{
     object-fit: cover;
     height:100%;
 }
+
+.table_wrap{
+    max-height: 70vh;
+    overflow: auto;
+    display: inline-block;
+}

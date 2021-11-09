@@ -8,9 +8,14 @@ block content
         .container-fluid
           .d-grid.gap-2
             br
-            button.btn.btn-info(type='button' onclick="window.location.href='add_word/'") Agregar Palabra          
+            div.form-group.row
+              div.input-group.mb-2.col-8
+                div.input-group-prepend.ml-2
+                    div(for="filtro_busqueda" class="input-group-text") Búsqueda
+                input(type="text" name="filtro_busqueda" id="filtro_busqueda" class="form-control")
+                button.btn.btn-dark(type='button' onclick="window.location.href='add_word/'") Agregar Palabra          
           br
-          table.table.table-striped
+          table.table.table-striped.table_wrap
             thead.thead-dark
               tr
                 th(scope='col') #
