@@ -3,10 +3,11 @@ block content
   include __navbar
     div.container-fluid.text-light(style="height:90%;")
       div.row.h-100
+        div.col.row.login-side
         div.col-4.row.login
           div.col.h-auto
-          div.col-12.h-auto
-            form(action="/login" method="POST").d-flex.flex-column.p-5
+          div.col-14.h-auto
+            form(action="/signup" method="POST").d-flex.flex-column.p-5
                 div.d-flex.justify-content-center.m-3.mb-4
                   img(class="logo-login" src="../images/Logo.png")
                 div.form-group
@@ -16,7 +17,6 @@ block content
                 div.form-group
                   label(for="exampleInputEmail1") Contraseña
                   input(type="password" name="password" class="form-control" id="inputPass")
-                button(type="submit").btn.btn-primary LOG IN
-            a(href="/signup") ¿No tienes cuenta?, ¡Registrate!
+                button(type="submit").btn.btn-primary SIGN UP
           div.col.h-auto
         div.col.row.login-side
