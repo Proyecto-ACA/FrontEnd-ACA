@@ -130,10 +130,9 @@ body, html {
 
 .grid-item {
     text-align: center;
-    padding-left: 30px;
-    padding-top: 25px;
+    padding-left: 2em;
+    padding-top: 2em;
     justify-content: center;
-    border-radius: 25px;
 }
 
 .grid-item1 {
