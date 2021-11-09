@@ -5,6 +5,7 @@ const axios = require('axios');
 var api = 'http://localhost:3023/';
 
 module.exports = function (passport) {
+
     passport.serializeUser((user, done)=>{
         done(null, user.data.data.id);
     });
@@ -19,7 +20,17 @@ module.exports = function (passport) {
             }
         });
     });
-
+/*
+ 
+         ██╗      ██████╗  ██████╗ ██╗███╗   ██╗
+         ██║     ██╔═══██╗██╔════╝ ██║████╗  ██║
+         ██║     ██║   ██║██║  ███╗██║██╔██╗ ██║
+         ██║     ██║   ██║██║   ██║██║██║╚██╗██║
+         ███████╗╚██████╔╝╚██████╔╝██║██║ ╚████║
+         ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝╚═╝  ╚═══╝
+                                                
+ 
+*/
     passport.use('local-login', new LocalStrategy({
         username: 'username',
         password: 'password',
@@ -45,7 +56,8 @@ module.exports = function (passport) {
                 })
             }
             return done(null, user);
-        }).catch((err) => {
+        }).catch((err) => 
+        {
             console.error(err);
             return done(null, false, {
                 message: 'Algo salio mal'
@@ -53,5 +65,57 @@ module.exports = function (passport) {
         })
     }
 ));
-    
+        
+/*
+ 
+     ███████╗██╗ ██████╗ ███╗   ██╗    ██╗   ██╗██████╗ 
+     ██╔════╝██║██╔════╝ ████╗  ██║    ██║   ██║██╔══██╗
+     ███████╗██║██║  ███╗██╔██╗ ██║    ██║   ██║██████╔╝
+     ╚════██║██║██║   ██║██║╚██╗██║    ██║   ██║██╔═══╝ 
+     ███████║██║╚██████╔╝██║ ╚████║    ╚██████╔╝██║     
+     ╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝     ╚═════╝ ╚═╝     
+                                                                                    
+ 
+*/
+
+        passport.use('local-signup', new LocalStrategy({
+            username: 'username',
+            password: 'password',
+            passReqToCallback: true,
+        },
+        function (req, username, password, done) {
+
+            axios.post(api+'users/user',{name: username})
+            .then((user) => {
+                if (user) {
+                    console.log("-----------------------------------------\nYA EXISTE\n-------------------------------")
+                    return done(null, false, {
+                        message: 'Usuario ya existe'
+                    });
+                }
+                else{
+                    var obj = new Object();
+                    obj.name = username;
+                    obj.rol_id = rol_id;
+                    obj.password = password;
+                    
+                    axios.post(api+'users/save', JSON.parse(jsonString))
+                    .then(function (res) {
+                        console.log("se envio"+res)
+                        })
+                    .catch(function (err) {
+                        console.log(err)
+                    });
+                }
+                return done(null, user);
+            }).catch((err) => 
+            {
+                console.error(err);
+                return done(null, false, {
+                    message: 'Algo salio mal'
+                })
+            })
+        }
+    ));
+
 }
