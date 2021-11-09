@@ -112,13 +112,13 @@ body, html {
 .navp {
     padding-left: 0px;
     padding-right: 0px;
-    background-color: #fef9e6;
+    background-color: #ffffff;
 }
 .grid-containerpp {
     display: grid;
     grid-template-columns: auto auto auto;
     overflow-y: scroll;
-    height: 557px;
+    height: 90vh;
 }
 /*abc*/
 .grid-containerabc {
@@ -169,7 +169,7 @@ h5 {
     box-shadow: 0 4px 8px 0 #394d5f;
     transition: 0.3s;
     border: none;
-    border-radius: 12px;
+    border-radius: 1px;
 }
 
 .card:hover {
@@ -449,4 +449,38 @@ a{
 }
 .notas{
     padding-left: 220px;
+}
+
+/* /* /* /* /* /* /* /* /* /* /* /* /* /* /* */
+
+.contenedor{
+    text-align: center;
+    height: 100%;
+}
+
+.centrado{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.centrado h5{
+    color: #fff;
+    font-size: 2em;
+}
+
+.contenedor:before {
+	content:'';
+	position: absolute;
+        top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.35);
+}
+
+.card-img-top{
+    object-fit: cover;
+    height:100%;
 }
