@@ -8,15 +8,15 @@ router.get('/', (req, res, next)=>{
 
     axios({
         method: 'GET',
-        url: 'localhost:3023/lesson/lessonsign/getAll',
+        url: 'http://localhost:3023/lesson/lessonsign/getAll',
         //data: req.body,
     })
     .then((response) => {
-        console.log('responce', response);
+        //console.log('responce', response);
         if (e) {
             //e(response.data);
             //console.log(e.data);
-            console.log('data');
+            console.log('data', response.data);
         }
         if (response.data.code === 4012) {
             //console.log('responce', response.data);
@@ -24,7 +24,7 @@ router.get('/', (req, res, next)=>{
         } else {
             //res.send(response.data);
         }
-        console.log('responce', response.data);
+        //console.log('responce', response.data);
     })
     .catch((error) => {
     //res.send('error.message');
