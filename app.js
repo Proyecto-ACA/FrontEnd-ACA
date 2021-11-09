@@ -16,6 +16,7 @@ var estadisticasRouter = require('./routes/estadisticas');
 var signRouter = require('./routes/sign');
 var usersRouter = require('./routes/users');
 var searchRouter = require('./routes/search');
+const testRouter = require('./routes/test');
 
 var app = express();
 
@@ -51,6 +52,7 @@ passport.deserializeUser(function (id,done){
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/test', testRouter);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/catalogo', signRouter);
@@ -59,6 +61,7 @@ app.use('/evaluacion', evaluacionRouter);
 app.use('/estadisticas', estadisticasRouter);
 app.use('/leccion', leccionRouter);
 app.use('/search', searchRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
