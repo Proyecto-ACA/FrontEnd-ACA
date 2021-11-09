@@ -11,10 +11,10 @@ axios.get(api+'signs/getCategory?category_id='+last_segment)
         {
           return (        
           '<div class="grid-item">'+
-            '<div class="card" style="width: 18rem;">'+
-              '<a href="catalogo/palabra?id='+signs.id+'"><img class="card-img-top" src="'+signs.image+'" alt="Card image cap"/>'
-                +'<div class="card-body">'
-                  +'<h5 class="card-title">'+signs.name+'</h5>'
+            '<div class="card" style="width: 20rem; height: 20rem">'+
+              '<a class="contenedor" href="catalogo/palabra?id='+signs.id+'"><img class="card-img-top" src="'+signs.image+'" alt="Card image cap"/>'
+                +'<div class="centrado">'
+                  +'<h5>'+((signs.name.length == 1)?"":signs.name)+'</h5>'
                 +'</div></a></div>'
           +'</div>'
           );
