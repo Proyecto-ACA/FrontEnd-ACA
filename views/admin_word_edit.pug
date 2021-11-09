@@ -6,14 +6,8 @@ block content
       script(src='routes/home.js')
       // Navbar
       .navp.col.py-0
-        nav.navbar.navbar-expand-lg.navbar-light
-          .container
-            h5.w-75.text-light  Categorias
-            #navbarSupportedContent.collapse.navbar-collapse
-              form.d-flex
-                input#formulario.form-control.me-2.w-100(type='search', placeholder='Buscar', aria-label='Search')
-                button#boton.btn(type='submit')
-                  i.icon.ion-md-search.lead.text-light
+        include __navbar2
+
         .container-fluid
           br
           #container-edit
