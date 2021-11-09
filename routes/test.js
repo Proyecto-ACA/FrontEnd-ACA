@@ -4,11 +4,14 @@ var router = express.Router();
 const axios = require('axios');
 
 router.get('/', (req, res, next)=>{
-    console.log('aqui prro');
+    console.log('aqui prro 2');
 
     axios({
         method: 'GET',
-        url: 'http://localhost:3023/lesson/lessonsign/getAll',
+        url: 'http://localhost:3023/lesson/lessonsign/get',
+        params: {
+            lesson: 1,
+        }
         //data: req.body,
     })
     .then((response) => {
