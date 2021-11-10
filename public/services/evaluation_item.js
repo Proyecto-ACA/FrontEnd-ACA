@@ -71,6 +71,7 @@ function myRespuesta(res) {
       puntaje ++;
     }
   }
+  //siguiente pregunta :v
 }
 
 function getItems(){ axios.get(api+'test/testxquestion/getByTest',{ params: { test: last_segment } })
