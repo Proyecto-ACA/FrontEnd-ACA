@@ -189,4 +189,13 @@
 
 .bglogin{
     background-color:#101453;
+    border-radius: 8px !important;
+}
+
+.successpass{
+    border: #39ff39 3px solid;
+}
+
+.failedpass{
+    border: #ff2424 3px solid;
 }
