@@ -13,7 +13,7 @@ axios.get(api+'lesson/lessonsign/get',{ params: { lesson: last_segment } })
           return (        
           '<div class="grid-item">'+
             '<div class="card" style="width: 20rem; height: 20rem">'+
-              '<a class="contenedor" href="catalogo/palabra?id='+item.id+'"><img class="card-img-top" src="'+
+              '<a class="contenedor" href="catalogo/palabra?id='+item.sign.id+'"><img class="card-img-top" src="'+
               ((item.type == 2)? '../images/play.png':item.sign.image)+'" alt="Card image cap"/>'
                 +'<div class="centrado">'
                   +'<h5>'+((item.sign.name.length <= 2)?"":item.sign.name)+'</h5>'
