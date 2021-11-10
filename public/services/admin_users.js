@@ -38,3 +38,17 @@ axios.get(api+'users/getAll')
         .catch(function (err) {
           document.getElementById('mytable').innerHTML = '<li class="text-danger">' + err.message + '</li>';
         });
+        
+const filtrar = () => {
+  var texto = filtro_busqueda.value.toLowerCase();
+  for (let i=0; i<mytable.childElementCount; i++){
+    let busqueda = mytable.children[i].children[1].textContent.toLowerCase();
+    if(busqueda.indexOf(texto) !== -1){
+      mytable.children[i].style.display = '' 
+  } else{
+      mytable.children[i].style.display = 'none'
+  }
+  }
+}
+
+filtro_busqueda.addEventListener('keyup',filtrar);

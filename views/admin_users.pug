@@ -7,7 +7,12 @@ block content
         include __navbar2
         .container-fluid
           .d-grid.gap-2
-            
+            br
+            div.form-group.row
+              div.input-group.mb-2.col-8
+                div.input-group-prepend.ml-2
+                    div(for="filtro_busqueda" class="input-group-text") Búsqueda
+                input(type="text" name="filtro_busqueda" id="filtro_busqueda" class="form-control")
           br
           table.table.table-striped
             thead.thead-dark
