@@ -1,22 +1,21 @@
 extends __layout
+
 block content
-  include __navbar
-    div.container-fluid.text-light(style="height:90%;")
-      div.row.h-100
-        div.col-4.row.login
-          div.col.h-auto
-          div.col-12.h-auto
-            form(action="/login" method="POST").d-flex.flex-column.p-5
-                div.d-flex.justify-content-center.m-3.mb-4
-                  img(class="logo-login" src="../images/Logo.png")
-                div.form-group
-                  label(for="exampleInputEmail1") Nombre de usuario
-                  input(type="text" class="form-control" id="inputUsername" name="username" placeholder="nombre de usuario" aria-describedby="userlHelp")
-                  small(id="userHelp" class="form-text text-muted")
-                div.form-group
-                  label(for="exampleInputEmail1") Contraseña
-                  input(type="password" name="password" class="form-control" id="inputPass")
-                button(type="submit").btn.btn-primary LOG IN
-            a(href="/signup") ¿No tienes cuenta?, ¡Registrate!
-          div.col.h-auto
-        div.col.row.login-side
+  section.w-100.h-100
+    div.container-fluid.w-100.h-100.d-flex.align-items-center.justify-content-center
+      div.card.h-70.w-25.d-flex.align-items-center.justify-content-center.bglogin
+        div.d-flex.flex-column.align-items-center
+          img(class="img-login-small align-middle w-30 mb-3" src="../images/Logo.png", alt="")
+          h4 
+          div.w-90.pt-3
+            form(action="/login" method="POST")
+              //- h4 SI-STCF
+              div.form-group.mb-2
+                input.form-control(type="text" id="inputUsername" name="username" placeholder="Nombre de usuario" required)
+              div.form-group.mb-2
+                input.form-control(type="password" name="password" id="inputPass" placeholder="Contraseña" required)
+              div.form-group.mb-2.d-flex.align-items-center.justify-content-center.mt-4
+                button.btn.btn-primary.btn-login(type="submit") Entrar
+            p.footer-login
+              a(href="/signup") ¿No tienes cuenta?, ¡Registrate!
+            p.footer-login &copy; 2021 MR. DEVART   
