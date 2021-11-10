@@ -1,57 +1,46 @@
 extends __layout
 block content
+  script(src='https://cdn.jsdelivr.net/npm/chart.js')
   .container-fluid
     .row.flex-nowrap
       include __sidebar
       .navp.col.py-0
         include __navbar2
         .container-fluid
-            .est
-                #page-content.row.d-print-block
-                    #region-main-box.esta.col-12
-                        section#region-main
-                          .card
-                            .card-body
-                              span#user-notifications.notifications
-                              div(role='main')
-                                span#maincontent
-                                h2 Reporte de usuario
-                                .grade-navigation
-                                  ul.nav.nav-tabs.mb-3
-                                br
-                                table.boxaligncenter.generaltable.user-grade(cellspacing='0' cellpadding='0')
-                                  thead
-                                    tr
-                                      th#itemname.header.column-itemname(colspan='2')
-                                      th#grade.header.column-grade Calificación
-                                      th#range.header.column-range Rango
-                                  tbody
-                                    tr
-                                      td.level1.levelodd.oddd1.b1t.b2b.b1l.column-leader(rowspan='12')
-                                      th.level1.levelodd.oddd1.b1b.b1t.column-itemname(id='' colspan='7')
-                                        i.icon.fa.fa-folder.fa-fw.icon.itemicon(title='Categoría' aria-label='Categoría')
-                                        | @LESSA
-                                    tr
-                                      th.level2.leveleven.item.b1b.column-itemname(id='' colspan='1')
-                                        a.gradeitemheader(title='' href='')
-                                          ion-icon(name='document-text-outline')
-                                          | Tarea N° 1: Inscripción grupos etc.
-                                      td.nota.level2.leveleven.item.b1b.itemcenter.column-grade(headers='cat_324_20402 row_787_20402 grade') -
-                                      td.notas.level2.leveleven.item.b1b.itemcenter.column-range(headers='cat_324_20402 row_787_20402 range') 0–10
-                                      td.level2.leveleven.item.b1b.feedbacktext.column-feedback(headers='cat_324_20402 row_787_20402 feedback')  
-                                    tr
-                                      th.level2.leveleven.item.b1b.column-itemname(id='' colspan='1')
-                                        a.gradeitemheader(title='' href='')
-                                          ion-icon(name='document-text-outline')
-                                          | Tarea N° 1: Inscripción grupos etc.
-                                      td.nota.level2.leveleven.item.b1b.itemcenter.column-grade(headers='cat_324_20402 row_787_20402 grade') -
-                                      td.notas.level2.leveleven.item.b1b.itemcenter.column-range(headers='cat_324_20402 row_787_20402 range') 0–10
-                                      td.level2.leveleven.item.b1b.feedbacktext.column-feedback(headers='cat_324_20402 row_787_20402 feedback')  
-                                    tr
-                                      th.level2.leveleven.item.b1b.column-itemname(id='' colspan='1')
-                                        a.gradeitemheader(title='' href='')
-                                          ion-icon(name='document-text-outline')
-                                          | Tarea N° 1: Inscripción grupos etc.
-                                      td.nota.level2.leveleven.item.b1b.itemcenter.column-grade(headers='cat_324_20402 row_787_20402 grade') -
-                                      td.notas.level2.leveleven.item.b1b.itemcenter.column-range(headers='cat_324_20402 row_787_20402 range') 0–10
-                                      td.level2.leveleven.item.b1b.feedbacktext.column-feedback(headers='cat_324_20402 row_787_20402 feedback')  
+            canvas#myChart
+    script.
+      const ctx = document.getElementById('myChart').getContext('2d');
+      const myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+      labels: ['Evaluacion 1', 'Evaluacion 2', 'Evaluacion 4', 'Evaluacion 5', 'Evaluacion 6', 'Evaluacion 7'],
+      datasets: [{
+      label: '# ',
+      data: [8, 6, 7, 5, 1, 9],
+      backgroundColor: [
+      'rgba(255, 99, 132, 0.8)',
+      'rgba(54, 162, 235, 0.8)',
+      'rgba(255, 206, 86, 0.8)',
+      'rgba(75, 192, 192, 0.8)',
+      'rgba(153, 102, 255, 0.8)',
+      'rgba(255, 159, 64, 0.8)'
+      ],
+      borderColor: [
+      'rgba(255, 99, 132, 1)',
+      'rgba(54, 162, 235, 1)',
+      'rgba(255, 206, 86, 1)',
+      'rgba(75, 192, 192, 1)',
+      'rgba(153, 102, 255, 1)',
+      'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1
+      }]
+      },
+      options: {
+      scales: {
+      y: {
+      beginAtZero: true
+      }
+      }
+      }
+      });
