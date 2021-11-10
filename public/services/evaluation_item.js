@@ -8,7 +8,10 @@ var lista;
 var data;
 var actual;
 var test;
+var puntaje = 0;
 console.log('item');
+var question_element = document.createElement('div');
+var respuesta; 
 
 function getEvaluation() { axios.get(api+'test/test/get',{ params: { id: last_segment } })
         .then( (response) => {
@@ -23,6 +26,10 @@ function getEvaluation() { axios.get(api+'test/test/get',{ params: { id: last_se
 
 function rederSign(flag){
   const element = data[flag].question;
+  question_element = element
+  //generar opcion al azar
+  respuesta = element.sign.id;
+  //agregar botones verdadero flaso y llamar myRespuesta con res= 1 verdadero, 2 falso
   console.log('element', element);
   container.innerHTML =
         '<div class="flex-container">'+
@@ -48,6 +55,24 @@ function rederSign(flag){
         '</div>'
 }
 
+function myRespuesta(res) {
+  if (test.category.category == 1) { //verdadero o falso
+    if (res == 1){ //verdadero
+      if (question_element.sign.id == respuesta){
+        puntaje ++;
+      }
+    } else {
+      if (question_element.sign.id != respuesta){
+        puntaje ++;
+      }
+    }
+  } else if (test.category.category == 2) { //opcion multiple
+    if (question_element.sign.id == res){
+      puntaje ++;
+    }
+  }
+}
+
 function getItems(){ axios.get(api+'test/testxquestion/getByTest',{ params: { test: last_segment } })
       .then( (response) => {
           console.log('test list',response.data);
@@ -57,7 +82,7 @@ function getItems(){ axios.get(api+'test/testxquestion/getByTest',{ params: { te
         .catch( (err) => {
           container.innerHTML = '<li class="text-danger">' + err.message + '</li>';
         });
-      }
+}
 
         function selectTarget(flag) {
           actual = flag;
