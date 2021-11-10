@@ -26,12 +26,12 @@ axios.get(api+'users/getAll')
         {
           return (        
             '<tr>'+
-                '<th scope="row">'+user.id+'</th>'+
-                    '<td>'+user.name+'</td>'+
-                    '<td>'+user.rol_id+'</td>'+
-                    '<td>'+'<a class="btn btn-sm btn-primary" href="/admin/edit_user?id=' +user.id+'">Editar</a>'+'</td>'+
-                    '<td>'+'<a class="btn btn-sm btn-danger" onClick="deleteconfirmation('+user.id+')">Eliminar</a>'+'</td>'+
-            '</tr>'
+            '<th scope="row">'+user.id+'</th>'+
+                '<td class="w-75">'+user.name+'</td>'+
+                '<td class="w-25">'+user.rol_id+'</td>'+
+                '<td>'+'<a class="btn btn-sm btn-primary" href="/admin/edit_user?id=' +user.id+'">Editar</a>'+'</td>'+
+                '<td>'+'<a class="btn btn-sm btn-danger" onClick="deleteconfirmation('+user.id+')">Eliminar</a>'+'</td>'+
+        '</tr>'
           );
         }).join('');
         })
