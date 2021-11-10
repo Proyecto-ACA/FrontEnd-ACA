@@ -18,6 +18,7 @@ axios.get(api+'signs/getOne/'+last_segment)
                     '</div>'+
     
                 '<div class="flex-child green">'+
+                '<h1 class="titulo fs-12 p-l-25 text-black">'+response.data.name+'</h1>'+
                     '<div class="containera d-flex align-items-center justify-content-center flex-wrap">'+
                         '<div class="boxa">'+
                             '<div class="bodya">'+
