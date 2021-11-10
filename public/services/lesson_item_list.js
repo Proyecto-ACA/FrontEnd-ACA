@@ -38,7 +38,7 @@ axios.get(api+'lesson/lessonsign/get',{ params: { lesson: last_segment } })
           if (data[flag].type == 1) {
             rederSign(flag);
           } else if (data[flag].type == 2) {
-            renderMovie(flag);
+            rederMovie(flag);
           }
           
         }
