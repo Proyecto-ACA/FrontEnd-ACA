@@ -17,6 +17,20 @@ function deleteconfirmation(id)
   }
 }
 
+axios.get(api+'rol/getAll')
+      .then(function (response) {
+        document.getElementById('rol').innerHTML = 
+        response.data.map(function (rol) 
+        {
+          return (        
+                  '<option value="'+rol.id+'">'+rol.name+'</option>'
+          );
+        }).join('');
+    })
+        .catch(function (err) {
+          document.getElementById('container-edit').innerHTML = '<li class="text-danger">' + err.message + '</li>';
+});
+
 axios.get(api+'users/getAll')
       .then(function (response) 
       {

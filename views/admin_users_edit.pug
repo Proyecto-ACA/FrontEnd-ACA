@@ -23,8 +23,9 @@ block content
                 span.input-group-text Nombre
                 input#name.form-control(type='text', placeholder='Nombre', aria-label='Nombre', aria-describedby='basic-addon1')
               .input-group.mb-2
-                span.input-group-text ID ROL
-                input#image.form-control(type='text', placeholder='URL de imagen', aria-label='URL de imagen', aria-describedby='basic-addon1')                      
+                  span.input-group-text Rol
+                  select#rol.form-select
+                    option(value='1') not fount                     
             .d-grid.gap-2
               button#post.btn.btn-primary(type='button') Actualizar usuario
   script(src='/services/admin_users_edit.js')
