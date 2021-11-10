@@ -14,4 +14,8 @@ router.get('/leccion1', function(req, res, next) {
   res.render('leccion1', { title: 'Leccion' });
 });
 
+router.get('/leccion_item', (req, res, next)=>{
+  res.render('lesson_list', { title: 'lesson_items' });
+});
+
 module.exports = router;
