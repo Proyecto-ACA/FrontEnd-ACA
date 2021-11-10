@@ -68,7 +68,7 @@ axios.get(api+'lesson/lessonsign/get',{ params: { lesson: last_segment } })
           inicio += ' </span> <span class="close"> <a onclick="goHome()">' +
                   '<span class="xclose"><ion-icon class="iclose" name="close-circle-outline"></ion-icon></span>' +
               '</a> </span> <span class="mdl-right">'
-          if (actual < data.length - 2){
+          if (actual < data.length - 1){
             inicio += '<a onclick="goNextItem()"> Siguiente <span class="rarrow"><ion-icon name="caret-forward-outline"></ion-icon></span> </a>'
           }
           inicio += ' </span></div>'
@@ -108,7 +108,7 @@ axios.get(api+'lesson/lessonsign/get',{ params: { lesson: last_segment } })
                     '<div class="flex-child magenta">'+
                         '<img class="imga" src="'+element.sign+'" alt="">'+
                     '</div>'+
-                '<div class="flex-child green">'+
+                '<div class="flex-child green">'+ navegacion() +
                 '<h1 class="titulo fs-12 p-l-25 text-black">'+element.name+'</h1>'+
                     '<div class="containera d-flex align-items-center justify-content-center flex-wrap">'+
                         '<div class="boxa">'+
