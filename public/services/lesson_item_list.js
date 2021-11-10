@@ -4,8 +4,9 @@ var last_segment = url_array[url_array.length-1];  // Get the last part of the a
 // alert( last_segment ); // Alert last segment
 // alert(api+'signs/getAll?id='+last_segment);
 
-axios.get(api+'signs/getCategory?category_id='+last_segment)
+axios.get(api+'lesson/lessonsign/get?lesson='+last_segment)
       .then(function (response) {
+          console.log(response.data);
         document.getElementById('obteniendo').innerHTML = 
         response.data.map(function (signs) 
         {
