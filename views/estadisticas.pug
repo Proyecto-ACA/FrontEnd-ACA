@@ -103,12 +103,15 @@ block content
           include __navbar2
           .container-fluid
             .slideshow-container
-              .mySlides.fade
-                canvas#myChart
-              .mySlides.fade
-                canvas#myChart2
-              .mySlides.fade
-                canvas#myChart3
+              .mySlides.fade.w-100
+                .container-fluid
+                  canvas#myChart
+              .mySlides.fade.h-100
+                .container-fluid.h-100
+                  canvas#myChart2.h-100
+              .mySlides.fade.h-100
+                .container-fluid.h-100
+                  canvas#myChart3.h-100
               a.prev(onclick='plusSlides(-1)') &#x276E;
               a.next(onclick='plusSlides(1)') &#x276F;
           div(style='text-align:center')
@@ -120,8 +123,6 @@ block content
 
             
     script.
-      function  load1(){
-        console.log("SASA")
         const ctx = document.getElementById('myChart').getContext('2d');
         const myChart = new Chart
         (ctx,{
@@ -166,9 +167,6 @@ block content
           }
         });
       
-      }
-      
-      function load2(){
             const ctx2 = document.getElementById('myChart2').getContext('2d');
             const myChart2 = new Chart
             (ctx2,{
@@ -193,9 +191,7 @@ block content
               }
             });
       
-      }
       
-      function load3(){
         const ctx3 = document.getElementById('myChart3').getContext('2d');
         const myChart3= new Chart
         (ctx3,{
@@ -219,7 +215,6 @@ block content
             }]
         }});
       
-      }
       
       var slideIndex = 1;
       showSlides(slideIndex);
@@ -241,9 +236,12 @@ block content
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";  
         }
+        //- dots
         for (i = 0; i < dots.length; i++) {
             dots[i].className = dots[i].className.replace(" active", "");
         }
-        slides[slideIndex-1].style.display = "block";  
+        
+        slides[slideIndex-1].style.display = "inline";  
         dots[slideIndex-1].className += " active";
+
       }
