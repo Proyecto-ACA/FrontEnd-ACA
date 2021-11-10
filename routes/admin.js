@@ -6,7 +6,9 @@ var router = express.Router();
 router.get('/users',isLoggedIn, (req, res)=>{
   res.render('admin_users', { title: 'Administrar Usuarios' });
 });
-
+router.get('/edit_user', isLoggedIn,(req, res)=>{
+  res.render('admin_users_edit', { title: 'Editar Categoria' });
+});
 
 //CATEGORIES
 router.get('/category', isLoggedIn, (req, res)=>{

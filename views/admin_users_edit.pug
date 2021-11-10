@@ -1,0 +1,30 @@
+extends __layout
+block content
+  .container-fluid
+    .row.flex-nowrap
+      include __sidebar
+      script(src='routes/home.js')
+      // Navbar
+      .navp.col.py-0
+        include __navbar2
+        .container-fluid
+          br
+          //- form.form(role='form' onsubmit='return false;')
+          //-   .form-group
+          //-     label(for='data') JSON
+          //-     textarea#data.form-control(rows='5')
+          //-   button#post.btn.btn-primary(type='button') POST
+          form.form(role='form' onsubmit='return false;')
+            .form-group
+              .input-group.mb-2
+                  span.input-group-text ID
+                  input#id.form-control(type='text', placeholder='id', aria-label='id', aria-describedby='basic-addon1' readonly)
+              .input-group.mb-2
+                span.input-group-text Nombre
+                input#name.form-control(type='text', placeholder='Nombre', aria-label='Nombre', aria-describedby='basic-addon1')
+              .input-group.mb-2
+                span.input-group-text ID ROL
+                input#image.form-control(type='text', placeholder='URL de imagen', aria-label='URL de imagen', aria-describedby='basic-addon1')                      
+            .d-grid.gap-2
+              button#post.btn.btn-primary(type='button') Actualizar usuario
+  script(src='/services/admin_users_edit.js')
