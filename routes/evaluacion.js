@@ -11,7 +11,7 @@ router.get('/evaluacion', function(req, res, next) {
 });
 
 router.get('/evaluacion_item', (req, res, next)=>{
-  res.render('lesson_list', { title: 'Leccion' });
+  res.render('evaluacion', { title: 'Evaluacion' });
 });
 
 router.get('/examen1', function(req, res, next) {
