@@ -15,7 +15,7 @@ router.get('/leccion1', function(req, res, next) {
 });
 
 router.get('/leccion_item', (req, res, next)=>{
-  res.render('lesson_list', { title: 'lesson_items' });
+  res.render('lesson_list', { title: 'Leccion' });
 });
 
 module.exports = router;
