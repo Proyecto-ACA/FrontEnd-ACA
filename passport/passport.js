@@ -99,12 +99,12 @@ module.exports = function (passport) {
                     //----
                     axios.post(api+'users/save', JSON.parse(usuarionuevo))
                     .then(function (res) {
-                        return done(null, user);
+                        return done(null, res);
                         })
                     .catch(function (err) {
                         console.log(err)
                     });
-                    return done(null, user);
+                    return done(null, res);
                 }).catch((err) => 
                 {
                     console.error(err);
