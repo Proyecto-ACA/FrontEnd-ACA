@@ -45,16 +45,33 @@ axios.get(api+'lesson/lessonsign/get',{ params: { lesson: last_segment } })
           
         }
 
+        function goHome(){
+          container.innerHTML = lista;
+        }
+
+        function goBackItem(){
+          console.log('back');
+          selectTarget(actual - 1);
+        }
+
+        function goNextItem(){
+          console.log('next');
+          selectTarget(actual + 1);
+        }
+
         function navegacion() {
-          var inicio = 'inicio'
+          var inicio = '<div class="section-navigation mdl-bottom"> <span class="mdl-left">'
           if (actual!=0 ){ 
-            inicio += 'boton de regreso'
+            inicio += '<a onclick="goBackItem()">' +
+            '<span class="larrow"><ion-icon name="caret-back-outline"></ion-icon></span> Atrás </a>'
           }
-          inicio += 'boton home'
+          inicio += ' </span> <span class="close"> <a onclick="goHome()">' +
+                  '<span class="xclose"><ion-icon class="iclose" name="close-circle-outline"></ion-icon></span>' +
+              '</a> </span> <span class="mdl-right">'
           if (actual < data.length - 2){
-            inicio += 'bonton siguiente'
+            inicio += '<a onclick="goNextItem()"> Siguiente <span class="rarrow"><ion-icon name="caret-forward-outline"></ion-icon></span> </a>'
           }
-          inicio += 'fin'
+          inicio += ' </span></div>'
           return inicio
         }
 
@@ -65,7 +82,7 @@ axios.get(api+'lesson/lessonsign/get',{ params: { lesson: last_segment } })
                     '<div class="flex-child magenta">'+
                         '<img class="imga" src="'+element.sign+'" alt="">'+
                     '</div>'+
-                '<div class="flex-child green">'+
+                '<div class="flex-child green">'+ navegacion() +
                 '<h1 class="titulo fs-12 p-l-25 text-black">'+element.name+'</h1>'+
                     '<div class="containera d-flex align-items-center justify-content-center flex-wrap">'+
                         '<div class="boxa">'+
