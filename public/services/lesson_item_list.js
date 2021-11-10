@@ -6,6 +6,7 @@ var last_segment = url_array[url_array.length-1];  // Get the last part of the a
 const container = document.getElementById('obteniendo');
 var lista;
 var data;
+var actual;
 
 axios.get(api+'lesson/lessonsign/get',{ params: { lesson: last_segment } })
       .then( (response) => {
@@ -33,6 +34,7 @@ axios.get(api+'lesson/lessonsign/get',{ params: { lesson: last_segment } })
         });
 
         function selectTarget(flag) {
+          actual = flag;
           console.log(flag, 'to reder');
           console.log('lista', data);
           if (data[flag].type == 1) {
@@ -41,6 +43,12 @@ axios.get(api+'lesson/lessonsign/get',{ params: { lesson: last_segment } })
             rederMovie(flag);
           }
           
+        }
+
+        function navegacion() {
+          return (
+            ''
+          )
         }
 
         function rederSign(flag){
