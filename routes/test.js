@@ -20,6 +20,7 @@ router.get('/', (req, res, next)=>{
             //e(response.data);
             //console.log(e.data);
             console.log('data', response.data);
+            
         }
         if (response.data.code === 4012) {
             //console.log('responce', response.data);

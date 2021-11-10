@@ -77,28 +77,38 @@ module.exports = function (passport) {
 
 */
 
-    passport.use('local-signup', new LocalStrategy({
-        username: 'username',
-        password: 'password',
-        passReqToCallback: true,
-    },
-    function (req, username, password, done) {
-        var salt = bcrypt.genSaltSync(10);
-        var hash = bcrypt.hashSync(password, salt);
-        var obj = new Object();
-        obj.name = username;
-        obj.rol_id = 1;
-        obj.password = hash;
-        var usuarionuevo= JSON.stringify(obj);      
-        console.log(usuarionuevo)
-        axios.post(api+'users/user',{name: username})
-            .then((user) =>
-            {
-                //aqui se deberia validad si existe o no
-                //----
-                axios.post(api+'users/save', JSON.parse(usuarionuevo))
-                .then(function (res) {
-                    return done(null, user);
+        passport.use('local-signup', new LocalStrategy({
+            username: 'username',
+            password: 'password',
+            passReqToCallback: true,
+        },
+        function (req, username, password, done) {
+            var salt = bcrypt.genSaltSync(10);
+            var hash = bcrypt.hashSync(password, salt);
+            var obj = new Object();
+            obj.name = username;
+            obj.rol_id = 1;
+            obj.password = hash;
+            var usuarionuevo= JSON.stringify(obj);      
+            console.log(usuarionuevo)
+            axios.post(api+'users/user',{name: username})
+                .then((user) =>
+                {
+                    //aqui se deberia validad si existe o no
+                    //----
+                    axios.post(api+'users/save', JSON.parse(usuarionuevo))
+                    .then(function (res) {
+                        return done(null, res);
+                        })
+                    .catch(function (err) {
+                        console.log(err)
+                    });
+                    return done(null, res);
+                }).catch((err) => 
+                {
+                    console.error(err);
+                    return done(null, false, {
+                        message: 'Algo salio mal'
                     })
                 .catch(function (err) {
                     console.log(err)
