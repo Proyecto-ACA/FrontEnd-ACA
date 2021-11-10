@@ -7,39 +7,65 @@ const container = document.getElementById('obteniendo');
 var lista;
 var data;
 var actual;
+var test;
+console.log('item');
 
-axios.get(api+'lesson/lessonsign/get',{ params: { lesson: last_segment } })
+function getEvaluation() { axios.get(api+'test/test/get',{ params: { id: last_segment } })
+        .then( (response) => {
+            test = response.data[0]
+            console.log('test get', test);
+            getItems()
+        })
+        .catch( (err) => {
+            test = null;
+        });
+}
+
+function rederSign(flag){
+  const element = data[flag].question;
+  console.log('element', element);
+  container.innerHTML =
+        '<div class="flex-container">'+
+            '<div class="flex-child magenta">'+
+                '<img class="imga" src="'+element.sign.sign+'" alt="">'+
+            '</div>'+
+        '<div class="flex-child green">'+ navegacion() +
+        '<h1 class="titulo fs-12 p-l-25 text-black"> pregunta: '+(actual + 1)+'</h1>'+
+            '<div class="containera d-flex align-items-center justify-content-center flex-wrap">'+
+                '<div class="boxa">'+
+                    '<div class="bodya">'+
+                        '<div class="imgContainer"> '+
+                        '<img src="'+element.image+'" alt=""> </div>'+
+                            '<div class="contenta d-flex flex-column align-items-center justify-content-center">'+
+                                '<div>'+
+                                    '<p class="fs-6 text-white">'+element.description+'</p>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+            '</div>'+
+        '</div>'
+}
+
+function getItems(){ axios.get(api+'test/testxquestion/getByTest',{ params: { test: last_segment } })
       .then( (response) => {
-          console.log(response.data);
+          console.log('test list',response.data);
           data = response.data
-          var iteration = 0
-          lista = 
-          data.map( (item) =>
-          {
-            return (        
-            '<div class="grid-item">'+
-              '<div class="card" style="width: 20rem; height: 20rem">'+
-                '<a class="contenedor" onclick="selectTarget('+iteration++ +')"><img class="card-img-top" src="'+
-                ((item.type == 2)? '../images/play.png':item.sign.image)+'" alt="Card image cap"/>'
-                  +'<div class="centrado">'
-                    +'<h5>'+((item.sign.name.length <= 2)?"":item.sign.name)+'</h5>'
-                  +'</div></a></div>'
-            +'</div>'
-            );
-          }).join('');
-          container.innerHTML = lista;
+          selectTarget(0);
         })
         .catch( (err) => {
           container.innerHTML = '<li class="text-danger">' + err.message + '</li>';
         });
+      }
 
         function selectTarget(flag) {
           actual = flag;
           console.log(flag, 'to reder');
-          console.log('lista', data);
-          if (data[flag].type == 1) {
+          console.log('lista', test);
+          if (test.category.category == 1) {
             rederSign(flag);
-          } else if (data[flag].type == 2) {
+          } else if (test.category.category == 2) {
             rederMovie(flag);
           }
           
@@ -75,31 +101,7 @@ axios.get(api+'lesson/lessonsign/get',{ params: { lesson: last_segment } })
           return inicio
         }
 
-        function rederSign(flag){
-          const element = data[flag].sign;
-          container.innerHTML =
-                '<div class="flex-container">'+
-                    '<div class="flex-child magenta">'+
-                        '<img class="imga" src="'+element.sign+'" alt="">'+
-                    '</div>'+
-                '<div class="flex-child green">'+ navegacion() +
-                '<h1 class="titulo fs-12 p-l-25 text-black">'+element.name+'</h1>'+
-                    '<div class="containera d-flex align-items-center justify-content-center flex-wrap">'+
-                        '<div class="boxa">'+
-                            '<div class="bodya">'+
-                                '<div class="imgContainer"> '+
-                                '<img src="'+element.image+'" alt=""> </div>'+
-                                    '<div class="contenta d-flex flex-column align-items-center justify-content-center">'+
-                                        '<div>'+
-                                            '<p class="fs-6 text-white">'+element.description+'</p>'+
-                                        '</div>'+
-                                    '</div>'+
-                                '</div>'+
-                            '</div>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'
-        }
+        
 
         function rederMovie(flag){
           const element = data[flag].sign;
@@ -127,3 +129,4 @@ axios.get(api+'lesson/lessonsign/get',{ params: { lesson: last_segment } })
                 '</div>'
         }
 
+        getEvaluation();
