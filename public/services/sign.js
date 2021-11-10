@@ -12,18 +12,27 @@ axios.get(api+'signs/getOne/'+last_segment)
                 // console.log(response)
                 // console.log(response.data)
                 document.getElementById('obteniendo').innerHTML =
-                
-                '<main id="content" class="main-content">'+
-                    '<img class="gift" src="'+response.data.sign+'"width="400" height="100" alt="">'+
-                '</main>'+
-                    
-                '<aside class="side">'+
-                    '<img class="imagea" src="'+response.data.image+'" width="400" height="100" alt="">'+
-                '</aside>'+
-                    
-                '<aside class="twin">'+
-                    '<h5 class="texta">'+response.data.description+'</h5>'+
-                '</aside>'
+                '<div class="flex-container">'+
+                    '<div class="flex-child magenta">'+
+                        '<img class="imga" src="'+response.data.sign+'" alt="">'+
+                    '</div>'+
+    
+                '<div class="flex-child green">'+
+                    '<div class="containera d-flex align-items-center justify-content-center flex-wrap">'+
+                        '<div class="boxa">'+
+                            '<div class="bodya">'+
+                                '<div class="imgContainer"> '+
+                                '<img src="'+response.data.image+'" alt=""> </div>'+
+                                    '<div class="contenta d-flex flex-column align-items-center justify-content-center">'+
+                                        '<div>'+
+                                            '<p class="fs-6 text-white">'+response.data.description+'</p>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'
             }
         )
         .catch
