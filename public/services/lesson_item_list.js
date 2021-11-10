@@ -46,9 +46,16 @@ axios.get(api+'lesson/lessonsign/get',{ params: { lesson: last_segment } })
         }
 
         function navegacion() {
-          return (
-            ''
-          )
+          var inicio = 'inicio'
+          if (actual!=0 ){ 
+            inicio += 'boton de regreso'
+          }
+          inicio += 'boton home'
+          if (actual < data.length - 2){
+            inicio += 'bonton siguiente'
+          }
+          inicio += 'fin'
+          return inicio
         }
 
         function rederSign(flag){
