@@ -7,10 +7,11 @@ function deleteconfirmation(id)
       {
         location.reload();
       } else {
+        alert("ERROR AL ELIMINAR\nELEMENTO ID : "+id)
       }
         })
     .catch(function (err) {
-        alert(JSON.parse(jsonString))
+        alert("ERROR AL ELIMINAR  "+err)
     });
   } else {
     
