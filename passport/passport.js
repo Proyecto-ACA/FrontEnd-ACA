@@ -84,35 +84,38 @@ module.exports = function (passport) {
             passReqToCallback: true,
         },
         function (req, username, password, done) {
-             var salt = bcrypt.genSaltSync(10);
+            var salt = bcrypt.genSaltSync(10);
             var hash = bcrypt.hashSync(password, salt);
-            console.log(hash);
-            axios.post(api+'users/user',{name: username})
-            .then((user) => {
-            console.log("-----------------------------------------\nAgregando: "+username+"  "+password+"\n-------------------------------")
             var obj = new Object();
             obj.name = username;
             obj.rol_id = 1;
             obj.password = hash;
             var usuarionuevo= JSON.stringify(obj);      
             console.log(usuarionuevo)
-            axios.post(api+'users/save', JSON.parse(usuarionuevo))
-            .then(function (res) {
-                console.log("se envio"+res)
+            axios.post(api+'users/user',{name: username})
+                .then((user) =>
+                {
+                    //aqui se deberia validad si existe o no
+                    //----
+                    axios.post(api+'users/save', JSON.parse(usuarionuevo))
+                    .then(function (res) {
+                        return done(null, user);
+                        })
+                    .catch(function (err) {
+                        console.log(err)
+                    });
+                    return done(null, user);
+                }).catch((err) => 
+                {
+                    console.error(err);
+                    return done(null, false, {
+                        message: 'Algo salio mal'
+                    })
                 })
-            .catch(function (err) {
-                console.log(err)
-            });
-
-                return done(null, user);
-            }).catch((err) => 
-            {
-                console.error(err);
-                return done(null, false, {
-                    message: 'Algo salio mal'
-                })
-            })
-        }
-    ));
+            }
+            
+            
+            
+        ));
 
 }
