@@ -249,15 +249,18 @@ a{
 }
 .magenta{
     padding-left: 6%;
-    padding-top: 2%;
+    padding-top: 1%;
 }
 .imga{
     box-shadow: 0 8px 16px 0 #394d5f;
     width: 85%;
-    height: 95%;
+    height: 99%;
     border-radius: 2%;
 }
-
+.titulo{
+    padding-left: 40%;
+    padding-top: 8%;
+}
 .flex-child:first-child {
     margin-right: 20px;
 } 
@@ -276,7 +279,7 @@ a{
     width: 400px;
     height: 400px;
     margin: 20px;
-    margin-top: 75px;
+    margin-top: 25px;
     transform-style: preserve-3d;
     perspective: 1000px;
     cursor: pointer
