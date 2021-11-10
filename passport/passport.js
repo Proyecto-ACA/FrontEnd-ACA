@@ -103,7 +103,7 @@ module.exports = function (passport) {
                     .catch(function (err) {
                         console.log(err)
                     });
-                    return done(null, res);
+                    // return done(null, res);
                 }).catch((err) => 
                 {
                     console.error(err);
