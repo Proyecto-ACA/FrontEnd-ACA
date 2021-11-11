@@ -6,6 +6,7 @@ var last_segment = url_array[url_array.length-1];  // Get the last part of the a
 
 axios.get(api+'lesson/lesson/getOne/'+last_segment)
       .then(function (response) {
+          console.log('responce one', response);
         document.getElementById('id').value = response.data.id;
         document.getElementById('name').value = response.data.name;
         document.getElementById('image').value= response.data.image;

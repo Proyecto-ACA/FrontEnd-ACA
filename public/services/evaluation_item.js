@@ -34,7 +34,7 @@ function rederSign(flag){
   container.innerHTML =
         '<div class="flex-container">'+
             '<div class="flex-child magenta">'+
-                '<img class="imga" src="'+element.sign.sign+'" alt="">'+
+                '<img class="imga" src="'+ element.sign.sign + '" alt="">'+
             '</div>'+
         '<div class="flex-child green">'+ navegacion() +
         '<h1 class="titulo fs-12 p-l-25 text-black"> pregunta: '+(actual + 1)+'</h1>'+
