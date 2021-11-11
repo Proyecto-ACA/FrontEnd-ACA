@@ -2,89 +2,89 @@ extends __layout
 block content
   script(src='https://cdn.jsdelivr.net/npm/chart.js')
   style(type="text/css").
-        
-        /* Slideshow container */
-        .slideshow-container {
-          position: relative;
-          margin: auto;
-        }
-        
-        /* Next & previous buttons */
-        .prev, .next {
-          cursor: pointer;
-          position: absolute;
-          top: 50%;
-          width: auto;
-          padding: 16px;
-          margin-top: -22px;
-          color: black;
-          font-weight: bold;
-          font-size: 18px;
-          transition: 0.6s ease;
-          border-radius: 0 3px 3px 0;
-          user-select: none;
-        }
-        
-        /* Position the "next button" to the right */
-        .next {
-          right: 0;
-          border-radius: 3px 0 0 3px;
-        }
-        
-        /* On hover, add a black background color with a little bit see-through */
-        .prev:hover, .next:hover {
-          background-color: rgba(0,0,0,0.8);
-        }
-        
-        /* Caption text */
-        .text {
-          color: #f2f2f2;
-          font-size: 15px;
-          padding: 8px 12px;
-          position: absolute;
-          bottom: 8px;
-          width: 100%;
-          text-align: center;
-        }
-        
-        /* The dots/bullets/indicators */
-        .dot {
-          cursor: pointer;
-          height: 15px;
-          width: 15px;
-          margin: 0 2px;
-          background-color: #bbb;
-          border-radius: 50%;
-          display: inline-block;
-          transition: background-color 0.6s ease;
-        }
-        
-        .active, .dot:hover {
-          background-color: #717171;
-        }
-        
-        /* Fading animation */
-        .fade {
-          -webkit-animation-name: fade;
-          -webkit-animation-duration: 1.5s;
-          animation-name: fade;
-          animation-duration: 1.5s;
-        }
-        
-        @-webkit-keyframes fade {
-          from {opacity: .4} 
-          to {opacity: 1}
-        }
-        
-        @keyframes fade {
-          from {opacity: .4} 
-          to {opacity: 1}
-        }
-        
-        /* On smaller screens, decrease text size */
-        @media only screen and (max-width: 300px) {
-          .prev, .next,.text {font-size: 11px}
-        }
+
+    /* Slideshow container */
+    .slideshow-container {
+      position: relative;
+      margin: auto;
+    }
+
+    /* Next & previous buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: black;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active, .dot:hover {
+      background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+
+    @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+      .prev, .next,.text {font-size: 11px}
+    }
   body(onload="load1()")
     .container-fluid
       .row.flex-nowrap
@@ -92,218 +92,221 @@ block content
         .navp.col.py-0
           include __navbar2
           .container-fluid
-            .row
-              .slideshow-container
+            .row.align-items-center(style="height: 85vh;")
+              .col-sm-9
+                .row
+                  canvas#myChart
+                .row
+              //-.col-sm-12
+              .col-sm-3
+                .row
+                  .col-sm-11
+                    canvas#myChart2.p-2
+                .row
+                  .col-sm-11
+                    canvas#myChart3.p-2
+              //-.slideshow-container
                 .row.justify-content-md-center
-                  .col-sm-12
-                    .mySlides.fade
-                      canvas#myChart
+                  .mySlides.fade
                 .row.justify-content-md-center
-                  .col-sm-6.p-8
-                    .mySlides.fade
-                      canvas#myChart2
                 .row.justify-content-md-center
-                  .col-sm-6.p-8                 
-                    .mySlides.fade
-                      canvas#myChart3
-            a.prev(onclick='plusSlides(-1)') &#x276E;
-            a.next(onclick='plusSlides(1)') &#x276F;
-            div(style='text-align:center')
+            //-a.prev(onclick='plusSlides(-1)') &#x276E;
+            //-a.next(onclick='plusSlides(1)') &#x276F;
+            //-div(style='text-align:center')
               span.dot(onclick='currentSlide(1)')
               span.dot(onclick='currentSlide(2)')
               span.dot(onclick='currentSlide(3)')
 
 
 
-            
+
     script.
-        const ctx = document.getElementById('myChart').getContext('2d');
-        Chart.defaults.font.size = 20;
-        const myChart = new Chart
-        (ctx,{
-          type: 'bar',
+      const ctx = document.getElementById('myChart').getContext('2d');
+      Chart.defaults.font.size = 10;
+      const myChart = new Chart
+      (ctx,{
+        type: 'bar',
+        data: 
+        {
+          labels: ['Evaluacion 1', 'Evaluacion 2', 'Evaluacion 4', 'Evaluacion 5', 'Evaluacion 6', 'Evaluacion 7'],
+          datasets: 
+          [{
+            label: 'Estadisticas',
+            data: [8, 6, 7, 5, 1, 9],
+            backgroundColor: 
+              [
+                'rgba(255, 99, 132, 0.8)',
+                'rgba(54, 162, 235, 0.8)',
+                'rgba(255, 206, 86, 0.8)',
+                'rgba(75, 192, 192, 0.8)',
+                'rgba(153, 102, 255, 0.8)',
+                'rgba(255, 159, 64, 0.8)'
+              ],
+            borderColor: 
+              [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+              ],
+            borderWidth: 1
+          }]
+        }
+        ,
+        options: 
+        {         
+        scale: {
+          ticks: {
+            min: 0,
+            max: 10,
+            max: 10,
+            stepSize: 1,
+            beginAtZero: true
+          },
+          pointLabels: { fontSize:12 }
+          }
+          ,
+          plugins: {
+            legend: {
+              labels: {
+                // This more specific font property overrides the global property
+                font: {
+                  size: 12
+                }}
+            }
+
+          } 
+        }
+      });
+
+        const ctx2 = document.getElementById('myChart2').getContext('2d');
+        const myChart2 = new Chart
+        (ctx2,{
+          type: 'radar',
           data: 
           {
-            labels: ['Evaluacion 1', 'Evaluacion 2', 'Evaluacion 4', 'Evaluacion 5', 'Evaluacion 6', 'Evaluacion 7'],
+            labels: [
+              'Abecedario',
+              'Familia',
+              'Comunes',
+              'Alimentos',
+              'Vestimenta',
+              'Colores',
+              'Saludos',
+              'Verbos',
+              'Ocupaciones',
+              'Numeros',
+              'Calendario'],
             datasets: 
             [{
-              label: 'Estadisticas',
-              data: [8, 6, 7, 5, 1, 9],
-              backgroundColor: 
-                [
-                  'rgba(255, 99, 132, 0.8)',
-                  'rgba(54, 162, 235, 0.8)',
-                  'rgba(255, 206, 86, 0.8)',
-                  'rgba(75, 192, 192, 0.8)',
-                  'rgba(153, 102, 255, 0.8)',
-                  'rgba(255, 159, 64, 0.8)'
-                ],
-              borderColor: 
-                [
-                  'rgba(255, 99, 132, 1)',
-                  'rgba(54, 162, 235, 1)',
-                  'rgba(255, 206, 86, 1)',
-                  'rgba(75, 192, 192, 1)',
-                  'rgba(153, 102, 255, 1)',
-                  'rgba(255, 159, 64, 1)'
-                ],
-              borderWidth: 1
+              label: 'Categorias',
+              data: [68,79,67,88,68,79,87,68,58,69,77],
+              fill: true,
+              backgroundColor:'rgba(153, 102, 255, 0.8)',
+              borderColor: 'rgb(255, 99, 132)',
+              pointBackgroundColor: 'rgb(255, 99, 132)',
+              pointBorderColor: '#fff',
+              pointHoverBackgroundColor: '#fff',
+              pointHoverBorderColor: 'rgb(255, 99, 132)'
             }]
           }
-          ,
-          options: 
-          {         
-           scale: {
-              ticks: {
-                min: 0,
-                max: 10,
-                max: 10,
-                stepSize: 1,
-                beginAtZero: true
-              },
-              pointLabels: { fontSize:18 }
-            }
-            ,
-            plugins: {
-                legend: {
-                    labels: {
-                        // This more specific font property overrides the global property
-                        font: {
-                            size: 30
-                        }}
-                }
-               
-            } 
+        ,
+        options: 
+        {         
+          scale: {
+            ticks: {
+              min: 0,
+              max: 10,
+              max: 10,
+              stepSize: 1,
+              beginAtZero: true
+            },
+            pointLabels: { fontSize:18 }
+        }
+        ,
+        plugins: {
+          legend: {
+            labels: {
+              // This more specific font property overrides the global property
+              font: {
+                size: 12
+              }}
           }
-        });
-      
-            const ctx2 = document.getElementById('myChart2').getContext('2d');
-            const myChart2 = new Chart
-            (ctx2,{
-              type: 'radar',
-              data: 
-              {
-                labels: [
-                  'Abecedario',
-                  'Familia',
-                  'Comunes',
-                  'Alimentos',
-                  'Vestimenta',
-                  'Colores',
-                  'Saludos',
-                  'Verbos',
-                  'Ocupaciones',
-                  'Numeros',
-                  'Calendario'],
-                datasets: 
-                [{
-                  label: 'Categorias',
-                  data: [68,79,67,88,68,79,87,68,58,69,77],
-                  fill: true,
-                  backgroundColor:'rgba(153, 102, 255, 0.8)',
-                  borderColor: 'rgb(255, 99, 132)',
-                  pointBackgroundColor: 'rgb(255, 99, 132)',
-                  pointBorderColor: '#fff',
-                  pointHoverBackgroundColor: '#fff',
-                  pointHoverBorderColor: 'rgb(255, 99, 132)'
-                }]
-              }
-            ,
-          options: 
-          {         
-           scale: {
-              ticks: {
-                min: 0,
-                max: 10,
-                max: 10,
-                stepSize: 1,
-                beginAtZero: true
-              },
-              pointLabels: { fontSize:18 }
-            }
-            ,
-            plugins: {
-                legend: {
-                    labels: {
-                        // This more specific font property overrides the global property
-                        font: {
-                            size: 24
-                        }}
-                }
-               
-            } 
-          }
-              
-            });
-      
-      
-        const ctx3 = document.getElementById('myChart3').getContext('2d');
-        const myChart3= new Chart
-        (ctx3,{
-          type: 'doughnut',
-          data: 
-          {
-          labels: [
-              'Crear frases',//Red
-              'Comunicarse de manera fluida',// Blue
-              'Entender palabras',//Yellow
-              'Entender frases',
-              'Entender conversaciones'
+        } 
+        }
+
+          });
+
+
+      const ctx3 = document.getElementById('myChart3').getContext('2d');
+      const myChart3= new Chart
+      (ctx3,{
+        type: 'doughnut',
+        data: 
+        {
+        labels: [
+          'Crear frases',//Red
+          'Comunicarse de manera fluida',// Blue
+          'Entender palabras',//Yellow
+          'Entender frases',
+          'Entender conversaciones'
+          ],
+          datasets: [{
+            label: 'My First Dataset',
+            data: [300, 50, 100,200,120],
+            backgroundColor: [
+              'rgb(255, 99, 132)',
+              'rgb(54, 162, 235)',
+              'rgb(255, 205, 86)',
+              'rgb(153, 102, 255',
+              'rgb(255, 159, 64)'
             ],
-            datasets: [{
-              label: 'My First Dataset',
-              data: [300, 50, 100,200,120],
-              backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)',
-                'rgb(153, 102, 255',
-                'rgb(255, 159, 64)'
-              ],
-              hoverOffset: 4
-            }]
+            hoverOffset: 4
+          }]
+        }
+        ,
+
+        options: 
+        {         
+          scale: {
+            ticks: {
+              min: 0,
+              max: 10,
+              max: 10,
+              stepSize: 1,
+              beginAtZero: true
+            },
+            pointLabels: { fontSize:10 }
           }
           ,
-           
-          options: 
-          {         
-           scale: {
-              ticks: {
-                min: 0,
-                max: 10,
-                max: 10,
-                stepSize: 1,
-                beginAtZero: true
-              },
-              pointLabels: { fontSize:10 }
+          plugins: {
+            legend: {
+              labels: {
+                // This more specific font property overrides the global property
+                font: {
+                  size: 12
+                }}
             }
-            ,
-            plugins: {
-                legend: {
-                    labels: {
-                        // This more specific font property overrides the global property
-                        font: {
-                            size: 20
-                        }}
-                }
-               
-            } 
-          }
-        
-        });
-      
-      
+
+          } 
+        }
+
+      });
+
+
       var slideIndex = 1;
       showSlides(slideIndex);
-      
+
       function plusSlides(n) {
         showSlides(slideIndex += n);
       }
-      
+
       function currentSlide(n) {
         showSlides(slideIndex = n);
       }
-      
+
       function showSlides(n) {
         var i;
         var slides = document.getElementsByClassName("mySlides");
@@ -311,13 +314,13 @@ block content
         if (n > slides.length) {slideIndex = 1}    
         if (n < 1) {slideIndex = slides.length}
         for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
+          slides[i].style.display = "none";  
         }
         //- dots
         for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
+          dots[i].className = dots[i].className.replace(" active", "");
         }
-        
+
         slides[slideIndex-1].style.display = "inline";  
         dots[slideIndex-1].className += " active";
 

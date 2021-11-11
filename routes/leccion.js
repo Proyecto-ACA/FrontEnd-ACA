@@ -3,19 +3,19 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('lecciones', { title: 'Lecciones' });
+  res.render('lecciones', { title: 'Lecciones' , user: req.user});
 });
 
 router.get('/leccion', function(req, res, next) {
-  res.render('leccion', { title: 'Leccion' });
+  res.render('leccion', { title: 'Leccion', user: req.user });
 });
 
 router.get('/leccion1', function(req, res, next) {
-  res.render('leccion1', { title: 'Leccion' });
+  res.render('leccion1', { title: 'Leccion' , user: req.user});
 });
 
 router.get('/leccion_item', (req, res, next)=>{
-  res.render('lesson_list', { title: 'Leccion' });
+  res.render('lesson_list', { title: 'Leccion' , user: req.user});
 });
 
 module.exports = router;
