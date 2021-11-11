@@ -6,7 +6,7 @@ router.get('/', (req, res, next)=>{
     if(req.isAuthenticated()) return next();
     res.redirect("/login");
   }, (req, res) => {
-    res.render('search', { title: 'Buscando' });
+    res.render('search', { title: 'Buscando', user: req.user });
   });
   
 module.exports = router;

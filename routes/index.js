@@ -46,7 +46,7 @@ router.post('/signup', passport.authenticate('local-signup', {
 
 
 router.get('/', isLoggedIn, (req, res, next)=>{
-  res.render('home', { title: 'Lessa' })
+  res.render('home', { title: 'Lessa', user: req.user })
 })
 
 router.get('/logout', function(req, res){

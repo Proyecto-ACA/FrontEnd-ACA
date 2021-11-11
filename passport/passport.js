@@ -15,7 +15,7 @@ module.exports = function (passport) {
         axios.post(api+'users/userid',{id: id})
         .then((user)=>{
             if (user) {
-                done(null, user);
+                done(null, user.data.data);
             } else {
                 done(user.errors, null);
             }
