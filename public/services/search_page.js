@@ -10,11 +10,11 @@ axios.get(api+'category/getbyName?name='+last_segment)
         response.data.map(function (category) 
         {
           return (        
-          '<div class="grid-item">'+
-            '<div class="card" style="width: 18rem;">'+
-              '<a href="/catalogo?id='+category.id+'"><img class="card-img-top" src="'+category.image+'" alt="Card image cap"/>'
-                +'<div class="card-body">'
-                  +'<h5 class="card-title">'+category.name+'</h5>'
+          '<div class="col-4 p-2">'+
+            '<div class="card" style="width: 22rem; height: 8rem">'+
+              '<a class="contenedor" href="/catalogo?id='+category.id+'"><img class="card-img-top" src="'+category.image+'" alt="Card image cap"/>'
+                +'<div class="centrado">'
+                  +'<h5 class="h5-aux">'+category.name+'</h5>'
                 +'</div></a></div>'
           +'</div>'
           );
@@ -34,7 +34,7 @@ axios.get(api+'signs/getbyName?name='+last_segment)
               '<div class="card" style="width: 20rem; height: 20rem">'+
                 '<a class="contenedor" href="catalogo/palabra?id='+signs.id+'"><img class="card-img-top" src="'+signs.image+'" alt="Card image cap"/>'
                   +'<div class="centrado">'
-                    +'<h5>'+((signs.name.length == 1)?"":signs.name)+'</h5>'
+                    +'<h5 class="h5-aux">'+((signs.name.length == 1)?"":signs.name)+'</h5>'
                   +'</div></a></div>'
             +'</div>'
             );
