@@ -4,14 +4,16 @@ var last_segment = url_array[url_array.length-1];  // Get the last part of the a
 // alert( last_segment ); // Alert last segment
 // alert(api+'signs/getAll?id='+last_segment);
 
-axios.get(api+'lesson/lesson/getOne/'+last_segment)
-      .then(function (response) {
-          console.log('responce one', response);
-        document.getElementById('id').value = response.data.id;
-        document.getElementById('name').value = response.data.name;
-        document.getElementById('image').value= response.data.image;
+axios.get(api+'lesson/lesson/getOne?id='+last_segment)
+      .then( (response) => {
+        console.log('responce one', response.data[0]);
+        document.getElementById('name').value = response.data[0].name;
+        document.getElementById('image').value= response.data[0].image;
+        document.getElementById('description').value= response.data[0].image;
+        document.getElementById('category').value= response.data[0].category.id;
+        document.getElementById('level').value= response.data[0].level.id;
       })
-    .catch(function (err) {
+    .catch( (err) => {
           document.getElementsByClassName('container-fluid').innerHTML = '<li class="text-danger">' + err.message + '</li>';
 });   
 
@@ -61,6 +63,8 @@ axios.get(api+'category/getAll')
         var description = document.getElementById('description').value;
 
         var obj = new Object();
+
+        obj.id = last_segment;
         obj.name = name;
         obj.category = category_id_int;
         obj.level = level_id_int
@@ -71,7 +75,7 @@ axios.get(api+'category/getAll')
         console.log('objeto',obj);
         var jsonString= JSON.stringify(obj);  
 
-        axios.post('http://localhost:3023/lesson/lesson/save', JSON.parse(jsonString))
+        axios.patch('http://localhost:3023/lesson/lesson/update', JSON.parse(jsonString))
         .then(function (res) {
           if (confirm("Se agrego con exito!\n ¿Desea regresar?")) 
           {
