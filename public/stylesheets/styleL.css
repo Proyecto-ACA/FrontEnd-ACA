@@ -527,6 +527,10 @@ a{
     font-size: 2em;
 }
 
+.centrado .h5-aux{
+    font-size: 1em;
+}
+
 .contenedor:before {
 	content:'';
 	position: absolute;
