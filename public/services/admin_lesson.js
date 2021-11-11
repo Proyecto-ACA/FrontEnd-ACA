@@ -5,7 +5,7 @@ function deleteconfirmation(id)
 { 
   if (confirm("¿Seguro que desea eliminar la palabra?")) 
   {   
-    axios.delete(api+'signs/delete',{ params: { id: id } }).then(function (res) {
+    axios.delete(api+'lesson/lesson/delete',{ params: { id: id } }).then(function (res) {
       if (confirm("¡Se elimino con exito!")) 
       {
         location.reload();
@@ -35,7 +35,7 @@ axios.get(api+'lesson/lesson/getAll').then( (response) => {
               '<td>'+signs.category.name+'</td>'+
               '<td>'+signs.level.name+'</td>'+
               //'<td><img class="d-inline-block align-top" src='+signs.sign+' width="30" height="30" alt="" /></td>'+
-              '<td>'+'<a class="btn btn-sm btn-primary" href="/admin/edit_word?id=' +signs.id+'">Editar</a>'+'</td>'+
+              '<td>'+'<a class="btn btn-sm btn-primary" href="/admin/edit_lesson?id=' +signs.id+'">Editar</a>'+'</td>'+
               '<td>'+'<a class="btn btn-sm btn-danger" onClick="deleteconfirmation('+signs.id+')">Eliminar</a>'+'</td>'+
       '</tr>'
     );

@@ -42,6 +42,10 @@ router.get('/lesson', isLoggedIn, (req, res)=>{
   res.render('admin_lesson', { title: 'Administrar de lecciones' });
 });
 
+router.get('/edit_lesson', isLoggedIn, (req, res)=>{
+  res.render('admin_lesson_edit', { title: 'Editar leccion' });
+});
+
 // --------- funcion de login
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
