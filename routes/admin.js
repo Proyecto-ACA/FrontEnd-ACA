@@ -50,6 +50,27 @@ router.get('/add_lesson', isLoggedIn, (req, res)=>{
   res.render('admin_lesson_add', { title: 'Agregar leccion', user: req.user });
 });
 
+router.get('/items_lesson', isLoggedIn, (req, res)=>{
+  res.render('admin_lesson_item', { title: 'Items leccion', user: req.user });
+});
+
+router.get('/add_items_lesson', isLoggedIn, (req, res)=>{
+  res.render('admin_lesson_item_add', { title: 'Agregar Items leccion', user: req.user });
+});
+
+
+router.get('/test', isLoggedIn, (req, res)=>{
+  res.render('admin_test', { title: 'Administrar de Evaluaciones', user: req.user });
+});
+
+router.get('/edit_test', isLoggedIn, (req, res)=>{
+  res.render('admin_test_edit', { title: 'Editar Evaluacion', user: req.user });
+});
+
+router.get('/add_test', isLoggedIn, (req, res)=>{
+  res.render('admin_test_add', { title: 'Agregar Evaluacion', user: req.user });
+});
+
 // --------- funcion de login
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {

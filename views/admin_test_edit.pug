@@ -1,0 +1,28 @@
+extends __layout
+block content
+  .container-fluid
+    .row.flex-nowrap
+      include __sidebar
+      script(src='routes/home.js')
+      // Navbar
+      .navp.col.py-0
+        include __navbar2
+
+        .container-fluid
+          br
+          form.form(role='form' onsubmit='return false;')
+            .form-group
+              .input-group.mb-2
+                span.input-group-text Nombre
+                input#name.form-control(type='text', placeholder='Nombre', aria-label='Nombre', aria-describedby='basic-addon1')
+              .input-group.mb-2
+                span.input-group-text Categoria
+                select#category.form-select
+                  option(value='1') Abecedario
+              .input-group.mb-2
+                span.input-group-text Difficultad
+                select#level.form-select
+                  option(value='1') facil
+            .d-grid.gap-2
+              button#post.btn.btn-primary(type='button') Editar Evaluacion
+  script(src='/services/admin_test_edit.js')

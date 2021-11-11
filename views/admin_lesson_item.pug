@@ -13,20 +13,16 @@ block content
                 div.input-group-prepend.ml-2
                     div(for="filtro_busqueda" class="input-group-text") Búsqueda
                 input(type="text" name="filtro_busqueda" id="filtro_busqueda" class="form-control")
-                button.btn.btn-dark(type='button' onclick="window.location.href='add_lesson/'") Agregar Leccion          
+                button.btn.btn-dark(type='button' onclick="window.location.href='add_item_lesson/'") Agregar Item         
           br
           table.table.table-striped.table_wrap
             thead.thead-dark
               tr
                 th(scope='col') #
-                th(scope='col') Leccion
-                th(scope='col') Descripcion
-                th(scope='col') Imagen
+                th(scope='col') Tipo
+                th(scope='col') Palabra
                 th(scope='col') Categoria
-                th(scope='col') nivel
-                th(scope='col') Items
-                th(scope='col') Editar
                 th(scope='col') Eliminar
             tbody#mytable
         
-  script(src='/services/admin_lesson.js')
+  script(src='/services/admin_lesson_item.js')

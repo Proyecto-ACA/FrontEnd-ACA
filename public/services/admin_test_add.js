@@ -1,24 +1,22 @@
-axios.get(api+'category/getAll')
+axios.get(api+'test/category/getAll')
       .then(function (response) {
           console.log('categorias', response.data);
         document.getElementById('category').innerHTML = 
-        response.data.map(function (category) 
-        {
+        response.data.map( (category) => {
           return (        
                   '<option value="'+category.id+'">'+category.name+'</option>'
           );
         }).join('');
         })
-        .catch(function (err) {
+        .catch( (err) => {
           document.getElementById('obteniendo').innerHTML = '<li class="text-danger">' + err.message + '</li>';
         });
 
-        axios.get(api+'lesson/level/getAll')
-      .then(function (response) {
+        axios.get(api+'test/difficulty/getAll')
+      .then( (response) => {
           console.log('niveles', response.data);
         document.getElementById('level').innerHTML = 
-        response.data.map(function (category) 
-        {
+        response.data.map( (category) => {
           return (        
                   '<option value="'+category.id+'">'+category.name+'</option>'
           );
@@ -28,7 +26,7 @@ axios.get(api+'category/getAll')
           document.getElementById('obteniendo').innerHTML = '<li class="text-danger">' + err.message + '</li>';
         });
 
-(function () {
+( () => {
     document.getElementById('post').onclick = function () 
     {
         var name = document.getElementById('name').value;
@@ -38,24 +36,22 @@ axios.get(api+'category/getAll')
         var level = document.getElementById('level');
         var level_id = category.options[level.selectedIndex].value;
         var level_id_int = parseInt(level_id);
-        var image = document.getElementById('image').value;
-        var description = document.getElementById('description').value;
 
         var obj = new Object();
+
         obj.name = name;
         obj.category = category_id_int;
-        obj.level = level_id_int
-        obj.image = image;
-        obj.description = description;
+        obj.difficulty = level_id_int
 
 
         console.log('objeto',obj);
         var jsonString= JSON.stringify(obj);  
-        axios.post('http://localhost:3023/lesson/lesson/save', JSON.parse(jsonString))
+
+        axios.post('http://localhost:3023/test/test/save', JSON.parse(jsonString))
         .then(function (res) {
           if (confirm("Se agrego con exito!\n ¿Desea regresar?")) 
           {
-            window.open("/admin/lesson","_self");
+            window.open("/admin/test","_self");
           } else {
             
           }

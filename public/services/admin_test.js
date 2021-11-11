@@ -3,46 +3,42 @@ var filtro = document.getElementById('filtro_busqueda')
 
 function deleteconfirmation(id) 
 { 
-  if (confirm("¿Seguro que desea eliminar la leccion?")) 
+  if (confirm("¿Seguro que desea eliminar la test?")) 
   {   
-    axios.delete(api+'lesson/lesson/delete',{ params: { id: id } }).then(function (res) {
+    axios.delete(api+'test/test/delete',{ params: { id: id } }).then( (res) => {
       if (confirm("¡Se elimino con exito!")) 
       {
         location.reload();
       } else {
       }
         })
-    .catch(function (err) {
+    .catch( (err) => {
         alert(JSON.parse(jsonString))
     });
   } else {
     
   }
 }
-axios.get(api+'lesson/lesson/getAll').then( (response) => {
+axios.get(api+'test/test/getAll').then( (response) => {
     console.log('data', response.data);
 
   mytable.innerHTML = 
-  response.data.map(function (signs) 
-  {
+  response.data.map( (signs) => {
     // console.log("Sena : ",signs.name,signs)
     return (        
       '<tr>'+
           '<th scope="row">'+signs.id+'</th>'+
               '<td>'+signs.name+'</td>'+
-              '<td>'+signs.description+'</td>'+
-              '<td><img class="d-inline-block align-top" src='+signs.image+' width="30" height="30" alt="" /></td>'+
               '<td>'+signs.category.name+'</td>'+
-              '<td>'+signs.level.name+'</td>'+
+              '<td>'+signs.difficulty.name+'</td>'+
               //'<td><img class="d-inline-block align-top" src='+signs.sign+' width="30" height="30" alt="" /></td>'+
-              '<td>'+'<a class="btn btn-sm btn-secondary" href="/admin/items_lesson?id=' +signs.id+'">Items</a>'+'</td>'+
-              '<td>'+'<a class="btn btn-sm btn-primary" href="/admin/edit_lesson?id=' +signs.id+'">Editar</a>'+'</td>'+
+              '<td>'+'<a class="btn btn-sm btn-primary" href="/admin/edit_test?id=' +signs.id+'">Editar</a>'+'</td>'+
               '<td>'+'<a class="btn btn-sm btn-danger" onClick="deleteconfirmation('+signs.id+')">Eliminar</a>'+'</td>'+
       '</tr>'
     );
   }).join('');
   })
-  .catch(function (err) {
+  .catch( (err) => {
     mytable.innerHTML = '<li class="text-danger">' + err.message + '</li>';
 });
         
