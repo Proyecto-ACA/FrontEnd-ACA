@@ -37,6 +37,11 @@ router.get('/add_word', isLoggedIn, (req, res)=>{
   res.render('admin_word_add', { title: 'Agregar palabra' });
 });
 
+
+router.get('/lesson', isLoggedIn, (req, res)=>{
+  res.render('admin_lesson', { title: 'Administrar de lecciones' });
+});
+
 // --------- funcion de login
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
