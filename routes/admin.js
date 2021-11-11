@@ -37,6 +37,19 @@ router.get('/add_word', isLoggedIn, (req, res)=>{
   res.render('admin_word_add', { title: 'Agregar palabra' , user: req.user});
 });
 
+
+router.get('/lesson', isLoggedIn, (req, res)=>{
+  res.render('admin_lesson', { title: 'Administrar de lecciones' });
+});
+
+router.get('/edit_lesson', isLoggedIn, (req, res)=>{
+  res.render('admin_lesson_edit', { title: 'Editar leccion' });
+});
+
+router.get('/add_lesson', isLoggedIn, (req, res)=>{
+  res.render('admin_lesson_add', { title: 'Agregar leccion' });
+});
+
 // --------- funcion de login
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
