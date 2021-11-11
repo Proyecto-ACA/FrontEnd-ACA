@@ -39,15 +39,15 @@ router.get('/add_word', isLoggedIn, (req, res)=>{
 
 
 router.get('/lesson', isLoggedIn, (req, res)=>{
-  res.render('admin_lesson', { title: 'Administrar de lecciones' });
+  res.render('admin_lesson', { title: 'Administrar de lecciones', user: req.user });
 });
 
 router.get('/edit_lesson', isLoggedIn, (req, res)=>{
-  res.render('admin_lesson_edit', { title: 'Editar leccion' });
+  res.render('admin_lesson_edit', { title: 'Editar leccion', user: req.user });
 });
 
 router.get('/add_lesson', isLoggedIn, (req, res)=>{
-  res.render('admin_lesson_add', { title: 'Agregar leccion' });
+  res.render('admin_lesson_add', { title: 'Agregar leccion', user: req.user });
 });
 
 // --------- funcion de login
