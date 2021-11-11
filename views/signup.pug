@@ -7,7 +7,7 @@ block content
           img(class="img-login-small align-middle w-30 mb-3" src="../images/Logo.png", alt="")
           h4 
           div.w-90.pt-3
-            form(action="/signup" method="POST")
+            form(action="/signup" method="POST" id="form_signup")
               //- h4 SI-STCF
               div.form-group.mb-2
                 input.form-control(type="text" id="inputUsername" name="username" placeholder="Nombre de usuario" required)
@@ -16,9 +16,10 @@ block content
               div.form-group.mb-2
                 input.form-control(type="password" name="confirm_password" id="confirmInputPass" placeholder="Confirme contraseña" required)
               div.form-group.mb-2.d-flex.align-items-center.justify-content-center.mt-4
-                button.btn.btn-primary.btn-login(type="submit" id="btn_signup") Registrarse
+                button.btn.btn-primary.btn-login(id="btn_signup") Registrarse
             p.footer-login
               a(href="/login") Regresar
             p.footer-login &copy; 2021 MR. DEVART 
+  script(src="/sweetalert2/dist/sweetalert2.all.min.js")
   script(src='/services/confirm_pass.js')
 
