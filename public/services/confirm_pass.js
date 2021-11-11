@@ -1,6 +1,7 @@
 var inputPass = document.getElementById('inputPass');
 var confirmInputPass = document.getElementById('confirmInputPass');
 var btn_signup = document.getElementById('btn_signup');
+var form_signup = document.getElementById('form_signup');
 
 btn_signup.setAttribute("disabled", true)
 
@@ -26,3 +27,23 @@ function validate(){
         btn_signup.setAttribute("disabled", true)
     }
 }
+
+btn_signup.addEventListener("click", (e) => {
+    form_signup.submit();
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 1000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+    
+    Toast.fire({
+        icon: 'success',
+        title: 'Usuario creado con exito'
+    })
+})
