@@ -5,22 +5,21 @@ var form_signup = document.getElementById('form_signup');
 
 btn_signup.setAttribute("disabled", true)
 
-confirmInputPass.addEventListener('keyup', ()=>{
+confirmInputPass.addEventListener('keyup', () => {
     validate();
 })
 
-inputPass.addEventListener('keyup', ()=>{
+inputPass.addEventListener('keyup', () => {
     validate();
 })
 
-function validate(){
-    if(confirmInputPass.value == inputPass.value){
+function validate() {
+    if (confirmInputPass.value == inputPass.value) {
         confirmInputPass.classList.remove('failedpass')
         inputPass.classList.add('successpass')
         confirmInputPass.classList.add('successpass')
         btn_signup.removeAttribute("disabled");
-    }
-    else{
+    } else {
         confirmInputPass.classList.remove('successpass')
         inputPass.classList.remove('successpass')
         confirmInputPass.classList.add('failedpass')
@@ -30,20 +29,14 @@ function validate(){
 
 btn_signup.addEventListener("click", (e) => {
     form_signup.submit();
-    const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 1000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-            toast.addEventListener('mouseenter', Swal.stopTimer)
-            toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
-    })
-    
-    Toast.fire({
+    Swal.fire({
+        title: 'Uusario creado!',
+        timer: 2000,
         icon: 'success',
-        title: 'Usuario creado con exito'
+        timerProgressBar: true,
+        showConfirmButton: false,
+        willClose: () => {
+            clearInterval(timerInterval)
+        }
     })
 })

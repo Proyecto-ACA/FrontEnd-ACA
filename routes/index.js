@@ -52,7 +52,7 @@ router.get('/', isLoggedIn, (req, res, next)=>{
 router.get('/logout', function(req, res){
   req.logout();
   res.redirect('/');
-});
+}); 
 
 // ------------- Funcion de logueo
 function isLoggedIn(req, res, next) {

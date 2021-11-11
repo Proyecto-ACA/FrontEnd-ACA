@@ -7,6 +7,6 @@ router.get('/', (req, res, next)=>{
     res.redirect("/login");
   }, (req, res) => {
     res.render('search', { title: 'Buscando', user: req.user });
-  });
+  }); 
   
 module.exports = router;
