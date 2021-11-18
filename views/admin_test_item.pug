@@ -1,4 +1,3 @@
-
 extends __layout
 block content
   .container-fluid
@@ -14,18 +13,15 @@ block content
                 div.input-group-prepend.ml-2
                     div(for="filtro_busqueda" class="input-group-text") Búsqueda
                 input(type="text" name="filtro_busqueda" id="filtro_busqueda" class="form-control")
-                button.btn.btn-dark(type='button' onclick="window.location.href='add_test/'") Agregar Test          
+                button.btn.btn-dark(type='button' onclick="addItemOnClick()") Agregar Item         
           br
           table.table.table-striped.table_wrap
             thead.thead-dark
               tr
                 th(scope='col') #
-                th(scope='col') Test
-                th(scope='col') Categoria
-                th(scope='col') Dificultad
-                th(scope='col') Items
-                th(scope='col') Editar
+                th(scope='col') Enunciado
+                th(scope='col') Palabra
                 th(scope='col') Eliminar
             tbody#mytable
         
-  script(src='/services/admin_test.js')
+  script(src='/services/admin_test_item.js')
