@@ -57,14 +57,18 @@ function aceptar(parser){
     var jsonString= JSON.stringify(parser); 
     axios.post(api + 'test/testxquestion/save', JSON.parse(jsonString))
         .then(function (res) {
-          if (confirm("Se agrego con exito!\n ¿Desea regresar?")) 
-          {
-            window.open("/admin/items_test?id=" + last_segment,"_self");
-          } else {
+        if (confirm("Se agrego con exito!\n ¿Desea regresar?")) 
+        {
+            goBack();
+        } else {
             
-          }
+        }
             })
         .catch( (err) => {
             alert(JSON.parse(jsonString))
         });
+}
+
+function goBack() {
+    window.open("/admin/items_test?id=" + last_segment,"_self");
 }

@@ -62,3 +62,7 @@ function addItemOnClick(){
 }
 
 filtro_busqueda.addEventListener('keyup',filtrar);
+
+function goBack() {
+  window.open("/admin/test","_self");
+}

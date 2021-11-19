@@ -93,3 +93,7 @@ function itemclassdisplay(){
         itemvideo.style.display = ""
     }
 }
+
+function goBack() {
+    window.open("/admin/items_lesson?id=" + last_segment,"_self");
+}
