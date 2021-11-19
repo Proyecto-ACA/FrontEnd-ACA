@@ -55,9 +55,19 @@ router.get('/items_lesson', isLoggedIn, (req, res)=>{
 });
 
 router.get('/add_items_lesson', isLoggedIn, (req, res)=>{
+  console.log('hola, mundo ;v');
+  console.log('usuario: ' , req.user);
   res.render('admin_lesson_item_add', { title: 'Agregar Items leccion', user: req.user });
+  /*try {
+    res.render('admin_litem_add', { title: 'Agregar Items leccion', user: req.user }, null, (err)=>{
+      console.log(err);
+    })
+  }
+  catch (err) {
+    console.log(err);
+  }*/
+  
 });
-
 
 router.get('/test', isLoggedIn, (req, res)=>{
   res.render('admin_test', { title: 'Administrar de Evaluaciones', user: req.user });

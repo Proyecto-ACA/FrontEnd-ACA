@@ -56,4 +56,10 @@ const filtrar = () => {
   }
 }
 
+function addItemOnClick(){
+  //return last_segment;
+  window.location.href='/admin/add_items_lesson?id='+last_segment;
+  //window.open("/admin/add_items_lesson?id="+last_segment);
+}
+
 filtro_busqueda.addEventListener('keyup',filtrar);

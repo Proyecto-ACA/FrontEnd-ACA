@@ -36,7 +36,7 @@ axios.get(api+'category/getAll')
         var category_id = category.options[category.selectedIndex].value;
         var category_id_int = parseInt(category_id);
         var level = document.getElementById('level');
-        var level_id = category.options[level.selectedIndex].value;
+        var level_id = level.options[level.selectedIndex].value;
         var level_id_int = parseInt(level_id);
         var image = document.getElementById('image').value;
         var description = document.getElementById('description').value;
