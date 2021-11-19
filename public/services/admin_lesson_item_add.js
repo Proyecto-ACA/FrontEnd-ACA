@@ -1,7 +1,13 @@
 var full_url = document.URL; // Get current url
 var url_array = full_url.split('=') // Split the string into an array with / as separator
 var last_segment = url_array[url_array.length - 1]; // Get the last part of the array (-1)
+var mytype = document.getElementById("mytype");
+var itemword = document.getElementById("itemword");
+var itemvideo = document.getElementById("itemvideo");
 
+mytype.addEventListener("change", function() {
+    itemclassdisplay();
+});
 
 axios.get(api + 'signs/getAllId')
     .then((response) => {
@@ -75,4 +81,15 @@ function aceptar(parser) {
         .catch((err) => {
             alert(JSON.parse(jsonString))
         });
+}
+
+
+function itemclassdisplay(){
+    if(mytype.value == "1"){
+        itemvideo.style.display = "none";
+        itemword.style.display = "";
+    } else if(mytype.value == "2"){
+        itemword.style.display = "none";
+        itemvideo.style.display = ""
+    }
 }
