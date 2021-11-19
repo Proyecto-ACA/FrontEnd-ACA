@@ -51,7 +51,7 @@ axios.get(api+'category/getAll')
 
         console.log('objeto',obj);
         var jsonString= JSON.stringify(obj);  
-        axios.post('http://localhost:3023/lesson/lesson/save', JSON.parse(jsonString))
+        axios.post(api + 'lesson/lesson/save', JSON.parse(jsonString))
         .then(function (res) {
           if (confirm("Se agrego con exito!\n ¿Desea regresar?")) 
           {

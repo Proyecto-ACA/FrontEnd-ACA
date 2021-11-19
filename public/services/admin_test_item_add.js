@@ -31,7 +31,7 @@ axios.get(api+'signs/getAllId')
         obj.sign = level_id_int 
 
         var myquestion= JSON.stringify(obj);  
-        axios.post('http://localhost:3023/test/question/save', JSON.parse(myquestion))
+        axios.post(api + 'test/question/save', JSON.parse(myquestion))
             .then( (res) => {
                 console.log('question guardado', res.data.data.id);
                 var myQuestionSaveItem = new Object();
@@ -55,7 +55,7 @@ axios.get(api+'signs/getAllId')
 function aceptar(parser){
     console.log('data a guardar:', parser);
     var jsonString= JSON.stringify(parser); 
-    axios.post('http://localhost:3023/test/testxquestion/save', JSON.parse(jsonString))
+    axios.post(api + 'test/testxquestion/save', JSON.parse(jsonString))
         .then(function (res) {
           if (confirm("Se agrego con exito!\n ¿Desea regresar?")) 
           {
