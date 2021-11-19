@@ -1,25 +1,29 @@
+var full_url = document.URL; // Get current url
+var url_array = full_url.split('=') // Split the string into an array with / as separator
+var last_segment = url_array[url_array.length-1];  // Get the last part of the array (-1)
+
 var mytable = document.getElementById('mytable');
 var filtro = document.getElementById('filtro_busqueda')
 
 function deleteconfirmation(id) 
 { 
-  if (confirm("¿Seguro que desea eliminar la test?")) 
+  if (confirm("¿Seguro que desea eliminar el item de leccion?")) 
   {   
-    axios.delete(api+'test/test/delete',{ params: { id: id } }).then( (res) => {
+    axios.delete(api+'test/testxquestion/delete',{ params: { id: id } }).then(function (res) {
       if (confirm("¡Se elimino con exito!")) 
       {
         location.reload();
       } else {
       }
         })
-    .catch( (err) => {
+    .catch(function (err) {
         alert(JSON.parse(jsonString))
     });
   } else {
     
   }
 }
-axios.get(api+'test/test/getAll').then( (response) => {
+axios.get(api+'test/testxquestion/getByTest',{ params: { test: last_segment } }).then( (response) => {
     console.log('data', response.data);
 
   mytable.innerHTML = 
@@ -28,17 +32,14 @@ axios.get(api+'test/test/getAll').then( (response) => {
     return (        
       '<tr>'+
           '<th scope="row">'+signs.id+'</th>'+
-              '<td>'+signs.name+'</td>'+
-              '<td>'+signs.category.name+'</td>'+
-              '<td>'+signs.difficulty.name+'</td>'+
-              '<td>'+'<a class="btn btn-sm btn-secondary" href="/admin/items_test?id=' +signs.id+'">Items</a>'+'</td>'+
-              '<td>'+'<a class="btn btn-sm btn-primary" href="/admin/edit_test?id=' +signs.id+'">Editar</a>'+'</td>'+
+              '<td>'+signs.question.statement+'</td>'+
+              '<td>'+signs.question.sign.name+'</td>'+
               '<td>'+'<a class="btn btn-sm btn-danger" onClick="deleteconfirmation('+signs.id+')">Eliminar</a>'+'</td>'+
       '</tr>'
     );
   }).join('');
   })
-  .catch( (err) => {
+  .catch(function (err) {
     mytable.innerHTML = '<li class="text-danger">' + err.message + '</li>';
 });
         
@@ -52,6 +53,12 @@ const filtrar = () => {
       mytable.children[i].style.display = 'none'
   }
   }
+}
+
+function addItemOnClick(){
+  //return last_segment;
+  window.location.href='/admin/add_items_test?id='+last_segment;
+  //window.open("/admin/add_items_lesson?id="+last_segment);
 }
 
 filtro_busqueda.addEventListener('keyup',filtrar);

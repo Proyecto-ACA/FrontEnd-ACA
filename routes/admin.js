@@ -81,6 +81,13 @@ router.get('/add_test', isLoggedIn, (req, res)=>{
   res.render('admin_test_add', { title: 'Agregar Evaluacion', user: req.user });
 });
 
+router.get('/items_test', isLoggedIn, (req, res)=>{
+  res.render('admin_test_item', { title: 'Items test', user: req.user });
+});
+
+router.get('/add_items_test', isLoggedIn, (req, res)=>{
+  res.render('admin_test_item_add', { title: 'Agregar Items test', user: req.user });
+});
 // --------- funcion de login
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
