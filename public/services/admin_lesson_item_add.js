@@ -78,3 +78,7 @@ function aceptar(parser){
             alert(JSON.parse(jsonString))
         });
 }
+
+function goBack() {
+    window.open("/admin/items_lesson?id=" + last_segment,"_self");
+}
