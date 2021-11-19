@@ -47,7 +47,7 @@ axios.get(api+'test/category/getAll')
         console.log('objeto',obj);
         var jsonString= JSON.stringify(obj);  
 
-        axios.post('http://localhost:3023/test/test/save', JSON.parse(jsonString))
+        axios.post(api + 'test/test/save', JSON.parse(jsonString))
         .then(function (res) {
           if (confirm("Se agrego con exito!\n ¿Desea regresar?")) 
           {

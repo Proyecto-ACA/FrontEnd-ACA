@@ -45,7 +45,7 @@ axios.get(api+'signs/getAllId')
             myvideo.sign = image;
             myvideo.active = 2;
             var videosign= JSON.stringify(myvideo);  
-            axios.post('http://localhost:3023/signs/save', JSON.parse(videosign))
+            axios.post(api + 'signs/save', JSON.parse(videosign))
                 .then( (res) => {
                     console.log('video guardado', res.data.data.id);
                     obj.sign = res.data.data.id
@@ -65,7 +65,7 @@ axios.get(api+'signs/getAllId')
 function aceptar(parser){
     console.log('data a guardar:', parser);
     var jsonString= JSON.stringify(parser); 
-    axios.post('http://localhost:3023/lesson/lessonsign/save', JSON.parse(jsonString))
+    axios.post(api + 'lesson/lessonsign/save', JSON.parse(jsonString))
         .then(function (res) {
           if (confirm("Se agrego con exito!\n ¿Desea regresar?")) 
           {

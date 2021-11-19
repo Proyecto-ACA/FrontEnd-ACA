@@ -75,7 +75,7 @@ axios.get(api+'category/getAll')
         console.log('objeto',obj);
         var jsonString= JSON.stringify(obj);  
 
-        axios.patch('http://localhost:3023/lesson/lesson/update', JSON.parse(jsonString))
+        axios.patch(api + 'lesson/lesson/update', JSON.parse(jsonString))
         .then(function (res) {
           if (confirm("Se agrego con exito!\n ¿Desea regresar?")) 
           {

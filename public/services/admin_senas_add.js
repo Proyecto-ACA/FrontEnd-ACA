@@ -30,7 +30,7 @@ axios.get(api+'category/getAll')
         obj.sign = sign;
 
         var jsonString= JSON.stringify(obj);      
-        axios.post('http://localhost:3023/signs/save', JSON.parse(jsonString))
+        axios.post(api + 'signs/save', JSON.parse(jsonString))
         .then(function (res) {
           if (confirm("Se agrego con exito!\n ¿Desea regresar?")) 
           {

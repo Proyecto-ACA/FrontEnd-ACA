@@ -53,7 +53,7 @@ axios.get(api+'signs/getOne/'+last_segment)
         obj.sign = get_sign;
 
         var jsonString= JSON.stringify(obj);      
-        axios.patch('http://localhost:3023/signs/update', JSON.parse(jsonString))
+        axios.patch(api + 'signs/update', JSON.parse(jsonString))
         .then(function (res) {
           if (confirm("Se cambio con exito!\n ¿Desea regresar?")) 
           {
