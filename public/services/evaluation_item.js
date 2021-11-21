@@ -37,10 +37,11 @@ function rederSign(flag){
   //agregar botones verdadero flaso y llamar myRespuesta con res= 1 verdadero, 0 falso
   console.log('es verdadero?: ', verdadero);
   console.log('repsuesta item', respuesaItem);
+  console.log('pregunta item', question_element);
   container.innerHTML =
         '<div class="flex-container">'+
             '<div class="flex-child magenta">'+
-                '<img class="imga" src="'+ respuesaItem.sign.sign + '" alt="">'+
+                '<img class="imga" src="'+ question_element.sign.sign + '" alt="">'+
             '</div>'+
         '<div class="flex-child green">'+ navegacion() +
         '<h1 class="titulo fs-12 p-l-25 text-black"> pregunta: '+(actual + 1)+'/'+ data.length +'</h1>'+
