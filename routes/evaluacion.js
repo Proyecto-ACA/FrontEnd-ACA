@@ -10,7 +10,7 @@ router.get('/evaluacion', isLoggedIn, function(req, res, next) {
   res.render('evaluacion', { title: 'Evaluacion' , user: req.user});
 });
 
-router.get('/evaluacion_item', isLoggedIn, (req, res, next)=>{
+router.get('/evaluacion_item', /* isLoggedIn, */ (req, res, next)=>{
   res.render('evaluacion', { title: 'Evaluacion' , user: req.user});
 });
 

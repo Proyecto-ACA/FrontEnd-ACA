@@ -39,6 +39,55 @@ function rederSign(flag){
   console.log('repsuesta item', respuesaItem);
   console.log('pregunta item', question_element);
   container.innerHTML =
+    `<div id="carouselExampleIndicators" class="carousel slide w-100 h-100 mt-3 bg-dark" data-ride="carousel">
+        <div class="carousel-inner h-100">
+          <div class="carousel-item active h-100">
+            <a class="carousel-control-next" onclick="goNextItem()" role="button" data-slide="next">
+              <span class="sr-only">Siguiente</span>
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </a>
+            <div class="w-100 h-100">
+              <div class="row ">
+                <div class="w-100 text-center col-12">
+                  <h3 class="text-light mt-2">pregunta: ${actual + 1}/${data.length}</h3>
+                </div>
+                <div class="col-6 row">
+                  <div class="col-3">
+                  </div>
+                  <div class="col-9 bg-dark d-flex align-items-center justify-content-center" style="height: 75vh" >
+                    <img class="w-100 h-75" src="${question_element.sign.sign}" alt="First slide">
+                  </div>
+                  </div>
+                  <div class="col-6 row">
+                    <div class="col-1"></div>
+                    <div class="col-8">
+                      <br>
+                      <h5 class="text-white">La seña corresponde a esta palabra: ${respuesaItem.sign.name}</h5>
+                      <div class="imgContainer text-center"> 
+                        <img src="${respuesaItem.sign.image}" alt="" style="width: 40%"> 
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>`
+/*  container.innerHTML =
+
+<div class="containera d-flex align-items-center justify-content-center flex-wrap" style="height: 75vh">
+                        <div class="boxa">
+                            <div class="bodya">
+                                <div class="imgContainer"> 
+                                  <img src="${respuesaItem.sign.image}" alt=""> </div>
+                                    <div class="contenta d-flex flex-column align-items-center justify-content-center">
+                                        <div>
+                                            <p class="fs-6 text-white">${respuesaItem.sign.name}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      
         '<div class="flex-container">'+
             '<div class="flex-child magenta">'+
                 '<img class="imga" src="'+ question_element.sign.sign + '" alt="">'+
@@ -61,6 +110,8 @@ function rederSign(flag){
                 '<div> <button onclick="myRespuesta(1)">Verdadero</button> <button onclick="myRespuesta(2)">Falso</button> </div>'+
             '</div>'+
         '</div>'
+     */
+    
         
 }
 
