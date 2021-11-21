@@ -58,9 +58,17 @@ function rederSign(flag){
                     <div class="col-2"></div>
                     <div class="col-9">
                       <br>
-                      <h5 class="text-white">La seña corresponde a esta palabra: ${respuesaItem.sign.name}</h5>
+                      <br>
+                      <h5 class="text-white text-center">La seña corresponde a esta palabra: ${respuesaItem.sign.name}</h5>
                       <div class="imgContainer text-center"> 
                         <img src="${respuesaItem.sign.image}" alt="" style="width: 40%"> 
+                      </div>
+                      <br>
+                      <div class="w-100"> 
+                        <button type="button" class="btn btn-success w-100 mt-3" onclick="myRespuesta(1)">Verdadero</button> 
+                      </div>
+                      <div class="w-100"> 
+                        <button type="button" class="btn btn-danger w-100 mt-3" onclick="myRespuesta(2)">Falso</button> 
                       </div>
                     </div>
                   </div>
