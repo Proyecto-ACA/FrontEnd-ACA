@@ -241,7 +241,7 @@ function myRespuestaOption(flag){
   console.log("item_name", item_name);
   item_name.textContent = data[flag].question.sign.name
   let item_image = document.getElementById('container_item_image');// obtener imagen y nombre para cambiar
-  item_image.src = data[flag].question.sign.name
+  item_image.src = data[flag].question.sign.image
   respuesta = flag;
 }
 
