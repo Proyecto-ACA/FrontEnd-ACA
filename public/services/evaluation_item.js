@@ -269,8 +269,12 @@ function rederMovie(flag) {
 
   container.innerHTML =
   `<div id="carouselExampleIndicators" class="carousel slide w-100 h-100 mt-3 bg-dark" data-ride="carousel">
-  <div class="carousel-inner h-100">
-    <div class="carousel-item active h-100">
+    <div class="carousel-inner h-100">
+      <div class="carousel-item active h-100">
+        <a class="carousel-control-next" id="nextbtn" onclick="myRespuesta(1)"  style="display: none" role="button" data-slide="next">
+          <span class="sr-only">Siguiente</span>
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </a>
       <div class="w-100 h-100">
         <div class="row ">
           <div class="w-100 text-center col-12">
@@ -284,13 +288,13 @@ function rederMovie(flag) {
             </div>
             </div>
             <div class="col-6 row">
-              <div class="col-2"></div>
-              <div class="col-9">
+              <div class="col-1"></div>
+              <div class="col-8">
                 <br>
                 <br>
                 <h5 class="text-white text-center">Elige la respuesta correcta</h5>
-                <div class="imgContainer text-center" id="container_item_image"> 
-                  <img src="/images/question.png" alt="" style="width: 40%"> 
+                <div class="imgContainer text-center" style="height: 30%"> 
+                  <img src="/images/question.png" alt="" style="width: 40%" id="container_item_image"> 
                 </div>
                 <br>
                 <div id="container_button" class="w-100">  </div>
@@ -338,8 +342,10 @@ function myRespuestaOption(flag) {
   /* let item_name = document.getElementById('container_item_description'); // obtener imagen y nombre para cambiar
   console.log("item_name", item_name); */
   //item_name.textContent = data[flag].question.sign.name
+  let next = document.getElementById("nextbtn");
   let item_image = document.getElementById('container_item_image'); // obtener imagen y nombre para cambiar
   item_image.src = data[flag].question.sign.image
+  next.style.display = '';
   respuesta = flag;
 }
 
