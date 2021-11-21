@@ -212,10 +212,10 @@ function rederMovie(flag){
                 '<div class="boxa">'+
                     '<div class="bodya">'+
                         '<div class="imgContainer"> '+
-                        '<img src="'+"element.image"+'" alt="" id="container_item_image"> </div>'+
+                        '<img src="'+"/images/question.png"+'" alt="" id="container_item_image"> </div>'+
                             '<div class="contenta d-flex flex-column align-items-center justify-content-center">'+
                                 '<div>'+
-                                  '<p class="fs-6 text-white" id="container_item_description">'+"element.description"+'</p>'+
+                                  '<p class="fs-6 text-white" id="container_item_description">'+"?"+'</p>'+
                                 '</div>'+
                             '</div>'+
                         '</div>'+
