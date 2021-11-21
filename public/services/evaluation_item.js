@@ -201,14 +201,14 @@ function rederMovie(flag){
 
   console.log('opciones', opciones);
   console.log('element', question_element);
-  
+
   container.innerHTML =
         '<div class="flex-container">'+
             '<div class="flex-child magenta">'+
-                '<img class="imga" src="'+question_element.sign+'" alt="">'+
+                '<img class="imga" src="'+ question_element.sign.sign + '" alt="">'+
             '</div>'+
         '<div class="flex-child green">'+ navegacion() +
-        '<h1 class="titulo fs-12 p-l-25 text-black" id="container_item_name">'+"?"+'</h1>'+
+        '<h1 class="titulo fs-12 p-l-25 text-black"> pregunta: '+(actual + 1)+'/'+ data.length +'</h1>'+
             '<div class="containera d-flex align-items-center justify-content-center flex-wrap">'+
                 '<div class="boxa">'+
                     '<div class="bodya">'+
@@ -216,7 +216,7 @@ function rederMovie(flag){
                         '<img src="'+"element.image"+'" alt="" id="container_item_image"> </div>'+
                             '<div class="contenta d-flex flex-column align-items-center justify-content-center">'+
                                 '<div>'+
-                                    '<p class="fs-6 text-white" id="container_item_description">'+"element.description"+'</p>'+
+                                  '<p class="fs-6 text-white" id="container_item_description">'+"element.description"+'</p>'+
                                 '</div>'+
                             '</div>'+
                         '</div>'+
@@ -226,6 +226,7 @@ function rederMovie(flag){
                 '<div id="container_button_save" onclick="myRespuesta(1)">  Siguiente </div>'+
             '</div>'+
         '</div>'
+        
         let buttonsoptions = document.getElementById('obteniendo');
         buttonsoptions.innerHTML = 
           opciones.map( (the_button) => {
@@ -238,9 +239,9 @@ function rederMovie(flag){
 
 function myRespuestaOption(flag){
   let item_name = document.getElementById('container_item_description');// obtener imagen y nombre para cambiar
-  item_name.textContent = data[flag].question.sign.name
+  item_name.innerText = data[flag].question.sign.name
   let item_image = document.getElementById('container_item_image');// obtener imagen y nombre para cambiar
-  item_image.textContent = data[flag].question.sign.name
+  item_image.src = data[flag].question.sign.name
   respuesta = flag;
 }
 
