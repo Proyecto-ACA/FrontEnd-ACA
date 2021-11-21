@@ -75,16 +75,15 @@ function myRespuesta(res) {
       }
     }
 
-    if (actual + 1 >= data.length){
-      showResult()
-    } else {
-      goNextItem();
-    }
-
   } else if (test.category.category == 2) { //opcion multiple
     if (actual == respuesta){
       puntaje ++;
     }
+  }
+  if (actual + 1 >= data.length){
+    showResult()
+  } else {
+    goNextItem();
   }
   console.log('mi puntuacion', puntaje);
   //siguiente pregunta :v
