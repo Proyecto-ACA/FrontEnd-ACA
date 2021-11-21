@@ -57,6 +57,7 @@ function rederSign(flag){
                         '</div>'+
                     '</div>'+
                 '</div>'+
+                '<div> <button>Verdadero</button> <button>Falso</button> </div>'+
             '</div>'+
         '</div>'
 }
