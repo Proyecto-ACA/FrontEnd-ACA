@@ -209,7 +209,8 @@ ion-icon {
 /*a*/
 
 .iclose{
-    color: red;
+    margin-top: 3px;
+    color: rgba(100, 100, 100, 0.87);
     font-size: 30px;
 }
 a{
@@ -276,9 +277,9 @@ a{
 
 .containera .boxa {
     position: relative;
-    width: 400px;
-    height: 400px;
-    margin: 20px;
+    width: 24em;
+    height: 24em;
+    margin: 1em;
     margin-top: 25px;
     transform-style: preserve-3d;
     perspective: 1000px;
