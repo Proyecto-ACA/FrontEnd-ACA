@@ -48,10 +48,10 @@ function rederSign(flag){
                 '<div class="boxa">'+
                     '<div class="bodya">'+
                         '<div class="imgContainer"> '+
-                        '<img src="'+respuesaItem.image+'" alt=""> </div>'+
+                        '<img src="'+respuesaItem.sign.image+'" alt=""> </div>'+
                             '<div class="contenta d-flex flex-column align-items-center justify-content-center">'+
                                 '<div>'+
-                                    '<p class="fs-6 text-white">'+respuesaItem.description+'</p>'+
+                                    '<p class="fs-6 text-white">'+respuesaItem.sign.name+'</p>'+
                                 '</div>'+
                             '</div>'+
                         '</div>'+
