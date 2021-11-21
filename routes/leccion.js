@@ -14,7 +14,7 @@ router.get('/leccion1', isLoggedIn, function(req, res, next) {
   res.render('leccion1', { title: 'Leccion' , user: req.user});
 });
 
-router.get('/leccion_item'/*, isLoggedIn*/, (req, res, next)=>{
+router.get('/leccion_item', isLoggedIn, (req, res, next)=>{
   res.render('lesson_list', { title: 'Leccion' , user: req.user});
 });
 

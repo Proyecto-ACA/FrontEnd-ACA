@@ -6,7 +6,7 @@ router.get('/palabra', isLoggedIn, (req, res, next)=>{
   res.render('sign', { title: 'Seña', user: req.user });
 });
 
-router.get('/categoria', (req, res, next)=>{})
+router.get('/categoria', isLoggedIn, (req, res, next)=>{})
 
 router.get('/', isLoggedIn, (req, res, next)=>{
   res.render('sign_list', { title: 'Categoria', user: req.user });
