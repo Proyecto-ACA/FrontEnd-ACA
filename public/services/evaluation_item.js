@@ -42,25 +42,21 @@ function rederSign(flag){
     `<div id="carouselExampleIndicators" class="carousel slide w-100 h-100 mt-3 bg-dark" data-ride="carousel">
         <div class="carousel-inner h-100">
           <div class="carousel-item active h-100">
-            <a class="carousel-control-next" onclick="goNextItem()" role="button" data-slide="next">
-              <span class="sr-only">Siguiente</span>
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </a>
             <div class="w-100 h-100">
               <div class="row ">
                 <div class="w-100 text-center col-12">
                   <h3 class="text-light mt-2">pregunta: ${actual + 1}/${data.length}</h3>
                 </div>
                 <div class="col-6 row">
-                  <div class="col-3">
+                  <div class="col-2">
                   </div>
                   <div class="col-9 bg-dark d-flex align-items-center justify-content-center" style="height: 75vh" >
                     <img class="w-100 h-75" src="${question_element.sign.sign}" alt="First slide">
                   </div>
                   </div>
                   <div class="col-6 row">
-                    <div class="col-1"></div>
-                    <div class="col-8">
+                    <div class="col-2"></div>
+                    <div class="col-9">
                       <br>
                       <h5 class="text-white">La seña corresponde a esta palabra: ${respuesaItem.sign.name}</h5>
                       <div class="imgContainer text-center"> 
