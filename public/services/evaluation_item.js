@@ -272,7 +272,7 @@ function rederMovie(flag) {
     <div class="carousel-inner h-100">
       <div class="carousel-item active h-100">
         <a class="carousel-control-next" id="nextbtn" onclick="myRespuesta(1)"  style="display: none" role="button" data-slide="next">
-          <span class="sr-only">Siguiente</span>
+          <span class="sr-only">Aceptar</span>
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
         </a>
       <div class="w-100 h-100">
