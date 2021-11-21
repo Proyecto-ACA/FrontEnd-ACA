@@ -160,7 +160,7 @@ function rederMovie(flag){
   let opciones = []
   let opcionVerdaderaFlag = true;
   question_element = data[flag].sign;
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 4 && i < data.length; i++) {
     if (opcionVerdaderaFlag && i==3){
       opciones.push(actual);
       break;
