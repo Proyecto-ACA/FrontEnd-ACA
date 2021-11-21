@@ -59,3 +59,7 @@ const filtrar = () => {
 }
 
 filtro_busqueda.addEventListener('keyup',filtrar);
+
+function goBack() {
+  window.open("/","_self");
+}
