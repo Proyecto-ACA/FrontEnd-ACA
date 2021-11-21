@@ -227,7 +227,7 @@ function rederMovie(flag){
             '</div>'+
         '</div>'
         
-        let buttonsoptions = document.getElementById('obteniendo');
+        let buttonsoptions = document.getElementById('container_button');
         buttonsoptions.innerHTML = 
           opciones.map( (the_button) => {
             return (        
@@ -239,7 +239,8 @@ function rederMovie(flag){
 
 function myRespuestaOption(flag){
   let item_name = document.getElementById('container_item_description');// obtener imagen y nombre para cambiar
-  item_name.innerText = data[flag].question.sign.name
+  console.log("item_name", item_name);
+  item_name.textContent = data[flag].question.sign.name
   let item_image = document.getElementById('container_item_image');// obtener imagen y nombre para cambiar
   item_image.src = data[flag].question.sign.name
   respuesta = flag;
