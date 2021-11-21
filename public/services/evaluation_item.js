@@ -74,8 +74,13 @@ function myRespuesta(res) {
         puntaje ++;
       }
     }
-    goNextItem();
-    
+
+    if (actual + 1 >= data.length){
+      showResult()
+    } else {
+      goNextItem();
+    }
+
   } else if (test.category.category == 2) { //opcion multiple
     if (actual == respuesta){
       puntaje ++;
@@ -83,6 +88,11 @@ function myRespuesta(res) {
   }
   console.log('mi puntuacion', puntaje);
   //siguiente pregunta :v
+}
+
+
+function showResult(){
+  console.log('calificacion', puntaje * 10/data.length);
 }
 
 function getItems(){ axios.get(api+'test/testxquestion/getByTest',{ params: { test: last_segment } })
