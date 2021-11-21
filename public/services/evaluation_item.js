@@ -107,7 +107,7 @@ function rederSign(flag){
                         '</div>'+
                     '</div>'+
                 '</div>'+
-                '<div> <button onclick="myRespuesta(1)">Verdadero</button> <button onclick="myRespuesta(2)">Falso</button> </div>'+
+                '<div class="container_button"> <button onclick="myRespuesta(1)">Verdadero</button> <button onclick="myRespuesta(2)">Falso</button> </div>'+
             '</div>'+
         '</div>'
      */
@@ -224,7 +224,7 @@ function getRandomIntNotRepeat(list, m, n){
 function rederMovie(flag){
   let opciones = []
   let opcionVerdaderaFlag = true;
-  question_element = data[flag].sign;
+  question_element = data[flag].question;
   for (let i = 0; i < 4 && i < data.length; i++) {
     if (opcionVerdaderaFlag && i==3){
       opciones.push(actual);
@@ -252,30 +252,52 @@ function rederMovie(flag){
   }
 
   console.log('opciones', opciones);
-  
+  console.log('element', question_element);
+
   container.innerHTML =
         '<div class="flex-container">'+
             '<div class="flex-child magenta">'+
-                '<img class="imga" src="'+element.sign+'" alt="">'+
+                '<img class="imga" src="'+ question_element.sign.sign + '" alt="">'+
             '</div>'+
         '<div class="flex-child green">'+ navegacion() +
-        '<h1 class="titulo fs-12 p-l-25 text-black">'+element.name+'</h1>'+
+        '<h1 class="titulo fs-12 p-l-25 text-black"> pregunta: '+(actual + 1)+'/'+ data.length +'</h1>'+
             '<div class="containera d-flex align-items-center justify-content-center flex-wrap">'+
                 '<div class="boxa">'+
                     '<div class="bodya">'+
                         '<div class="imgContainer"> '+
-                        '<img src="'+element.image+'" alt=""> </div>'+
+                        '<img src="'+"element.image"+'" alt="" id="container_item_image"> </div>'+
                             '<div class="contenta d-flex flex-column align-items-center justify-content-center">'+
                                 '<div>'+
-                                    '<p class="fs-6 text-white">'+element.description+'</p>'+
+                                  '<p class="fs-6 text-white" id="container_item_description">'+"element.description"+'</p>'+
                                 '</div>'+
                             '</div>'+
                         '</div>'+
                     '</div>'+
                 '</div>'+
+                '<div id="container_button">  </div>'+
+                '<div id="container_button_save" onclick="myRespuesta(1)">  Siguiente </div>'+
             '</div>'+
         '</div>'
+        
+        let buttonsoptions = document.getElementById('obteniendo');
+        buttonsoptions.innerHTML = 
+          opciones.map( (the_button) => {
+            return (        
+              `<button onclick="myRespuestaOption(${the_button})">${data[the_button].question.sign.name}</button>`
+            );
+          }).join('');
+  
 }
+
+function myRespuestaOption(flag){
+  let item_name = document.getElementById('container_item_description');// obtener imagen y nombre para cambiar
+  item_name.innerText = data[flag].question.sign.name
+  let item_image = document.getElementById('container_item_image');// obtener imagen y nombre para cambiar
+  item_image.src = data[flag].question.sign.name
+  respuesta = flag;
+}
+
+
 
 getEvaluation();
 
