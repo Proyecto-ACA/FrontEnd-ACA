@@ -58,9 +58,10 @@ function rederSign(flag){
                         '</div>'+
                     '</div>'+
                 '</div>'+
-                '<div> <button class="btn btn-success">Verdadero</button> <button class="btn btn-danger">Falso</button> </div>'+
+                '<div> <button onclick="myRespuesta(1)">Verdadero</button> <button onclick="myRespuesta(2)">Falso</button> </div>'+
             '</div>'+
         '</div>'
+        
 }
 
 function myRespuesta(res) {
@@ -74,12 +75,14 @@ function myRespuesta(res) {
         puntaje ++;
       }
     }
-    console.log('mi puntuacion', puntaje);
+    goNextItem();
+    
   } else if (test.category.category == 2) { //opcion multiple
     if (actual == respuesta){
       puntaje ++;
     }
   }
+  console.log('mi puntuacion', puntaje);
   //siguiente pregunta :v
 }
 
