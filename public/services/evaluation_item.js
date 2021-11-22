@@ -153,7 +153,8 @@ function myRespuesta(res) {
 
 function showResult() {
   console.log('calificacion', puntaje * 10 / data.length);
-  container.innerHTML =
+  if((puntaje * 10 / data.length)>=6){
+    container.innerHTML =
   `<div id="carouselExampleIndicators" class="carousel slide w-100 h-100 mt-3 bg-dark" data-ride="carousel">
       <div class="carousel-inner h-100">
         <div class="carousel-item active h-100">
@@ -163,15 +164,21 @@ function showResult() {
                 <h3 class="text-light mt-2">Resultados</h3>
               </div>
               <div class="col-6 row">
-                <div class="col-2">
+                <div class="col-4">
                 </div>
-                <div class="col-11">
+                <div class="col-11 p-5">
                   <canvas id="myChart4"></canvas>
+                </div>
+                <div class="col-4">
                 </div>
                 </div>
                 <div class="col-6 row">
                   <div class="col-5"></div>
                   <div class="col-11">
+                  <h3 class="text-light mt-2">Has aprobado la evaluacion</h3>
+                  <div class="imgContainer text-center"> 
+                  <img src="https://media.istockphoto.com/photos/silhouette-of-a-man-holding-a-trophy-at-sunset-picture-id1202740292?k=20&m=1202740292&s=612x612&w=0&h=NEvKyErDCYIgK6-Ne9yxO-YvcCRaDqFtvpV7IE6TZig=" alt="" style="width: 60%"> 
+                  </div>
                   <h3 class="text-light mt-2">Tu calificacion es :</h3>
                   <h3 class="text-light mt-2">${puntaje * 10 / data.length}</h3>
                   </div>
@@ -179,8 +186,40 @@ function showResult() {
               </div>
             </div>
           </div>`
-          
-          
+  }else{
+    container.innerHTML =
+  `<div id="carouselExampleIndicators" class="carousel slide w-100 h-100 mt-3 bg-dark" data-ride="carousel">
+      <div class="carousel-inner h-100">
+        <div class="carousel-item active h-100">
+          <div class="w-100 h-100">
+            <div class="row ">
+              <div class="w-100 text-center col-12">
+                <h3 class="text-light mt-2">Resultados</h3>
+              </div>
+              <div class="col-6 row">
+                <div class="col-4">
+                </div>
+                <div class="col-11 p-5">
+                  <canvas id="myChart4"></canvas>
+                </div>
+                <div class="col-4">
+                </div>
+                </div>
+                <div class="col-6 row">
+                  <div class="col-5"></div>
+                  <div class="col-11">
+                  <h3 class="text-light mt-2">Has fallado la evaluacion</h3>
+                  <div class="imgContainer text-center"> 
+                  <img src="https://play-lh.googleusercontent.com/LLWrCaH2ii4D_zaqNWYM6CihD3J5EOcE_ZuCfAoIzk5BDVBm4x2flKqN28JaJECPRR4" alt="" style="width: 60%"> 
+                  </div>
+                  <h3 class="text-light mt-2">Tu calificacion es :</h3>
+                  <h3 class="text-light mt-2">${puntaje * 10 / data.length}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>`
+  }
           const ctx3 = document.getElementById('myChart4').getContext('2d');
           const myChart4= new Chart
           (ctx3,{
