@@ -54,12 +54,14 @@ function goHome() {
 
 function goBackItem() {
   console.log('back');
-  selectTarget(actual - 1);
+  if(actual >= 1)
+    selectTarget(actual - 1);
 }
 
 function goNextItem() {
   console.log('next');
-  selectTarget(actual + 1);
+  if(actual < data.length - 1)
+    selectTarget(actual + 1);
 }
 
 function navegacion() {
@@ -130,28 +132,6 @@ function rederSign(flag) {
               </div>
             </div>
           </div>`
-  /*+ 
-  '<div class="flex-container">'+
-      '<div class="flex-child magenta">'+
-          '<img class="imga" src="'+element.sign+'" alt="">'+
-      '</div>'+
-  '<div class="flex-child green">'+ navegacion() +
-  '<h1 class="titulo fs-12 p-l-25 text-black">'+element.name+'</h1>'+
-      '<div class="containera d-flex align-items-center justify-content-center flex-wrap">'+
-          '<div class="boxa">'+
-              '<div class="bodya">'+
-                  '<div class="imgContainer"> '+
-                  '<img src="'+element.image+'" alt=""> </div>'+
-                      '<div class="contenta d-flex flex-column align-items-center justify-content-center">'+
-                          '<div>'+
-                              '<p class="fs-6 text-white">'+element.description+'</p>'+
-                          '</div>'+
-                      '</div>'+
-                  '</div>'+
-              '</div>'+
-          '</div>'+
-      '</div>'+
-  '</div>'*/
 }
 
 
@@ -183,26 +163,4 @@ function rederMovie(flag) {
         </div>
       </div>
     </div>`
-/* 
-  '<div class="flex-container">' +
-  '<div class="flex-child magenta">' +
-  '<img class="imga" src="' + element.sign + '" alt="">' +
-    '</div>' +
-    '<div class="flex-child green">' + navegacion() +
-    '<h1 class="titulo fs-12 p-l-25 text-black">' + element.name + '</h1>' +
-    '<div class="containera d-flex align-items-center justify-content-center flex-wrap">' +
-    '<div class="boxa">' +
-    '<div class="bodya">' +
-    '<div class="imgContainer"> ' +
-    '<img src="' + element.image + '" alt=""> </div>' +
-    '<div class="contenta d-flex flex-column align-items-center justify-content-center">' +
-    '<div>' +
-    '<p class="fs-6 text-white">' + element.description + '</p>' +
-    '</div>' +
-    '</div>' +
-    '</div>' +
-    '</div>' +
-    '</div>' +
-    '</div>' +
-    '</div>' */
 }

@@ -190,12 +190,14 @@ function goHome() {
 
 function goBackItem() {
   console.log('back');
-  selectTarget(actual - 1);
+  if(actual >= 1)
+    selectTarget(actual - 1);
 }
 
 function goNextItem() {
   console.log('next');
-  selectTarget(actual + 1);
+  if(actual < data.length - 1)
+    selectTarget(actual + 1);
 }
 
 function navegacion() {
