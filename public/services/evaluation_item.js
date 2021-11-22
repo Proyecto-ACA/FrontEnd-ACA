@@ -153,6 +153,82 @@ function myRespuesta(res) {
 
 function showResult() {
   console.log('calificacion', puntaje * 10 / data.length);
+  container.innerHTML =
+  `<div id="carouselExampleIndicators" class="carousel slide w-100 h-100 mt-3 bg-dark" data-ride="carousel">
+      <div class="carousel-inner h-100">
+        <div class="carousel-item active h-100">
+          <div class="w-100 h-100">
+            <div class="row ">
+              <div class="w-100 text-center col-12">
+                <h3 class="text-light mt-2">Resultados</h3>
+              </div>
+              <div class="col-6 row">
+                <div class="col-2">
+                </div>
+                <div class="col-11">
+                  <canvas id="myChart4"></canvas>
+                </div>
+                </div>
+                <div class="col-6 row">
+                  <div class="col-5"></div>
+                  <div class="col-11">
+                  <h3 class="text-light mt-2">Tu calificacion es :</h3>
+                  <h3 class="text-light mt-2">${puntaje * 10 / data.length}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>`
+          
+          
+          const ctx3 = document.getElementById('myChart4').getContext('2d');
+          const myChart4= new Chart
+          (ctx3,{
+            type: 'doughnut',
+            data: 
+            {
+            labels: [
+              'Exito',//Red
+              'Fallo'
+              ],
+              datasets: [{
+                label: 'Resultados',
+                data: [puntaje, data.length-puntaje],
+                backgroundColor: [
+                  'rgb(0, 143, 57)',
+                  'rgb(255, 0, 0)'
+                ],
+                hoverOffset: 4
+              }]
+            }
+            ,
+    
+            options: 
+            {         
+              scale: {
+                ticks: {
+                  min: 0,
+                  max: 10,
+                  max: 10,
+                  stepSize: 1,
+                  beginAtZero: true
+                },
+                pointLabels: { fontSize:10 }
+              }
+              ,
+              plugins: {
+                legend: {
+                  labels: {
+                    // This more specific font property overrides the global property
+                    font: {
+                      size: 12
+                    }}
+                }
+    
+              } 
+            }
+    
+          });
 }
 
 function getItems() {
