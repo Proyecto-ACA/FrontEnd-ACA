@@ -32,8 +32,8 @@ axios.get(api+'test/testxquestion/getByTest',{ params: { test: last_segment } })
     return (        
       '<tr>'+
           '<th scope="row">'+signs.id+'</th>'+
-              '<td>'+signs.question.statement+'</td>'+
-              '<td>'+signs.question.sign.name+'</td>'+
+              '<td  class="w-75">'+signs.question.statement+'</td>'+
+              '<td  class="w-25">'+signs.question.sign.name+'</td>'+
               '<td>'+'<a class="btn btn-sm btn-danger" onClick="deleteconfirmation('+signs.id+')">Eliminar</a>'+'</td>'+
       '</tr>'
     );

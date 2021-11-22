@@ -33,7 +33,7 @@ axios.get(api+'lesson/lessonsign/get',{ params: { lesson: last_segment } }).then
       '<tr>'+
           '<th scope="row">'+signs.id+'</th>'+
               '<td>'+(signs.type==1? 'palabra' : 'video')+'</td>'+
-              '<td>'+signs.sign.name+'</td>'+
+              '<td  class="w-75">'+signs.sign.name+'</td>'+
               '<td>'+signs.sign.category_id+'</td>'+
               '<td>'+'<a class="btn btn-sm btn-danger" onClick="deleteconfirmation('+signs.id+')">Eliminar</a>'+'</td>'+
       '</tr>'
