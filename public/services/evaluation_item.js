@@ -138,8 +138,8 @@ function showResult() {
                   <div class="imgContainer text-center"> 
                   <img src="https://media.istockphoto.com/photos/silhouette-of-a-man-holding-a-trophy-at-sunset-picture-id1202740292?k=20&m=1202740292&s=612x612&w=0&h=NEvKyErDCYIgK6-Ne9yxO-YvcCRaDqFtvpV7IE6TZig=" alt="" style="width: 60%"> 
                   </div>
-                  <h3 class="text-light mt-2 text-center">Tu calificacion es :</h3>
-                  <h3 class="text-light mt-2 text-center">${Math.round10(puntaje * 10 / data.length, -1)}</h3>
+                  <h3 class="text-light mt-2">Tu calificacion es :</h3>
+                  <h3 class="text-light mt-2">${Math.round(puntaje * 10 / data.length, -1* 100) / 100}</h3>
                   </div>
                 </div>
               </div>
