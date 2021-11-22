@@ -180,7 +180,7 @@ function showResult() {
                   <img src="https://media.istockphoto.com/photos/silhouette-of-a-man-holding-a-trophy-at-sunset-picture-id1202740292?k=20&m=1202740292&s=612x612&w=0&h=NEvKyErDCYIgK6-Ne9yxO-YvcCRaDqFtvpV7IE6TZig=" alt="" style="width: 60%"> 
                   </div>
                   <h3 class="text-light mt-2">Tu calificacion es :</h3>
-                  <h3 class="text-light mt-2">${puntaje * 10 / data.length}</h3>
+                  <h3 class="text-light mt-2">${Math.round10(puntaje * 10 / data.length, -1)}</h3>
                   </div>
                 </div>
               </div>
@@ -213,7 +213,7 @@ function showResult() {
                   <img src="https://play-lh.googleusercontent.com/LLWrCaH2ii4D_zaqNWYM6CihD3J5EOcE_ZuCfAoIzk5BDVBm4x2flKqN28JaJECPRR4" alt="" style="width: 60%"> 
                   </div>
                   <h3 class="text-light mt-2">Tu calificacion es :</h3>
-                  <h3 class="text-light mt-2">${puntaje * 10 / data.length}</h3>
+                  <h3 class="text-light mt-2">${Math.round10(puntaje * 10 / data.length, -1)}</h3>
                   </div>
                 </div>
               </div>
