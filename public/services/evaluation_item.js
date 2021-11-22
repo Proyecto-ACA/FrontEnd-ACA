@@ -80,48 +80,7 @@ function rederSign(flag) {
                 </div>
               </div>
             </div>`
-  /*  container.innerHTML =
-
-  <div class="containera d-flex align-items-center justify-content-center flex-wrap" style="height: 75vh">
-                          <div class="boxa">
-                              <div class="bodya">
-                                  <div class="imgContainer"> 
-                                    <img src="${respuesaItem.sign.image}" alt=""> </div>
-                                      <div class="contenta d-flex flex-column align-items-center justify-content-center">
-                                          <div>
-                                              <p class="fs-6 text-white">${respuesaItem.sign.name}</p>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                        </div>
-                        
-          '<div class="flex-container">'+
-              '<div class="flex-child magenta">'+
-                  '<img class="imga" src="'+ question_element.sign.sign + '" alt="">'+
-              '</div>'+
-          '<div class="flex-child green">'+ navegacion() +
-          '<h1 class="titulo fs-12 p-l-25 text-black"> pregunta: '+(actual + 1)+'/'+ data.length +'</h1>'+
-              '<div class="containera d-flex align-items-center justify-content-center flex-wrap">'+
-                  '<div class="boxa">'+
-                      '<div class="bodya">'+
-                          '<div class="imgContainer"> '+
-                          '<img src="'+respuesaItem.sign.image+'" alt=""> </div>'+
-                              '<div class="contenta d-flex flex-column align-items-center justify-content-center">'+
-                                  '<div>'+
-                                      '<p class="fs-6 text-white">'+respuesaItem.sign.name+'</p>'+
-                                  '</div>'+
-                              '</div>'+
-                          '</div>'+
-                      '</div>'+
-                  '</div>'+
-                  '<div class="container_button"> <button onclick="myRespuesta(1)">Verdadero</button> <button onclick="myRespuesta(2)">Falso</button> </div>'+
-              '</div>'+
-          '</div>'
-       */
-
-
+ 
 }
 
 function myRespuesta(res) {
@@ -175,12 +134,17 @@ function showResult() {
                 <div class="col-6 row">
                   <div class="col-5"></div>
                   <div class="col-11">
-                  <h3 class="text-light mt-2">Has aprobado la evaluacion</h3>
+                  <h3 class="text-light mt-2 text-center">Has aprobado la evaluacion</h3>
                   <div class="imgContainer text-center"> 
                   <img src="https://media.istockphoto.com/photos/silhouette-of-a-man-holding-a-trophy-at-sunset-picture-id1202740292?k=20&m=1202740292&s=612x612&w=0&h=NEvKyErDCYIgK6-Ne9yxO-YvcCRaDqFtvpV7IE6TZig=" alt="" style="width: 60%"> 
                   </div>
+<<<<<<< HEAD
                   <h3 class="text-light mt-2">Tu calificacion es :</h3>
                   <h3 class="text-light mt-2">${Math.round(puntaje * 10 / data.length, -1* 100) / 100}</h3>
+=======
+                  <h3 class="text-light mt-2 text-center">Tu calificacion es :</h3>
+                  <h3 class="text-light mt-2 text-center">${Math.round10(puntaje * 10 / data.length, -1)}</h3>
+>>>>>>> 372ddcaf2a45d5bb84f4bef0ca41243664c94f0c
                   </div>
                 </div>
               </div>
