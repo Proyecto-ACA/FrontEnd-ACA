@@ -19,5 +19,16 @@ axios.get(api+'test/test/getAll')
         });
 
 function imageselector(category){
-    return '../images/play.png'
+    if(category == 1){
+        console.log(category)
+        return '../images/facil.jpg'}
+    if(category == 2){
+        console.log(category)
+        return '../images/medio.jpg'}
+    if(category == 3){
+        console.log(category)
+        return '../images/dificil.jpg'}
+    if(category == 4){
+        console.log(category)
+        return '../images/inferno.jpg'}
 }
