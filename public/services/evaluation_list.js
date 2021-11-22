@@ -6,7 +6,7 @@ axios.get(api+'test/test/getAll')
             return (        
             '<div class="grid-item">'+
             '<div class="card" style="width: 20rem; height: 20rem">'+
-                '<a class="contenedor" href="/evaluacion/evaluacion_item?id='+item.id+'"><img class="card-img-top" src="'+imageselector(item.category.category)+'" alt="Card image cap"/>'
+                `<a class="contenedor" href="/evaluacion/evaluacion_item?id=${item.id}"><img class="card-img-top" src="${imageselector(item.category.category)}" alt="Card image cap"/>`
                 +'<div class="centrado">'
                     +'<h5>'+item.name+'</h5>'
                 +'</div></a></div>'
