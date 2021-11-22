@@ -43,10 +43,10 @@ axios.get(api + 'signs/getAllId')
             aceptar(obj);
         } else {
             var myvideo = new Object();
-            myvideo.name = 'default';
+            myvideo.name = 'video';
             myvideo.category_id = 1;
-            myvideo.image = 'deflault';
-            myvideo.description = 'default';
+            myvideo.image = 'video';
+            myvideo.description = 'video';
             myvideo.sign = image;
             myvideo.active = 2;
             var videosign= JSON.stringify(myvideo);  
