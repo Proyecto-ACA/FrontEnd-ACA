@@ -1,5 +1,6 @@
 axios.get(api+'test/test/getAll')
     .then( (response) => {
+        console.log("tests", response.data);
         document.getElementById('obteniendo').innerHTML = 
         response.data.map( (item) =>
         {
