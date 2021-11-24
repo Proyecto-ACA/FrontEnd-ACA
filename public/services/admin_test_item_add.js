@@ -49,7 +49,7 @@ axios.get(api+'signs/getAllId')
         aceptar(obj);
 
         
-  })();
+})();
 
 
 function aceptar(parser){

@@ -28,7 +28,6 @@ axios.get(api+'category/getAllOrderbyId')
         {
           return (        
             '<tr>'+
-                '<th scope="row">'+category.id+'</th>'+
                     '<td class="w-75">'+category.name+'</td>'+
                     '<td class="w-25" style="text-align:center"><img class="d-inline-block align-top" src='+category.image+' width="30" height="30" alt="" /></td>'+
                     '<td>'+'<a class="btn btn-sm btn-primary" href="/admin/edit_category?id=' +category.id+'">Editar</a>'+'</td>'+

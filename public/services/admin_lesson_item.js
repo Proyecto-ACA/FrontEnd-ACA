@@ -31,7 +31,6 @@ axios.get(api+'lesson/lessonsign/get',{ params: { lesson: last_segment } }).then
     // console.log("Sena : ",signs.name,signs)
     return (        
       '<tr>'+
-          '<th scope="row">'+signs.id+'</th>'+
               '<td>'+(signs.type==1? 'palabra' : 'video')+'</td>'+
               '<td  class="w-75">'+signs.sign.name+'</td>'+
               '<td>'+signs.sign.category_id+'</td>'+

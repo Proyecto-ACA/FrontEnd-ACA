@@ -87,7 +87,7 @@ module.exports = function (passport) {
             var hash = bcrypt.hashSync(password, salt);
             var obj = new Object();
             obj.name = username;
-            obj.rol_id = 1;
+            obj.rol_id = 2;
             obj.password = hash;
             var usuarionuevo= JSON.stringify(obj);      
             console.log(usuarionuevo)

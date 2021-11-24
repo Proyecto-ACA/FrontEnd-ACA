@@ -12,7 +12,7 @@ axios.get(api+'rol/getAll')
         { 
           console.log("Valor :" +rol.name)
           return (        
-                  '<option value="'+rol.id+'">'+rol.name+'</option>'
+                  '<option value='+rol.id+'>'+rol.name+'</option>'
           );
         }).join('');
     })

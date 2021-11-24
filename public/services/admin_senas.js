@@ -27,7 +27,6 @@ axios.get(api+'signs/getAllId').then(function (response)
     // console.log("Sena : ",signs.name,signs)
     return (        
       '<tr>'+
-          '<th scope="row">'+signs.id+'</th>'+
               '<td>'+signs.name+'</td>'+
               '<td>'+signs.description+'</td>'+
               '<td><img class="d-inline-block align-top" src='+signs.image+' width="30" height="30" alt="" /></td>'+

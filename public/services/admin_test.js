@@ -27,7 +27,6 @@ axios.get(api+'test/test/getAll').then( (response) => {
     // console.log("Sena : ",signs.name,signs)
     return (        
       '<tr>'+
-          '<th scope="row">'+signs.id+'</th>'+
               '<td>'+signs.name+'</td>'+
               '<td>'+signs.category.name+'</td>'+
               '<td>'+signs.difficulty.name+'</td>'+
