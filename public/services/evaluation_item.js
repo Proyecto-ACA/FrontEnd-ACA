@@ -1,8 +1,9 @@
+//Examen, elegir respuestas
+
 var full_url = document.URL; // Get current url
 var url_array = full_url.split('=') // Split the string into an array with / as separator
 var last_segment = url_array[url_array.length - 1]; // Get the last part of the array (-1)
-// alert( last_segment ); // Alert last segment
-// alert(api+'signs/getAll?id='+last_segment);
+
 const container = document.getElementById('obteniendo');
 var lista;
 var data;
@@ -80,7 +81,6 @@ function rederSign(flag) {
                 </div>
               </div>
             </div>`
- 
 }
 
 function myRespuesta(res) {
@@ -321,7 +321,8 @@ function rederMovie(flag) {
     }
     if (opcionVerdaderaFlag) {
       let verdadero = getRandomInt(0, 2) == 1 ? true : false;
-      if (verdadero) { //guardar respuesta correcta
+      //guarda respuesta correcta
+      if (verdadero) { 
         opciones.push(actual);
         opcionVerdaderaFlag = false;
       } else {
@@ -333,7 +334,8 @@ function rederMovie(flag) {
       }
     } else {
       let res = getRandomIntNotRepeat(opciones, 0, data.length);
-      if (res == actual) { //random guarda respeusta correcta
+      //guardar la respuesta correcta
+      if (res == actual) {
         opcionVerdaderaFlag = false;
       }
       opciones.push(res);
@@ -379,31 +381,6 @@ function rederMovie(flag) {
           </div>
         </div>
       </div>`
-      
-    /* '<div class="flex-container">' +
-    '<div class="flex-child magenta">' +
-    '<img class="imga" src="' + question_element.sign.sign + '" alt="">' +
-    '</div>' +
-    '<div class="flex-child green">' + navegacion() +
-    '<h1 class="titulo fs-12 p-l-25 text-black"> pregunta: ' + (actual + 1) + '/' + data.length + '</h1>' +
-    '<div class="containera d-flex align-items-center justify-content-center flex-wrap">' +
-    '<div class="boxa">' +
-    '<div class="bodya">' +
-    '<div class="imgContainer"> ' +
-    '<img src="' + "/images/question.png" + '" alt="" id="container_item_image"> </div>' +
-    '<div class="contenta d-flex flex-column align-items-center justify-content-center">' +
-    '<div>' +
-    '<p class="fs-6 text-white" id="container_item_description">' + "?" + '</p>' +
-    '</div>' +
-    '</div>' +
-    '</div>' +
-    '</div>' +
-    '</div>' +
-    '<div id="container_button">  </div>' +
-    '<div id="container_button_save" onclick="myRespuesta(1)">  Siguiente </div>' +
-    '</div>' +
-    '</div>' */
-
   let buttonsoptions = document.getElementById('container_button');
   buttonsoptions.innerHTML =
     opciones.map((the_button) => {
@@ -415,11 +392,9 @@ function rederMovie(flag) {
 }
 
 function myRespuestaOption(flag) {
-  /* let item_name = document.getElementById('container_item_description'); // obtener imagen y nombre para cambiar
-  console.log("item_name", item_name); */
-  //item_name.textContent = data[flag].question.sign.name
   let next = document.getElementById("nextbtn");
-  let item_image = document.getElementById('container_item_image'); // obtener imagen y nombre para cambiar
+  //obtener imagen y nombre para cambiar
+  let item_image = document.getElementById('container_item_image');
   item_image.src = data[flag].question.sign.image
   next.style.display = '';
   respuesta = flag;
@@ -430,6 +405,5 @@ function myRespuestaOption(flag) {
 getEvaluation();
 
 function getRandomInt(min, max) { // [min, max[
-  //console.log(Math.floor(Math.random() * (max - min)) + min);
   return Math.floor(Math.random() * (max - min)) + min;
 }

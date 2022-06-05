@@ -1,3 +1,4 @@
+//Mostrar las dificultades que hay en evaluaciones
 axios.get(api+'test/test/getAll')
     .then( (response) => {
         console.log("tests", response.data);
@@ -19,7 +20,7 @@ axios.get(api+'test/test/getAll')
         .catch( (err) => {
             document.getElementById('obteniendo').innerHTML = '<li class="text-danger">' + err.message + '</li>';
         });
-
+//imagenes alusiva al nivel de dificultad de cada leccion
 function imageselector(category){
     if(category == 1){
         console.log(category)

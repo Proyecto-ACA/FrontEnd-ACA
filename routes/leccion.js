@@ -18,7 +18,7 @@ router.get('/leccion_item', isLoggedIn, (req, res, next)=>{
   res.render('lesson_list', { title: 'Leccion' , user: req.user});
 });
 
-// ------------- Funcion de logueo
+//Funcion de logueo
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
       return next();

@@ -1,3 +1,4 @@
+//Mostrar todas las categorias en pagina principal
 axios.get(api+'category/getAll')
       .then(function (response) {
         document.getElementById('obteniendo').innerHTML = 

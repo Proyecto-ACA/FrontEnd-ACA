@@ -13,7 +13,7 @@ router.get('/', isLoggedIn, (req, res, next)=>{
 });
 
 
-// --------- funcion de login
+//funcion de login
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
       return next();

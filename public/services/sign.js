@@ -9,6 +9,7 @@ axios.get(api + 'signs/getOne/' + last_segment)
         function (response) {
             // console.log(response)
             // console.log(response.data)
+            //Cartas de señas donde se muestra el gift, nombre de la seña, imagen y descripción
             document.getElementById('obteniendo').innerHTML =
             `<div id="carouselExampleIndicators" class="carousel slide w-100 h-100 mt-3 bg-dark" data-ride="carousel">
                 <div class="carousel-inner h-100">
@@ -19,7 +20,7 @@ axios.get(api + 'signs/getOne/' + last_segment)
                                     <div class="col-3">
                                     </div>
                                     <div class="col-8 bg-dark d-flex align-items-center justify-content-center" style="height: 85vh" >
-                                        <img class="w-100" src="${response.data.sign}" alt="First slide">
+                                    <img class="w-100" src="${response.data.sign}" alt="First slide">
                                     </div>
                                 </div>
                                 <div class="col-6 row">
@@ -48,29 +49,6 @@ axios.get(api + 'signs/getOne/' + last_segment)
                     </div>
                     </div>
                 </div>`
-
-            /*  '<div class="flex-container">' +
-            '<div class="flex-child magenta">' +
-            '<img class="imga" src="' + response.data.sign + '" alt="">' +
-                '</div>' +
-
-                '<div class="flex-child green">' +
-                '<h1 class="titulo fs-12 p-l-25 text-black">' + response.data.name + '</h1>' +
-                '<div class="containera d-flex align-items-center justify-content-center flex-wrap">' +
-                '<div class="boxa">' +
-                '<div class="bodya">' +
-                '<div class="imgContainer"> ' +
-                '<img src="' + response.data.image + '" alt=""> </div>' +
-                '<div class="contenta d-flex flex-column align-items-center justify-content-center">' +
-                '<div>' +
-                '<p class="fs-6 text-white">' + response.data.description + '</p>' +
-                '</div>' +
-                '</div>' +
-                '</div>' +
-                '</div>' +
-                '</div>' +
-                '</div>' +
-                '</div>' */
         }
     )
     .catch(

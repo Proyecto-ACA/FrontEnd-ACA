@@ -1,3 +1,4 @@
+//Funcion para mostrar todas las lecciones
 axios.get(api+'lesson/lesson/getAll')
       .then( (response) => {
         document.getElementById('obteniendo').innerHTML = 

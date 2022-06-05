@@ -36,19 +36,6 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-/* passport.use(new PassportLocal(function (username, password, done) {
-  if(username === "admin" && password === "1234")
-    return done(null, {id: '1', name: 'admin'});
-  done(null, false);
-}));
-
-passport.serializeUser(function (user,done){
-  done(null, user.id);
-});
-
-passport.deserializeUser(function (id,done){
-  done(null, {id: '1', name: 'admin'});
-}); */
 
 app.use(express.static(path.join(__dirname, 'public')));
 

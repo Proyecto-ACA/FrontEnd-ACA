@@ -28,7 +28,6 @@ axios.get(api+'lesson/lessonsign/get',{ params: { lesson: last_segment } }).then
 
   mytable.innerHTML = 
   response.data.map( (signs) => {
-    // console.log("Sena : ",signs.name,signs)
     return (        
       '<tr>'+
               '<td>'+(signs.type==1? 'palabra' : 'video')+'</td>'+
@@ -56,9 +55,7 @@ const filtrar = () => {
 }
 
 function addItemOnClick(){
-  //return last_segment;
   window.location.href='/admin/add_items_lesson?id='+last_segment;
-  //window.open("/admin/add_items_lesson?id="+last_segment);
 }
 
 filtro_busqueda.addEventListener('keyup',filtrar);

@@ -4,6 +4,7 @@ var last_segment = url_array[url_array.length-1];  // Get the last part of the a
 // alert( last_segment ); // Alert last segment
 // alert(api+'signs/getAll?id='+last_segment); 
 
+//Funcion para obtener la lista de señas/palabras
 axios.get(api+'signs/getCategory?category_id='+last_segment)
       .then(function (response) {
         console.log("signs: ", response.data);

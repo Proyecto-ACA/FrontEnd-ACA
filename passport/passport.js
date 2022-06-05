@@ -2,6 +2,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcryptjs');
 const axios = require('axios');
 
+//direccion de la api (express)
 var api = 'http://localhost:3023/';
 
 module.exports = function (passport) {
@@ -38,9 +39,6 @@ module.exports = function (passport) {
     },
     function (req, username, password, done) {
         var isValidPassword = (userpass, password) => {
-            /* var salt = bcrypt.genSaltSync(10);
-            var hash = bcrypt.hashSync(password, salt);
-            console.log(hash); */
             return bcrypt.compareSync(password, userpass);
         }
         axios.post(api+'users/user',{name: username})
@@ -94,8 +92,8 @@ module.exports = function (passport) {
             axios.post(api+'users/user',{name: username})
                 .then((user) =>
                 {
-                    //aqui se deberia validad si existe o no
-                    //----
+                
+                    //se valida si existe o no el usuario
                     axios.post(api+'users/save', JSON.parse(usuarionuevo))
                     .then(function (res) {
                         return done(null, res);
@@ -103,7 +101,6 @@ module.exports = function (passport) {
                     .catch(function (err) {
                         console.log(err)
                     });
-                    // return done(null, res);
                 }).catch((err) => 
                 {
                     console.error(err);

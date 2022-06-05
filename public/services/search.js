@@ -1,3 +1,4 @@
+//Buscar palabras en el buscador
 function buscar() 
 {
   var searchvalue = document.getElementById('search-navbar').value;

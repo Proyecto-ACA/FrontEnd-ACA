@@ -1,3 +1,4 @@
+/*Estilos unificados*/
 body, html {
     height: 100%;
 }
@@ -120,7 +121,7 @@ body, html {
     overflow-y: scroll;
     height: 90vh;
 }
-/*abc*/
+/*estilos para diccionario de palabras*/
 .grid-containerabc {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -187,12 +188,12 @@ a:hover {
 .text-muted i {
     margin: 0 10px;
 }
-/*abc*/
+/*diccionario de palabras*/
 ion-icon {
     font-size: 30px;
     color: black;
 }
-/*abc*/
+/*diccionario de palabras*/
 .larroww{
     align-items: center;
 }
@@ -206,7 +207,7 @@ ion-icon {
 .mdl-leftt {
     text-align: left;
 }  
-/*a*/
+/*botones de navegacion(atras, adelante, cerrar) diccionario de palabras*/
 
 .iclose{
     margin-top: 3px;
@@ -344,7 +345,7 @@ a{
 }
 
 /*a*/
-/*lecciones*/
+/* estilo para lecciones (pagina ppal de lecciones)*/
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -352,7 +353,7 @@ a{
     height: 565px;
 }
 /**/
-/*leccion1*/
+/*estilo para cada una de las lecciones*/
 .lista {
     overflow-y: scroll;
     height: 520px;
@@ -386,7 +387,7 @@ a{
     display:inline-block;
 }
 /**/
-/*evaluaciones*/
+/* estilo para evaluaciones*/
 .accordion{
     overflow-y: scroll;
     height: 519px;
@@ -488,7 +489,7 @@ a{
         position: absolute;
     }
 }
-/*Estadisticas*/
+/*estilo para Estadisticas*/
 
 .est{
     overflow-y: scroll;

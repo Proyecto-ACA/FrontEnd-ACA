@@ -24,14 +24,12 @@ axios.get(api+'signs/getAllId').then(function (response)
   mytable.innerHTML = 
   response.data.map(function (signs) 
   {
-    // console.log("Sena : ",signs.name,signs)
     return (        
       '<tr>'+
               '<td>'+signs.name+'</td>'+
               '<td>'+signs.description+'</td>'+
               '<td><img class="d-inline-block align-top" src='+signs.image+' width="30" height="30" alt="" /></td>'+
               '<td>'+signs.category_id+'</td>'+
-              //'<td><img class="d-inline-block align-top" src='+signs.sign+' width="30" height="30" alt="" /></td>'+
               '<td>'+'<a class="btn btn-sm btn-primary" href="/admin/edit_word?id=' +signs.id+'">Editar</a>'+'</td>'+
               '<td>'+'<a class="btn btn-sm btn-danger" onClick="deleteconfirmation('+signs.id+')">Eliminar</a>'+'</td>'+
       '</tr>'

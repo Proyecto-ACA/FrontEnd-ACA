@@ -54,7 +54,7 @@ router.get('/logout', function(req, res){
   res.redirect('/');
 }); 
 
-// ------------- Funcion de logueo
+//Funcion de logueo
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
       return next();

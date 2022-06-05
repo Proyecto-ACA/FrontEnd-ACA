@@ -12,26 +12,17 @@ router.get('/', (req, res, next)=>{
         params: {
             lesson: 1,
         }
-        //data: req.body,
     })
     .then((response) => {
-        //console.log('responce', response);
         if (e) {
-            //e(response.data);
-            //console.log(e.data);
             console.log('data', response.data);
             
         }
         if (response.data.code === 4012) {
-            //console.log('responce', response.data);
-            //res.redirect('/logout');
         } else {
-            //res.send(response.data);
         }
-        //console.log('responce', response.data);
     })
     .catch((error) => {
-    //res.send('error.message');
     console.log('No logro concetar a la direccion', error.message);
     })
 console.log('aqui prrox2');

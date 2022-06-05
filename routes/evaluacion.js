@@ -18,7 +18,7 @@ router.get('/examen1', isLoggedIn, function(req, res, next) {
   res.render('exam1', { title: 'Evaluacion' , user: req.user});
 });
 
-// ------------- Funcion de logueo
+//Funcion de logueo
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
       return next();

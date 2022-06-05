@@ -38,7 +38,7 @@ axios.get(api + 'signs/getAllId')
         obj.lesson = last_segment;
         obj.type = category_id_int;
 
-        if (category_id_int == 1) { //sennia
+        if (category_id_int == 1) { //seña
             obj.sign = level_id_int
             aceptar(obj);
         } else {
