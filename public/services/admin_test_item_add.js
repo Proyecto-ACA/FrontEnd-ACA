@@ -2,7 +2,7 @@ var full_url = document.URL; // Get current url
 var url_array = full_url.split('=') // Split the string into an array with / as separator
 var last_segment = url_array[url_array.length-1];  // Get the last part of the array (-1)
 
-
+/* Se obtienen las señas */
 axios.get(api+'signs/getAllId')
     .then( (response) => {
         console.log('signs', response.data);
@@ -17,6 +17,7 @@ axios.get(api+'signs/getAllId')
         document.getElementById('obteniendo').innerHTML = '<li class="text-danger">' + err.message + '</li>';
 });
 
+/* Agregar item al test*/ 
 ( () => {
     document.getElementById('post').onclick = function () 
     {
@@ -51,7 +52,7 @@ axios.get(api+'signs/getAllId')
         
 })();
 
-
+/* Confirmación para agregar item */
 function aceptar(parser){
     console.log('data a guardar:', parser);
     var jsonString= JSON.stringify(parser); 
@@ -68,7 +69,7 @@ function aceptar(parser){
             alert(JSON.parse(jsonString))
         });
 }
-
+ /* Función regresar */
 function goBack() {
     window.open("/admin/items_test?id=" + last_segment,"_self");
 }

@@ -4,6 +4,7 @@ var last_segment = url_array[url_array.length-1];  // Get the last part of the a
 // alert( last_segment ); // Alert last segment
 // alert(api+'signs/getAll?id='+last_segment);
 
+/* Buscar categorías */
 axios.get(api+'category/getbyName?name='+last_segment)
       .then(function (response) {
         document.getElementById('obteniendo-search-categorias').innerHTML = 
@@ -23,7 +24,7 @@ axios.get(api+'category/getbyName?name='+last_segment)
         .catch(function (err) {
           document.getElementById('obteniendo').innerHTML = '<li class="text-danger">' + err.message + '</li>';
         });
-
+/* Buscar seña */
 axios.get(api+'signs/getbyName?name='+last_segment)
         .then(function (response) {
           document.getElementById('obteniendo-search-palabras').innerHTML = 

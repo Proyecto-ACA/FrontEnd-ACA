@@ -4,6 +4,7 @@ var last_segment = url_array[url_array.length-1];  // Get the last part of the a
 // alert( last_segment ); // Alert last segment
 // alert(api+'signs/getAll?id='+last_segment);
 
+/* Test a modificar */
 axios.get(api+'test/test/get?id='+last_segment)
       .then( (response) => {
         console.log('responce one', response.data[0]);
@@ -16,7 +17,7 @@ axios.get(api+'test/test/get?id='+last_segment)
 });   
 
 
-
+/* Se obtienen las categorías*/
 axios.get(api+'test/category/getAll')
       .then(function (response) {
           console.log('categorias', response.data);
@@ -30,7 +31,7 @@ axios.get(api+'test/category/getAll')
         .catch( (err) => {
           document.getElementById('obteniendo').innerHTML = '<li class="text-danger">' + err.message + '</li>';
         });
-
+/* Se obtiene la dificultad */
         axios.get(api+'test/difficulty/getAll')
       .then( (response) => {
           console.log('niveles', response.data);
