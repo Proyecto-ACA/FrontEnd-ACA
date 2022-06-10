@@ -1,6 +1,7 @@
 var mytable = document.getElementById('mytable');
 var filtro = document.getElementById('filtro_busqueda')
 
+/* Funcion para eliminar un test */
 function deleteconfirmation(id) 
 { 
   if (confirm("¿Seguro que desea eliminar la test?")) 
@@ -19,6 +20,8 @@ function deleteconfirmation(id)
     
   }
 }
+
+/* Mostrar test*/
 axios.get(api+'test/test/getAll').then( (response) => {
     console.log('data', response.data);
 
@@ -55,6 +58,7 @@ const filtrar = () => {
 
 filtro_busqueda.addEventListener('keyup',filtrar);
 
+/* Retroceder*/
 function goBack() {
   window.open("/","_self");
 }

@@ -1,3 +1,4 @@
+/* Variables */
 var inputPass = document.getElementById('inputPass');
 var confirmInputPass = document.getElementById('confirmInputPass');
 var btn_signup = document.getElementById('btn_signup');
@@ -13,6 +14,7 @@ inputPass.addEventListener('keyup', () => {
     validate();
 })
 
+/* Función de validación*/
 function validate() {
     if (confirmInputPass.value == inputPass.value) {
         confirmInputPass.classList.remove('failedpass')

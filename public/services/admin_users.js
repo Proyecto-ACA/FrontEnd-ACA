@@ -1,3 +1,4 @@
+/* Función para eliminar un usuario*/
 function deleteconfirmation(id) 
 { 
   if (confirm("¿Seguro que desea eliminar al usuario?")) 
@@ -17,6 +18,7 @@ function deleteconfirmation(id)
   }
 }
 
+/* Función para listar los roles */
 axios.get(api+'rol/getAll')
       .then(function (response) {
         document.getElementById('rol').innerHTML = 
@@ -31,6 +33,7 @@ axios.get(api+'rol/getAll')
           document.getElementById('container-edit').innerHTML = '<li class="text-danger">' + err.message + '</li>';
 });
 
+/* Función para listar los usuarios */
 axios.get(api+'users/getAll')
       .then(function (response) 
       {

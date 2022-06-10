@@ -1,3 +1,4 @@
+/* Se obtienen las categorías*/
 axios.get(api+'category/getAll')
       .then(function (response) {
           console.log('categorias', response.data);
@@ -12,7 +13,7 @@ axios.get(api+'category/getAll')
         .catch(function (err) {
           document.getElementById('obteniendo').innerHTML = '<li class="text-danger">' + err.message + '</li>';
         });
-
+/* Se obtienen los niveles */
         axios.get(api+'lesson/level/getAll')
       .then(function (response) {
           console.log('niveles', response.data);
@@ -27,7 +28,7 @@ axios.get(api+'category/getAll')
         .catch(function (err) {
           document.getElementById('obteniendo').innerHTML = '<li class="text-danger">' + err.message + '</li>';
         });
-
+/* Función para agregar una nueva lección*/
 (function () {
     document.getElementById('post').onclick = function () 
     {
@@ -47,7 +48,7 @@ axios.get(api+'category/getAll')
         obj.level = level_id_int
         obj.image = image;
         obj.description = description;
-
+        
 
         console.log('objeto',obj);
         var jsonString= JSON.stringify(obj);  

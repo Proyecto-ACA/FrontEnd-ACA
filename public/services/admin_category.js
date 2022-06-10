@@ -1,3 +1,4 @@
+/* Confirmar para eliminar una categoria*/
 function deleteconfirmation(id) 
 { 
   if (confirm("¿Seguro que desea eliminar la categoria?")) 
@@ -18,7 +19,7 @@ function deleteconfirmation(id)
   }
 }
 
-
+/* Listar las categorías */
 axios.get(api+'category/getAllOrderbyId')
       .then(function (response) 
       {
@@ -40,7 +41,7 @@ axios.get(api+'category/getAllOrderbyId')
           document.getElementById('mytable').innerHTML = '<li class="text-danger">' + err.message + '</li>';
         });
 
-        
+/* Función filtro */        
         const filtrar = () => {
           var texto = filtro_busqueda.value.toLowerCase();
           for (let i=0; i<mytable.childElementCount; i++){

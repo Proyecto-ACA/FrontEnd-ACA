@@ -1,3 +1,4 @@
+/* Función para agregar una categoría */
 (function () {
     document.getElementById('post').onclick = function () 
     {
@@ -6,7 +7,7 @@
         var obj = new Object();
         obj.name = name;
         obj.image = image;
-
+        
         var jsonString= JSON.stringify(obj);      
         axios.post(api+'category/save', JSON.parse(jsonString))
         .then(function (res) {
