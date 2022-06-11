@@ -10,7 +10,7 @@ router.get('/edit_user', isLoggedIn,(req, res)=>{
   res.render('admin_users_edit', { title: 'Editar Categoria' , user: req.user});
 });
 
-//CATEGORIES
+//CATEGORIAS
 router.get('/category', isLoggedIn, (req, res)=>{
   res.render('admin_category', { title: 'Administrar de Categorias' , user: req.user});
 });
@@ -23,7 +23,7 @@ router.get('/add_category', isLoggedIn,(req, res)=>{
   res.render('admin_category_add', { title: 'Agregar Categoria' , user: req.user});
 });
 
-//WORD
+//letras
 
 router.get('/words', isLoggedIn, (req, res)=>{
   res.render('admin_word', { title: 'Administrar de palabras' , user: req.user});
@@ -37,6 +37,7 @@ router.get('/add_word', isLoggedIn, (req, res)=>{
   res.render('admin_word_add', { title: 'Agregar palabra' , user: req.user});
 });
 
+//lecciones
 
 router.get('/lesson', isLoggedIn, (req, res)=>{
   res.render('admin_lesson', { title: 'Administrar de lecciones', user: req.user });
@@ -60,6 +61,7 @@ router.get('/add_items_lesson', isLoggedIn, (req, res)=>{
   res.render('admin_lesson_item_add', { title: 'Agregar Items leccion', user: req.user });
 });
 
+//exxamenes
 router.get('/test', isLoggedIn, (req, res)=>{
   res.render('admin_test', { title: 'Administrar de Evaluaciones', user: req.user });
 });

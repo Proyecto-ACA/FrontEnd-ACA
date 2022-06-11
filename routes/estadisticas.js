@@ -1,3 +1,4 @@
+//rutas para la seccion estadisticas 
 var express = require('express');
 var router = express.Router();
 
