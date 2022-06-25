@@ -1,0 +1,13 @@
+//extiene de layout donde estan contenidos los links de bootstrap, scripts, etc
+extends __layout
+block content
+    .container-fluid
+      .row.flex-nowrap
+        //style sidebar
+        include __sidebar
+        // Navbar
+        .navp.col.py-0.w-100
+          //style navbar
+          include __navbar2
+          #obteniendo.grid-containerpp
+    script(src='/services/evaluation_list.js')
