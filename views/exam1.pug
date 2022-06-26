@@ -1,0 +1,57 @@
+//extiene de layout donde estan contenidos los links de bootstrap, scripts, etc
+extends __layout
+block content
+    .container-fluid
+      .row.flex-nowrap
+        //style sidebar
+        include __sidebar
+        // Navbar
+        .navp.col.py-0.w-100
+          include __navbar2
+          // accion para enviar
+          form(action='' method='post')
+            .formex
+              .eval
+                .pregunta
+                  | 1. Selecciona la se&ntilde;a de letra A
+                  br
+                .respuestas
+                  input(type='radio' name='preg1' value='1')
+                  img.imgsena(src='https://static.vecteezy.com/system/resources/previews/002/594/391/non_2x/sign-language-hand-gesture-indicating-s-letter-line-icon-free-vector.jpg')
+                  br
+                  input(type='radio' name='preg1' value='2')
+                  img.imgsena(src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv3xI_rptMpGTg8wStU91ne-w9bLFGCkIty7N9BovXJpDHH-8TtyF2_cCXkkylQOgG9vg&usqp=CAU')
+                  br
+                  input(type='radio' name='preg1' value='3')
+                  img.imgsena(src='https://e7.pngegg.com/pngimages/248/846/png-clipart-peace-symbols-v-sign-gesture-sign-language-peaceful-signs-s-food-hand.png')
+                  br
+              .eval
+                .pregunta
+                  | 2. Selecciona la se&ntilde;a de letra A
+                  br
+                .respuestas
+                  input(type='radio' name='preg1' value='1')
+                  img.imgsena(src='https://static.vecteezy.com/system/resources/previews/002/594/391/non_2x/sign-language-hand-gesture-indicating-s-letter-line-icon-free-vector.jpg')
+                  br
+                  input(type='radio' name='preg1' value='2')
+                  img.imgsena(src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv3xI_rptMpGTg8wStU91ne-w9bLFGCkIty7N9BovXJpDHH-8TtyF2_cCXkkylQOgG9vg&usqp=CAU')
+                  br
+                  input(type='radio' name='preg1' value='3')
+                  img.imgsena(src='https://e7.pngegg.com/pngimages/248/846/png-clipart-peace-symbols-v-sign-gesture-sign-language-peaceful-signs-s-food-hand.png')
+                  br
+              .eval
+                .pregunta
+                  | 3. Selecciona la se&ntilde;a de letra A
+                  br
+                .respuestas
+                  input(type='radio' name='preg1' value='1')
+                  img.imgsena(src='https://static.vecteezy.com/system/resources/previews/002/594/391/non_2x/sign-language-hand-gesture-indicating-s-letter-line-icon-free-vector.jpg')
+                  br
+                  input(type='radio' name='preg1' value='2')
+                  img.imgsena(src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv3xI_rptMpGTg8wStU91ne-w9bLFGCkIty7N9BovXJpDHH-8TtyF2_cCXkkylQOgG9vg&usqp=CAU')
+                  br
+                  input(type='radio' name='preg1' value='3')
+                  img.imgsena(src='https://e7.pngegg.com/pngimages/248/846/png-clipart-peace-symbols-v-sign-gesture-sign-language-peaceful-signs-s-food-hand.png')
+                  br
+              .btn-enviar
+                input.btn-env.btn-outline-dark(type='submit' value='Enviar')
