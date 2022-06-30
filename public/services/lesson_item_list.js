@@ -1,6 +1,6 @@
 var full_url = document.URL; // Obtiene la URL
 var url_array = full_url.split('=') // Divide el string
-var last_segment = url_array[url_array.length -1]; //Obtien la ultima parte del arreglo
+var last_segment = url_array[url_array.length - 1]; //Obtien la ultima parte del arreglo
 
 const container = document.getElementById('obteniendo');
 var lista;
@@ -19,10 +19,11 @@ axios.get(api + 'lesson/lessonsign/get', {
     lista =
         data.map((item)=> {
             return (
-                //información para las cartas
+                // información para las cartas
                 '<div class="d-block m-4">' +
                 '<div class="card" style="width: 100%; height: 5rem">' +
-                '<a class="contenedor" onclick="selectTarget(' + iteration++ + ')"><img class="card-img-top"'+ ((item.sign.name.length <= 2) ? 'style="width: 7%;' : '') + '" src="' +
+                '<a class="contenedor" onclick="selectTarget(' + iteration++ + ')"><img class="card-img-top"'+ 
+                ((item.sign.name.length <= 2) ? 'style="width: 7%;' : '') + '" src="' +
                 ((item.type == 2) ? '../images/play.png' : item.sign.image) + '" alt="Card image cap"/>' +
                 '<div class="centrado">' +
                 '<h5>' + ((item.sign.name.length <= 2) ? "" : item.sign.name) + '</h5>' +
