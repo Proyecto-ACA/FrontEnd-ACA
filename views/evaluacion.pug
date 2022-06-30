@@ -1,13 +1,14 @@
 //extiene de layout donde estan contenidos los links de bootstrap, scripts, etc
-extends __layout 
+extends __layout
 block content
+  script(src='https://cdn.jsdelivr.net/npm/chart.js')
   .container-fluid
     .row.flex-nowrap
       //style sidebar
       include __sidebar
       // Navbar
       .navp.col.py-0
-        //donde esta contenido el style del navbar
+        //style navbar
         include __navbar2
 
         // Cartas
