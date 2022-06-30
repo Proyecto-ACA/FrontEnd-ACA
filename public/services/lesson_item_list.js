@@ -19,6 +19,7 @@ axios.get(api + 'lesson/lessonsign/get', {
     lista =
         data.map((item)=> {
             return (
+                //información para las cartas
                 '<div class="d-block m-4">' +
                 '<div class="card" style="width: 100%; height: 5rem">' +
                 '<a class="contenedor" onclick="selectTarget(' + iteration++ + ')"><img class="card-img-top"'+ ((item.sign.name.length <= 2) ? 'style="width: 7%;' : '') + '" src="' +
@@ -62,6 +63,7 @@ function goNextItem(){
         selectTarget(actual + 1);
 }
 
+//navegacion entre las pantallas de lecciones
 function navegacion(){
     var inicio = '<div class="section-navigation mdl-bottom"> <span class="mdl-left">'
     if (actual != 0) {
@@ -77,7 +79,7 @@ function navegacion(){
     inicio += ' </span></div>'
     return inicio 
 }
-
+//mostrar señas
 function renderSign(flag){
     const element = data[flag].sign;
     container.innerHTML =
@@ -131,7 +133,7 @@ function renderSign(flag){
     </div>
     </div>`
 }
-
+//mostrar video
 function renderMovie(flag){
     const element = data[flag].sign;
     `<div id="carouselExampleIndicators" class="carousel slide w-100 h-100 mt-3 bg-dark" data-ride="carousel">
@@ -149,9 +151,7 @@ function renderMovie(flag){
                     <div class="row ">
                         <div class="col-2"></div>
                         <div class="col-8" style="height: 85vh">
-                            <iframe width="100%" height="100%"
-                                src="${element.sign}">
-                            </iframe>
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/DL9D8JO6Fqs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     <div class="col-2"></div>
                 </div>
