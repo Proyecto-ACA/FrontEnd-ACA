@@ -17,6 +17,7 @@ var signRouter = require('./routes/sign');
 var usersRouter = require('./routes/users');
 var searchRouter = require('./routes/search');
 const testRouter = require('./routes/test');
+const mapRouter = require('./routes/mapa');
 
 var app = express();
 
@@ -48,6 +49,7 @@ app.use('/evaluacion', evaluacionRouter);
 app.use('/estadisticas', estadisticasRouter);
 app.use('/leccion', leccionRouter);
 app.use('/search', searchRouter);
+app.use('/mapa', mapRouter);
 
 
 // catch 404 and forward to error handler

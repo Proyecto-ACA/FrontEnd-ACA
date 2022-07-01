@@ -121,6 +121,26 @@ body, html {
     overflow-y: scroll;
     height: 90vh;
 }
+
+/*estilos  del mapa*/
+#container-map {
+    height: 100%;
+    width: 100%;
+    padding-top: 25px;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+}
+
+#map-template {
+    height: 80%;
+    width: 80%;
+    top: 12%;
+    left: 10%;
+    right: 10%;
+    position: absolute;
+}
+
 /*estilos para diccionario de palabras*/
 .grid-containerabc {
     display: grid;
