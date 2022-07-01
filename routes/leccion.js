@@ -1,3 +1,4 @@
+//ruta para lecciones
 var express = require('express');
 var router = express.Router();
 

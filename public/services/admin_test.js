@@ -1,3 +1,4 @@
+//funcion para administrar evaluaciones
 var mytable = document.getElementById('mytable');
 var filtro = document.getElementById('filtro_busqueda')
 

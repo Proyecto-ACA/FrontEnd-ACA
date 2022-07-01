@@ -1,3 +1,4 @@
+//funcion para añadir items a evaluaciones
 var full_url = document.URL; // Get current url
 var url_array = full_url.split('=') // Split the string into an array with / as separator
 var last_segment = url_array[url_array.length-1];  // Get the last part of the array (-1)

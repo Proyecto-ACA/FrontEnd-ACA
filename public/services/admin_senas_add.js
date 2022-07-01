@@ -1,3 +1,4 @@
+//funcion para añadir señas
 axios.get(api+'category/getAll')
       .then(function (response) {
         document.getElementById('category').innerHTML = 

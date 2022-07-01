@@ -1,3 +1,4 @@
+//funcion para añadir evaluaciones
 axios.get(api+'test/category/getAll')
       .then(function (response) {
           console.log('categorias', response.data);

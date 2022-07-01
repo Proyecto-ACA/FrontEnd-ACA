@@ -1,3 +1,5 @@
+//Obtener items para evaluaciones
+
 var full_url = document.URL; //se obtiene la url
 var url_array = full_url.split('=') // Divide el url
 var last_segment = url_array[url_array.length -1]; //Se obtiene la ultima parte del url
